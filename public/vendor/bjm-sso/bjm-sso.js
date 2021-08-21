@@ -26,7 +26,6 @@ class BjmSSO {
                         resolve(true);
                         console.log('close window');
                         clearInterval(interval);
-                        //self.getUser();
                     }
                 }, 1000);
               });
@@ -51,28 +50,20 @@ class BjmSSO {
 
     async loginWindow(_callBack) {
         var self = this;
-        const isLogin = await self.isLogin();
-        if (isLogin['status']) {
-            const status = await self.openWin();
-            const user = await self.getUser();
-            _callBack(user);
-        }
-        else {
-            const status = await self.openWin();
-            console.log('status ' + status);
-            if (status) {
-                const isLogin = await self.isLogin();
-                if (isLogin['status']) {
-                    const user = await self.getUser();
-                    _callBack(user);
-                }
-                else {
-                    console.log('Belum login');
-                }
+        const status = await self.openWin();
+        console.log('status ' + status);
+        if (status) {
+            const isLogin = await self.isLogin();
+            if (isLogin['status']) {
+                const user = await self.getUser();
+                _callBack(user);
             }
             else {
-                console.log('waittttt.....');
+                console.log('Gagal login.....');
             }
+        }
+        else {
+            console.log('Gagal Login.....');
         }
     }
 }

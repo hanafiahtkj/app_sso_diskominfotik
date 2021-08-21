@@ -88,6 +88,11 @@ $user = auth()->user();
                 $("#wrapper2").show();
             });
 
+            $("#btn-login-1").click(function(e){
+                e.preventDefault();
+                window.close();
+            });
+
             $("form#form-login").submit(function(e){
                 e.preventDefault();
                 var btn = $('#btn-simpan');
