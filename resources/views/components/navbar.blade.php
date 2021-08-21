@@ -2,7 +2,7 @@
 $user = auth()->user();
 @endphp
 
-<div class="navbar-bg"></div>
+<div class="navbar-bg bg-light"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
 <div class="container">
     <a href="{{ url('') }}" class="navbar-brand d-none d-md-none"><x-jet-application-logo class="block h-12 w-auto" /></a>

@@ -53,6 +53,7 @@ class BjmSSO {
         var self = this;
         const isLogin = await self.isLogin();
         if (isLogin['status']) {
+            const status = await self.openWin();
             const user = await self.getUser();
             _callBack(user);
         }

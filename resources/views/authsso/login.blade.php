@@ -1,50 +1,74 @@
-<x-sso-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@php
+$user = auth()->user();
+@endphp
 
-        <x-jet-validation-errors class="mb-4" />
+<x-sso-layout> 
+    @if(Auth::check())
+    <div id="wrapper1">
+        <x-jet-authentication-card>
+            <x-slot name="logo">
+                <x-jet-authentication-card-logo />
+            </x-slot>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+                <div>
+                    <x-jet-label value="{{ __('Email') }}" />
+                    <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email', $user->email)" readonly required autofocus />
+                </div>
 
-            <div>
-                <x-jet-label value="{{ __('Email') }}" />
-                <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+                <div class="flex items-center justify-end mt-4">
+        
+                        <a id="btn-ganti" class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                            {{ __('Gunakan Akun yang lain?') }}
+                        </a>
+                    
 
-            <div class="mt-4">
-                <x-jet-label value="{{ __('Password') }}" />
-                <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+                    <x-jet-button class="ml-4" id="btn-login-1">
+                        {{ __('Login') }}
+                    </x-jet-button>
+                </div>
+            </form>
+        </x-jet-authentication-card>
+    </div>
+    @endif
 
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+    <div id="wrapper2" style="display: {{ (Auth::check()) ? 'none;' : 'block;' }}">
+        <x-jet-authentication-card> 
+            <x-slot name="logo">
+                <x-jet-authentication-card-logo />
+            </x-slot>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+            <x-jet-validation-errors class="mb-4" />
 
-                <x-jet-button class="ml-4" id="btn-simpan">
-                    {{ __('Login') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
+            @if (session('status'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+            <form id="form-login" method="POST" action="{{ route('login') }}">
+                @csrf
+
+                <div>
+                    <x-jet-label value="{{ __('Email') }}" />
+                    <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                </div>
+
+                <div class="mt-4">
+                    <x-jet-label value="{{ __('Password') }}" />
+                    <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                </div>
+
+                <div class="flex items-center justify-end mt-4">
+                    <x-jet-button class="ml-4" id="btn-login-2">
+                        {{ __('Login') }}
+                    </x-jet-button>
+                </div>
+            </form>
+        </x-jet-authentication-card>
+    </div>
 
     <x-slot name="style">
         <style> 
@@ -58,7 +82,13 @@
         <script> 
         // jquery
         $(function() {
-            $("form").submit(function(e){
+            $("#btn-ganti").click(function(e){
+                e.preventDefault();
+                $("#wrapper1").hide();
+                $("#wrapper2").show();
+            });
+
+            $("form#form-login").submit(function(e){
                 e.preventDefault();
                 var btn = $('#btn-simpan');
                 btn.addClass('btn-progress');

@@ -8,7 +8,7 @@ $links = [
     ],
     [
         "icon" => "fas fa-question-circle",
-        "href" => "dashboard",
+        "href" => "about",
         "text" => "Tentang",
         "is_multi" => false,
     ],

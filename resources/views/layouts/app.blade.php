@@ -27,10 +27,13 @@
         <livewire:styles />
         <!-- Scripts -->
         <script defer src="{{ asset('vendor/alpine.js') }}"></script>
-
+        
         @isset($style)
             {{ $style }}
         @endisset
+
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    
     </head>
     <body class="layout-3">
         <div id="app">

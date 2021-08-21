@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-require __DIR__.'/sso.php';
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+require __DIR__.'/web-sso.php';

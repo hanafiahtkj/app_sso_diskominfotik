@@ -3,12 +3,21 @@
         <x-jet-application-logo class="block h-12 w-auto" />
     </div>
 
-    <div class="mt-8 text-2xl">
+    <div class="mt-6 text-2xl">
         Selamat datang di Aplikasi Banjarmasin!
     </div>
 
     <div class="mt-6 text-gray-500">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </div>
+
+    <div class="mt-6">
+    @auth
+        <a href="{{ route('dashboard') }}" class="btn btn-warning icon-left mr-2"><i class="far fa-user"></i> Dasbor</a>
+    @else
+        <a href="{{ route('login') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Login</a>
+        <a href="{{ route('register') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Register</a>
+    @endauth
     </div>
 </div>
 
