@@ -14,7 +14,7 @@ class BjmSSO {
         return response.data;
     }
     
-    async openWin() {
+    async openWin(status = false) {
         var self = this;
         try {
             const y = window.top.outerHeight / 2 + window.top.screenY - ( 500 / 2);
@@ -23,7 +23,7 @@ class BjmSSO {
             return await new Promise(resolve => {
                 const interval = setInterval(() => {
                     if(self.ssoWindow.closed) {
-                        resolve(true);
+                        resolve(status);
                         console.log('close window');
                         clearInterval(interval);
                     }
@@ -59,11 +59,11 @@ class BjmSSO {
                 _callBack(user);
             }
             else {
-                console.log('Gagal login.....');
+                console.log('Gagal login 1.....');
             }
         }
         else {
-            console.log('Gagal Login.....');
+            console.log('Gagal Login 2.....');
         }
     }
 }

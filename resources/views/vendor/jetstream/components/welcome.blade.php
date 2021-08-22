@@ -13,7 +13,7 @@
 
     <div class="mt-6">
     @auth
-        <a href="{{ route('dashboard') }}" class="btn btn-warning icon-left mr-2"><i class="far fa-user"></i> Dasbor</a>
+        <a href="{{ url('/user/profile') }}" class="btn btn-warning icon-left mr-2"><i class="far fa-user"></i> Profile</a>
     @else
         <a href="{{ route('login') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Login</a>
         <a href="{{ route('register') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Register</a>
