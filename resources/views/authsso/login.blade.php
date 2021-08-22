@@ -84,6 +84,22 @@ $user = auth()->user();
         $(function() {
             $("#btn-ganti").click(function(e){
                 e.preventDefault();
+                var formData = new FormData();
+                formData.append('_token', '{{ csrf_token() }}');
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('logout') }}",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",
+                    success: function(data, textStatus, jqXHR) {
+                        console.log('Logout Berhasil!'); 
+                    },
+                    error: function(data, textStatus, jqXHR) {
+                        console.log('Logout Gagal!');
+                    },
+                });
                 $("#wrapper1").hide();
                 $("#wrapper2").show();
             });

@@ -14,7 +14,7 @@ class BjmSSO {
         return response.data;
     }
     
-    async openWin(status = false) {
+    async openWin() {
         var self = this;
         try {
             const y = window.top.outerHeight / 2 + window.top.screenY - ( 500 / 2);
@@ -23,7 +23,7 @@ class BjmSSO {
             return await new Promise(resolve => {
                 const interval = setInterval(() => {
                     if(self.ssoWindow.closed) {
-                        resolve(status);
+                        resolve(true);
                         console.log('close window');
                         clearInterval(interval);
                     }
