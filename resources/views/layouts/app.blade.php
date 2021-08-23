@@ -39,7 +39,7 @@
         <div id="app">
             <div class="main-wrapper container">
                 @include('components.navbar')
-                @include('components.sidebar')
+                @include('components.sidebar') 
 
                 <!-- Main Content -->
                 <div class="main-content">

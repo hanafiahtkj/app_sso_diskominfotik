@@ -19,7 +19,7 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('welcome');
 })->name('about');
 
 require __DIR__.'/web-sso.php';

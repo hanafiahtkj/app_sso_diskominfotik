@@ -3,3 +3,13 @@
         max-width: 1024px;
     }
 }
+
+.navbar .nav-link, .navbar .nav-link.nav-link-user {
+    color: #6c757d;
+}
+
+.section .section-header {
+    box-shadow: unset;
+    background-color: transparent;
+    padding: 10px 0px 0px 0px;
+}

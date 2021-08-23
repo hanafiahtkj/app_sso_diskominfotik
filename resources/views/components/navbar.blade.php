@@ -2,7 +2,7 @@
 $user = auth()->user();
 @endphp
 
-<div class="navbar-bg bg-light"></div>
+<div class="navbar-bg bg-transparent"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
 <div class="container">
     <a href="{{ url('') }}" class="navbar-brand d-none d-md-none"><x-jet-application-logo class="block h-12 w-auto" /></a>
@@ -10,14 +10,13 @@ $user = auth()->user();
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     </div>
-    <div class="nav-collapse">
-        <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
-        <i class="fas fa-ellipsis-v"></i>
-    </a>
+    <a href="{{ url('') }}" class="navbar-brand sidebar-gone-show nav-collapse-toggle nav-link"><x-jet-application-logo class="block h-12 w-auto" /></a>
+    
     <ul class="navbar-nav navbar-right">
         
         <li class="dropdown"><a href="#" data-turbolinks="false" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             @if (!is_null($user))
+                <!-- <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}" class="rounded-circle mr-1"> -->
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ $user->name }}</div></a>
             @else
                 <div class="d-sm-none d-lg-inline-block">Hi, Welcome</div></a>

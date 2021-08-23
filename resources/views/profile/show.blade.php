@@ -1,8 +1,16 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
+    <x-slot name="header_content">
+        <div class="section-header-back">
+          <a href="http://sso.banjarmasinkota.test:8000/user" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <h1>{{ __('Profile') }}</h1>
+
+        <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="{{ route('dashboard')  }}">Dasbor</a></div>
+            <div class="breadcrumb-item">{{ __('Profile') }}</div>
+        </div>
+                                              
     </x-slot>
 
     <div>

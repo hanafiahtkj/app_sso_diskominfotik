@@ -42,8 +42,17 @@ $navigation_links = array_to_object($links);
               </ul>
             </li>
             @endforeach
-            @endif
+            @endif 
         @endforeach
+            <li class="nav-item dropdown">
+              <a href="#" data-toggle="dropdown" class="nav-link has-dropdown" aria-expanded="false"><i class="fas fa-user"></i><span>Menu Admin</span></a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="" class="nav-link">Dasbor</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Data Aplikasi</a></li>
+                <li class="nav-item"><a href="{{ route('user') }}" class="nav-link">Data User</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Pengaturan</a></li>
+              </ul>
+            </li>
     </ul>
 </div>
 </nav>

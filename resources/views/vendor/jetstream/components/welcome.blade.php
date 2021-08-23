@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class="px-6 py-0 pb-2">
+<div class="py-0 pb-3 px-0 sm:px-0">
     <h2 class="section-title">Kategori</h2>
     <p class="section-lead">This article component is based on card and flexbox.</p>
 </div>
@@ -105,7 +105,7 @@
     </div>
 </div>
 
-<div class="px-6 py-0 pb-2">
+<div class="py-0 pb-3 px-0 sm:px-0">
     <h2 class="section-title">Kategori</h2>
     <p class="section-lead">This article component is based on card and flexbox.</p>
 </div>
@@ -184,6 +184,5 @@
             </div>
         </article>
         </div>
-    </div>
 </div>
 
