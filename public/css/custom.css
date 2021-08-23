@@ -13,3 +13,11 @@
     background-color: transparent;
     padding: 10px 0px 0px 0px;
 }
+
+.section .section-header {
+    /* margin-bottom: 0px; */
+}
+
+.section .section-title:before {
+    background-color: #3f83f8;
+}

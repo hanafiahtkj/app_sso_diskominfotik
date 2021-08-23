@@ -14,7 +14,7 @@
     </x-slot>
 
     <div>
-        <div class="max-w-7xl mx-auto py-10 sm:px-0 lg:px-0">
+        <div class="max-w-7xl mx-auto py-0 sm:px-0 lg:px-0">
             @livewire('profile.update-profile-information-form')
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
