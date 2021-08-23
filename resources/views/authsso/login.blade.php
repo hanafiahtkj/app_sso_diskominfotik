@@ -7,7 +7,8 @@ $user = auth()->user();
     <div id="wrapper1">
         <x-jet-authentication-card>
             <x-slot name="logo">
-                <x-jet-authentication-card-logo />
+                LOGO
+                <!-- <x-jet-authentication-card-logo /> -->
             </x-slot>
 
             <form method="POST" action="{{ route('login') }}">

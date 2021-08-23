@@ -44,6 +44,8 @@ $navigation_links = array_to_object($links);
             @endforeach
             @endif 
         @endforeach
+        </ul>
+        <ul class="navbar-nav navbar-right">
             <li class="nav-item dropdown">
               <a href="#" data-toggle="dropdown" class="nav-link has-dropdown" aria-expanded="false"><i class="fas fa-desktop"></i><span>Menu Admin</span></a>
               <ul class="dropdown-menu">
@@ -53,6 +55,7 @@ $navigation_links = array_to_object($links);
                 <li class="nav-item"><a href="" class="nav-link">Pengaturan</a></li>
               </ul>
             </li>
-    </ul>
+              </ul>
+    
 </div>
 </nav>
