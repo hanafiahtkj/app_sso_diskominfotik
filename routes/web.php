@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UtamaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [ UtamaController::class, "index" ])->name('welcome');
 
-Route::get('/about', function () {
-    return view('welcome');
-})->name('about');
+Route::get('/about', [ UtamaController::class, "index" ])->name('about');
 
 require __DIR__.'/web-sso.php';

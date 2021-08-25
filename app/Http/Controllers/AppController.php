@@ -41,139 +41,65 @@ class AppController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     $validasi = [
-    //         'nama'               => 'required',
-    //         'tempat_lahir'       => 'required',
-    //         'tgl_lahir'          => 'required',
-    //         'alamat'             => 'required',
-    //         'id_kecamatan'       => 'required',
-    //         'no_hp'              => 'required',
-    //         'id_cabang_olahraga' => 'required',
-    //         'id_jenis_olahraga'  => 'required',
-    //         'tinggi'             => 'required',
-    //         'berat'              => 'required',
-    //         'spesialis'          => 'required',
-    //         'potensial'          => 'required',
-    //     ];
+    public function store(Request $request)
+    {
+        $validasi = [
+            'nama'               => 'required',
+            'id_kategori'        => 'required',
+            'keterangan'         => 'required',
+            'base_url'           => 'required',
+            'base_url_sso'       => 'required',
+            'foto'               => 'required',
+        ];
 
-    //     $validator = Validator::make($request->all(), $validasi);
+        $validator = Validator::make($request->all(), $validasi);
 
-    //     if ($validator->fails()) {
-    //         return response()->json([
-    //             'status' => false,
-    //             'errors' => $validator->errors()
-    //         ]);
-    //     }
-        
-    //     try{
-    //         DB::beginTransaction();
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors()
+            ]);
+        }
 
-    //         $atlet = Atlet::create([
-    //             'nama'               => $request->input('nama'),
-    //             'tempat_lahir'       => $request->input('tempat_lahir'),
-    //             'tgl_lahir'          => $request->input('tgl_lahir'),
-    //             'alamat'             => $request->input('alamat'),
-    //             'id_kecamatan'       => $request->input('id_kecamatan'),
-    //             'no_hp'              => $request->input('no_hp'),
-    //             'id_cabang_olahraga' => $request->input('id_cabang_olahraga'),
-    //             'id_jenis_olahraga'  => $request->input('id_jenis_olahraga'),
-    //             'tinggi'             => $request->input('tinggi'),
-    //             'berat'              => $request->input('berat'),
-    //             'spesialis'          => $request->input('spesialis'),
-    //             'potensial'          => $request->input('potensial'),
-    //             'jenis'              => $request->input('jenis'),
-    //             'id_tim'             => ($request->input('jenis') == 2) ? 
-    //                                     $request->input('jenis') : null,
-    //         ]);
+        $app = [
+            'nama'               => $request->input('nama'),
+            'id_kategori'        => $request->input('id_kategori'),
+            'keterangan'         => $request->input('keterangan'),
+            'base_url'           => $request->input('base_url'),
+            'base_url_sso'       => $request->input('base_url_sso'),
+        ];
 
-    //         if ($prestasi = $request->input('prestasi')) 
-    //         {
-    //             foreach ($prestasi as $key => $value) {
-    //                 $path = '';
-    //                 $filename = '';
-    //                 if($request->hasFile('uploads2_'.$key)) {
-    //                     $upload_path = 'public/atlet/'.$atlet->id.'/';
-    //                     $filename = time().'_'.$request->file('uploads2_'.$key)->getClientOriginalName();
-    //                     $path = $request->file('uploads2_'.$key)->storeAs(
-    //                         $upload_path, $filename
-    //                     );
-    //                 }
-    //                 AtletPrestasi::create([
-    //                     'id_atlet'   => $atlet->id,
-    //                     'nama'       => $value['nama'],
-    //                     'level'      => $value['level'],
-    //                     'tahun'      => $value['tahun'],
-    //                     'peringkat'  => $value['peringkat'],
-    //                     'path'       => $path,
-    //                     'file_name'  => $filename,
-    //                 ]);
-    //             }
-    //         }
+        if($request->hasFile('foto')) {
+            $path = 'logo_app/';
+            $filename = time().'_'.$request->file('foto')->getClientOriginalName();
+            $full_path = $request->file('foto')->storeAs(
+                'public/'.$path, $filename
+            );
+            $app['path'] = $path.$filename;
+            $app['file_name'] = $filename;
+        }
 
-    //         if ($uploads = $request->input('uploads')) 
-    //         {
-    //             foreach ($uploads as $key => $value) {
-    //                 if($request->hasFile('uploads_'.$key)) {
-    //                     $upload_path = 'public/atlet/'.$atlet->id.'/';
-    //                     $filename = time().'_'.$request->file('uploads_'.$key)->getClientOriginalName();
-    //                     $path = $request->file('uploads_'.$key)->storeAs(
-    //                         $upload_path, $filename
-    //                     );
-    //                     AtletFiles::create([
-    //                         'id_atlet'   => $atlet->id,
-    //                         'path'       => $path,
-    //                         'file_name'  => $filename,
-    //                         'keterangan' => $value['keterangan'],
-    //                     ]);
-    //                 }
-    //             }
-    //         }
+        $app = Aplikasi::create($app);
 
-    //         DB::commit();
+        return response()->json([
+            'status' => true,
+        ]);
+    }
 
-    //     }catch(\Exception $e){
-    //         DB::rollback();
-
-    //         return response()->json([
-    //             'status' => false,
-    //             'msg' => $e->getMessage(),
-    //         ]);
-    //     }
-
-    //     return response()->json([
-    //         'status' => true,
-    //     ]);
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show($id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit($id)
-    // {
-    //     $data = [
-    //         'kecamatan'         => Kecamatan::pluck('name', 'id'),
-    //         'jenis_olahraga'    => JenisOlahraga::pluck('nama', 'id'),
-    //         'cabang_olahraga'   => CabangOlahraga::pluck('nama', 'id'),
-    //         'atlet'             => Atlet::find($id),
-    //     ];
-    //     return view('atlet-form', $data);
-    // }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $data = [
+            'app' => Aplikasi::find($id),
+            'kategori' => Kategori::all(),
+        ];
+        return view('app-form', $data);
+    }
 
     // /**
     //  * Update the specified resource in storage.

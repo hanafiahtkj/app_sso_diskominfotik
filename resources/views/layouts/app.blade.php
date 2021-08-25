@@ -42,21 +42,7 @@
                 @include('components.sidebar') 
 
                 <!-- Main Content -->
-                <div class="main-content">
-                    <section class="section">
-                      <div class="section-header">
-                        @isset($header_content)
-                            {{ $header_content }}
-                        @else
-                            {{ __('Halaman') }}
-                        @endisset
-                      </div>
-
-                      <div class="section-body">
-                        {{ $slot }}
-                      </div>
-                    </section>
-                  </div>
+                    {{ $slot }}
 
                   <footer class="main-footer">
                     <div class="footer-left">

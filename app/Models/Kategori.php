@@ -17,4 +17,9 @@ class Kategori extends Model
         'urut',
     ];
 
+    public function aplikasi()
+    {
+        return $this->hasMany(Aplikasi::class, 'id_kategori', 'id');
+    }
+
 }

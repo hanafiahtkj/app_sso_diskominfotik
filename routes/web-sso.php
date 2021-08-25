@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\UtamaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
         ]);
     });
 
-    Route::view('/dashboard', "dashboard")->name('dashboard');
+    Route::get('/dashboard', [ UtamaController::class, "index" ])->name('dashboard');
     Route::resource('app', AppController::class)->middleware(['auth']);
     Route::resource('kategori', KategoriController::class)->middleware(['auth']);
     Route::get('/user', [ UserController::class, "index_view" ])->name('user');

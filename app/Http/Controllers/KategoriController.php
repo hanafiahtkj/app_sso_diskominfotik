@@ -178,11 +178,12 @@ class KategoriController extends Controller
     //  * @param  int  $id
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function destroy($id)
-    // {
-    //     Atlet::find($id)->delete();
-    //     return response()->json([
-    //         'status' => true,
-    //     ]);
-    // }
+    public function destroy($id)
+    {
+        Kategori::find($id)->delete();
+        return response()->json([
+            'status' => true,
+            'data' => Kategori::all(),
+        ]);
+    }
 }
