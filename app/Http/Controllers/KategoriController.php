@@ -44,41 +44,6 @@ class KategoriController extends Controller
         ]);
     }
 
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show($id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit($id)
-    // {
-    //     $data = [
-    //         'kecamatan'         => Kecamatan::pluck('name', 'id'),
-    //         'jenis_olahraga'    => JenisOlahraga::pluck('nama', 'id'),
-    //         'cabang_olahraga'   => CabangOlahraga::pluck('nama', 'id'),
-    //         'atlet'             => Atlet::find($id),
-    //     ];
-    //     return view('atlet-form', $data);
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
     // public function update(Request $request, $id)
     // {
     //     $validasi = [
@@ -219,12 +184,5 @@ class KategoriController extends Controller
     //     return response()->json([
     //         'status' => true,
     //     ]);
-    // }
-
-    // public function getDataTables(Request $request)
-    // {
-    //     $atlet = Atlet::orderBy('id','DESC');
-    //     return Datatables::of($atlet)
-    //         ->make(true);
     // }
 }
