@@ -69,6 +69,7 @@
         @stack('modals')
 
         <!-- General JS Scripts -->
+        <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('stisla/js/modules/jquery.min.js') }}"></script>
         <script defer async src="{{ asset('stisla/js/modules/popper.js') }}"></script>
         <script defer async src="{{ asset('stisla/js/modules/tooltip.js') }}"></script>

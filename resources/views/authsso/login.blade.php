@@ -63,6 +63,9 @@ $user = auth()->user();
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
+                    <a target=_blank class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                            {{ __('Belum memiliki Akun?') }}
+                        </a>
                     <x-jet-button class="ml-4" id="btn-login-2">
                         {{ __('Login') }}
                     </x-jet-button>
