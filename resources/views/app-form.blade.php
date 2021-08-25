@@ -74,8 +74,8 @@
               <div class="input-group mb-4">
                 <select class="custom-select" id="id_kategori" name="id_kategori">
                   <option selected>Pilih...</option>
-                  <template v-for="(kat, index) in kategori">
-                    <option value="3">Three</option>
+                  <template v-for="(ket, index) in kategori">
+                    <option :value="ket.id" :key="index">@{{ ket.nama }}</option>
                   </template>
                 </select>
                 <div class="input-group-append">
@@ -94,20 +94,21 @@
               <hr>
               <div class="form-group mt-4">
                 <label for="form-urut">No Urut</label>
-                <input type="text" name="urut" class="form-control" id="form-urut">
+                <input type="text" name="urut" class="form-control" id="form-urut" v-model="fkategori.urut">
                 <div class="invalid-feedback feedback-urut"></div>
               </div>
               <div class="form-group">
-                <label for="form-nama">Nama Aplikasi</label>
-                <input type="text" name="nama" class="form-control" id="form-nama">
+                <label for="form-nama">Nama Kategori</label>
+                <input type="text" name="nama" class="form-control" id="form-nama" v-model="fkategori.nama">
                 <div class="invalid-feedback feedback-nama"></div>
               </div>
               <div class="form-group">
                 <label for="form-keterangan">Keterangan</label>
-                <textarea class="form-control" id="form-keterangan" rows="4"></textarea>
+                <textarea class="form-control" id="form-keterangan" rows="4" v-model="fkategori.keterangan"></textarea>
                 <div class="invalid-feedback feedback-keterangan"></div>
               </div>
-              <button type="button" class="btn btn-primary"><i class="fas fa-save"></i> Simpan Kategori</button>
+              <input type="hidden" name="id_kategori" v-model="fkategori.id">
+              <button type="button" class="btn btn-primary" @click="simpanKategori()"><i class="fas fa-save"></i> Simpan Kategori</button>
               </template>
             </div>
           </div>
@@ -138,10 +139,10 @@
       is_display : false,
       kategori : @json($kategori),
       fkategori : {
-        id : '',
-        nama : '',
+        id         : '',
+        nama       : '',
         keterangan : '',
-        urut : '',
+        urut       : '',
       }
     };
 
@@ -156,10 +157,10 @@
         {
           this.is_display = true;
           this.fkategori = {
-            id : '',
-            nama : '',
+            id         : '',
+            nama       : '',
             keterangan : '',
-            urut : '',
+            urut       : '',
           };
         },
         editKategori: function (index) 
@@ -175,6 +176,32 @@
         deleteKategori: function (index) 
         {
           kategori.splice(index, 1);
+        },
+        simpanKategori: function () 
+        {
+          var self = this;
+          var formData = new FormData();
+          for ( var key in this.fkategori ) {
+            formData.append(key, this.fkategori[key]);
+          }
+          formData.append('_token', '{{ csrf_token() }}');
+          $.ajax({
+            type: 'POST',
+            url: "{{ route('kategori.store') }}",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: "json",
+            success: function(data, textStatus, jqXHR) {
+              if (data['status'] == true) {
+                self.kategori.push(data['data']);
+                self.is_display = false;
+              }
+            },
+            error: function(data, textStatus, jqXHR) {
+              alert(jqXHR + ' , Proses Dibatalkan!');
+            },
+          });
         },
       },
     });
