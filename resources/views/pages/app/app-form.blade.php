@@ -66,7 +66,7 @@
               <div class="form-group" id="form-foto">
                 <label>Logo</label>
                 <div class="mt-2">
-                  <div id="image-preview" class="image-preview" style="background-image: url('{{ isset($app) ? Storage::url('aplikasi/'.$user->path) : '' }}'); background-size: cover; background-position: center center;">
+                  <div id="image-preview" class="image-preview" style="background-image: url('{{ isset($app) ? asset(Storage::url($app->path)) : '' }}'); background-size: cover; background-position: center center;">
                     <label for="image-upload" id="image-label">Choose File</label>
                     <input type="file" name="foto" id="image-upload">
                   </div>
@@ -156,7 +156,7 @@
 
     let dataVue= {
       is_display  : false,
-      id_kategori : '',
+      id_kategori : '{{ isset($app) ? $app->id_kategori : '' }}',
       kategori    : @json($kategori),
       fkategori   : {}
     };

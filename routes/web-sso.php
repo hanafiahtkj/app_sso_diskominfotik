@@ -35,8 +35,10 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     });
 
     Route::get('/dashboard', [ UtamaController::class, "index" ])->name('dashboard');
-    Route::resource('app', AppController::class)->middleware(['auth']);
+    
     Route::resource('kategori', KategoriController::class)->middleware(['auth']);
+    Route::resource('app', AppController::class)->middleware(['auth']);
+
     Route::get('/user', [ UserController::class, "index_view" ])->name('user');
     Route::view('/user/new', "pages.user.user-new")->name('user.new');
     Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');

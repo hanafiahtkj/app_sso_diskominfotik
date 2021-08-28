@@ -8,7 +8,7 @@
     <!-- <x-jet-welcome/> -->
 
     <div class="bg-white overflow-hidden sm:rounded-lg">
-        <div class="p-6 sm:px-10 bg-white border-b border-gray-200">
+        <div class="p-6 sm:px-10 bg-white">
             <div>
                 <x-jet-application-logo class="block h-12 w-auto" />
             </div>
@@ -51,7 +51,7 @@
                     <div class="article-title">
                         <h2><a href="#">{{ $app->nama }}</a></h2>
                     </div>
-                    <p>{{ $app->keterangan }}</p>
+                    <p style="min-height: 120px;">{{ $app->keterangan }}</p>
                     <div class="article-cta">
                         <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
                     </div>

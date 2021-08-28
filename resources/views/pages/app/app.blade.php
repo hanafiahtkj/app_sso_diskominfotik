@@ -19,19 +19,11 @@
   </div>
 
   <div class="section-body">
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <!-- <div class="card-header">
-            <h4>Basic DataTables</h4>
-          </div> -->
-          <div class="card-body">
-            
-          </div>
-        </div>
-      </div>
+    <div>
+      <livewire:table.app name="app" :model="$app" />
     </div>
   </div>
+
   </section>
 </div>
 

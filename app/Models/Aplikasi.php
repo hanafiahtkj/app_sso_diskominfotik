@@ -21,4 +21,15 @@ class Aplikasi extends Model
         'file_name',
     ];
 
+    // protected $appends = [
+    //     'profile_photo_url',
+    // ];
+
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('nama', 'like', '%'.$query.'%')
+                ->orWhere('keterangan', 'like', '%'.$query.'%');
+    }
+
 }

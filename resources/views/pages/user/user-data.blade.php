@@ -22,9 +22,9 @@
     </div>
 
     <div class="section-body">
-    <div>
-        <livewire:table.main name="user" :model="$user" />
-    </div>
+      <div>
+          <livewire:table.main name="user" :model="$user" />
+      </div>
     </div>
   </section>
 </div>
