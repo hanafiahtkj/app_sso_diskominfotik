@@ -2,7 +2,7 @@
 <div class="bg-white overflow-hidden sm:rounded-lg">
     <div class="p-6 sm:px-10 bg-white border-b border-gray-200">
         <div>
-            <x-jet-application-logo class="block h-12 w-auto" />
+            <img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt="">
         </div>
 
         <div class="mt-6 text-2xl">

@@ -45,17 +45,18 @@ $navigation_links = array_to_object($links);
             @endif 
         @endforeach
         </ul>
+        @role('Admin')
         <ul class="navbar-nav navbar-right">
-            <li class="nav-item dropdown">
-              <a href="#" data-toggle="dropdown" class="nav-link has-dropdown" aria-expanded="false"><i class="fas fa-desktop"></i><span>Menu Admin</span></a>
-              <ul class="dropdown-menu">
-                <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link">Dasbor</a></li>
-                <li class="nav-item"><a href="{{ route('app.index') }}" class="nav-link">Data Aplikasi</a></li>
-                <li class="nav-item"><a href="{{ route('user') }}" class="nav-link">Data User</a></li>
-                <li class="nav-item"><a href="{{ route('settings.index') }}" class="nav-link">Pengaturan</a></li>
-              </ul>
-            </li>
-              </ul>
-    
+          <li class="nav-item dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown" aria-expanded="false"><i class="fas fa-desktop"></i><span>Menu Admin</span></a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link">Dasbor</a></li>
+              <li class="nav-item"><a href="{{ route('app.index') }}" class="nav-link">Data Aplikasi</a></li>
+              <li class="nav-item"><a href="{{ route('user') }}" class="nav-link">Data User</a></li>
+              <li class="nav-item"><a href="{{ route('settings.index') }}" class="nav-link">Pengaturan</a></li>
+            </ul>
+          </li>
+        </ul>
+        @endrole
 </div>
 </nav>

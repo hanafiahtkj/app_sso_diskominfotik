@@ -17,7 +17,7 @@
                     Tanggal Dibuat
                     @include('components.sort-icon', ['field' => 'created_at'])
                 </a></th>
-                <th>Action</th>
+                <th>Aksi</th>
             </tr>
         </x-slot>
         <x-slot name="body">

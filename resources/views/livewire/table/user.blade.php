@@ -6,7 +6,7 @@
                     No
                 </th>
                 <th><a wire:click.prevent="sortBy('name')" role="button" href="#">
-                    Name
+                    Nama
                     @include('components.sort-icon', ['field' => 'name'])
                 </a></th>
                 <th><a wire:click.prevent="sortBy('email')" role="button" href="#">
@@ -17,7 +17,7 @@
                     Tanggal Dibuat
                     @include('components.sort-icon', ['field' => 'created_at'])
                 </a></th>
-                <th>Action</th>
+                <th>Aksi</th>
             </tr>
         </x-slot>
         <x-slot name="body">

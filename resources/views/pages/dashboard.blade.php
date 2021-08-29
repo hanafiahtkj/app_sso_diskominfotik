@@ -7,13 +7,13 @@
         </div>
 
         <h1>{{ __('Dasbor') }}</h1>
-    </div>
+      </div>
 
-    <div class="section-body">
+      <div class="section-body">
         <div class="bg-white overflow-hidden sm:rounded-lg">
             <div class="p-6 sm:px-10 bg-white">
                 <div>
-                    <x-jet-application-logo class="block h-12 w-auto" />
+                    <img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt="">
                 </div>
 
                 <div class="mt-6 text-2xl">
@@ -25,7 +25,7 @@
                 </div>
                 </div>
             </div>
-        </div>
+      </div>
 
         <div class="row mt-4">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -90,8 +90,8 @@
             </div>                  
           </div>
 
-    </div>
-  </section>
+    
+    </section>
 </div>
 
 </x-app-layout>
