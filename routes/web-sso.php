@@ -8,6 +8,8 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +37,7 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
         ]);
     });
 
-    Route::get('/dashboard', [ UtamaController::class, "index" ])->name('dashboard');
+    Route::get('/dashboard', [ DashboardController::class, "index" ])->name('dashboard');
     
     Route::resource('kategori', KategoriController::class)->middleware(['auth']);
     Route::resource('app', AppController::class)->middleware(['auth']);
@@ -45,6 +47,7 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
 
     Route::get('/settings', [ SettingsController::class, "index" ])->name('settings.index');
+    Route::get('/about', [ PagesController::class, "about" ])->name('pages.about');
 });
 
 

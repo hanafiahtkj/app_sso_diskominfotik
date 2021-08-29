@@ -17,8 +17,21 @@
     <div class="section-body">
     <div>
         <livewire:settings.halaman-utama action="updateSetting" />
+
+        <x-jet-section-border />
+
+        <livewire:settings.about action="updateSetting" />
     </div>
     </div>
   </section>
 </div>
+
+  <x-slot name="style">
+    <link rel="stylesheet" href="{{ asset('vendor/summernote-0.8.18/summernote-bs4.css') }}">
+  </x-slot>
+
+  <x-slot name="script">
+    <script src="{{ asset('vendor/summernote-0.8.18/summernote-bs4.js') }}"></script>
+  </x-slot>
+
 </x-app-layout>
