@@ -43,7 +43,7 @@
                     </div>
                     <div class="article-details">
                     <div class="article-title">
-                        <h2><a href="#">{{ $app->nama }}</a></h2>
+                        <h2><a href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">{{ $app->nama }}</a></h2>
                     </div>
                     <p style="min-height: 120px;">{{ $app->keterangan }}</p>
                     <div class="article-cta">

@@ -35,11 +35,43 @@
                     {{ __('Sudah memiliki Akun?') }}
                 </a>
 
-                <x-jet-button class="ml-4">
+                <x-jet-button class="ml-4" id="btn-simpan">
                     {{ __('Register') }}
                 </x-jet-button>
             </div>
         </form>
     </x-jet-authentication-card>
 
+    <x-slot name="script">
+        <script> 
+        // jquery
+        $(function() {
+            $("form").submit(function(e){
+                e.preventDefault();
+                var btn = $('#btn-simpan');
+                btn.addClass('btn-progress');
+                var formData = new FormData($(this)[0]);
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('register') }}",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",
+                    success: function(data, textStatus, jqXHR) {
+                        //$(".is-invalid").removeClass("is-invalid");
+                        if (data['status'] == true) {
+                            window.location.replace("{{ route('welcome') }}");
+                        }   
+                    },
+                    error: function(data, textStatus, jqXHR) {
+                        console.log(data);
+                        alert('Register Gagal!');
+                        btn.removeClass('btn-progress');
+                    },
+                });
+            });
+        }); 
+        </script>
+    </x-slot>
 </x-guest-layout>

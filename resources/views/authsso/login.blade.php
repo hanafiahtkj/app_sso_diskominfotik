@@ -21,7 +21,7 @@ $user = auth()->user();
 
                 <div class="flex items-center justify-end mt-4">
         
-                        <a id="btn-ganti" class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        <a id="btn-to-form-login" class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                             {{ __('Gunakan Akun yang lain?') }}
                         </a>
                     
@@ -38,7 +38,8 @@ $user = auth()->user();
     <div id="wrapper2" style="display: {{ (Auth::check()) ? 'none;' : 'block;' }}">
         <x-jet-authentication-card> 
             <x-slot name="logo">
-                <x-jet-authentication-card-logo />
+                LOGO
+                <!-- <x-jet-authentication-card-logo /> -->
             </x-slot>
 
             <x-jet-validation-errors class="mb-4" />
@@ -63,11 +64,52 @@ $user = auth()->user();
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-                    <a target=_blank class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    <a id="btn-to-form-register" class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
                             {{ __('Belum memiliki Akun?') }}
                         </a>
                     <x-jet-button class="ml-4" id="btn-login-2">
                         {{ __('Login') }}
+                    </x-jet-button>
+                </div>
+            </form>
+        </x-jet-authentication-card>
+    </div>
+
+    <div id="wrapper3" style="display: {{ (Auth::check()) ? 'none;' : 'block;' }}">
+        <x-jet-authentication-card>
+            <x-slot name="logo">
+                LOGO
+                <!-- <x-jet-authentication-card-logo /> -->
+            </x-slot>
+
+            <x-jet-validation-errors class="mb-4" />
+
+            <form id="form-register" method="POST" action="{{ route('register') }}">
+                @csrf
+
+                <div>
+                    <x-jet-label value="{{ __('Nama') }}" />
+                    <x-jet-input class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                </div>
+
+                <div class="mt-4">
+                    <x-jet-label value="{{ __('Email') }}" />
+                    <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                </div>
+
+                <div class="mt-4">
+                    <x-jet-label value="{{ __('Password') }}" />
+                    <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                </div>
+
+                <div class="mt-4">
+                    <x-jet-label value="{{ __('Konfirmasi Password') }}" />
+                    <x-jet-input class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                </div>
+
+                <div class="flex items-center justify-end mt-4">
+                    <x-jet-button class="ml-4" id="btn-register">
+                        {{ __('Register') }}
                     </x-jet-button>
                 </div>
             </form>
@@ -86,7 +128,7 @@ $user = auth()->user();
         <script> 
         // jquery
         $(function() {
-            $("#btn-ganti").click(function(e){
+            $("#btn-to-form-login").click(function(e){
                 e.preventDefault();
                 var formData = new FormData();
                 formData.append('_token', '{{ csrf_token() }}');
@@ -106,6 +148,14 @@ $user = auth()->user();
                 });
                 $("#wrapper1").hide();
                 $("#wrapper2").show();
+                $("#wrapper3").hide();
+            });
+
+            $("#btn-to-form-register").click(function(e){
+                e.preventDefault();
+                $("#wrapper1").hide();
+                $("#wrapper2").hide();
+                $("#wrapper3").show();
             });
 
             $("#btn-login-1").click(function(e){
@@ -115,7 +165,7 @@ $user = auth()->user();
 
             $("form#form-login").submit(function(e){
                 e.preventDefault();
-                var btn = $('#btn-simpan');
+                var btn = $('#btn-register');
                 btn.addClass('btn-progress');
                 var formData = new FormData($(this)[0]);
                 $.ajax({
@@ -135,6 +185,33 @@ $user = auth()->user();
                     error: function(data, textStatus, jqXHR) {
                         console.log(data);
                         alert('Login Gagal!');
+                        btn.removeClass('btn-progress');
+                    },
+                });
+            });
+
+            $("form#form-register").submit(function(e){
+                e.preventDefault();
+                var btn = $('#btn-register');
+                btn.addClass('btn-progress');
+                var formData = new FormData($(this)[0]);
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('register') }}",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",
+                    success: function(data, textStatus, jqXHR) {
+                        //$(".is-invalid").removeClass("is-invalid");
+                        if (data['status'] == true) {
+                            alert(data['status']);
+                            window.close();
+                        }   
+                    },
+                    error: function(data, textStatus, jqXHR) {
+                        console.log(data);
+                        alert('register Gagal!');
                         btn.removeClass('btn-progress');
                     },
                 });

@@ -32,7 +32,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/sso/user', function (Request $request) {
         return response()->json([
             'status' => Auth::check(),
-            'data'   => Auth::user(),
+            'data'   => [
+                'user' => Auth::user(),
+                'key'  => session('key', false)
+            ]
         ]);
     });
 });
