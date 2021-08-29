@@ -10,7 +10,6 @@ class UtamaController extends Controller
 {
     public function index()
     {
-        //dd(session()->drivers); die();
         $data = [
             'kategori' => Kategori::all(),
             'settings' => Settings::all()->pluck('value', 'field'),

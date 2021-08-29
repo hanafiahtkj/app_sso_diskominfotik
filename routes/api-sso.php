@@ -37,5 +37,28 @@ Route::post('/sanctum/token', function (Request $request) {
     ]);
 });
 
+Route::post('/sso/is-login', function (Request $request) {
+    return response()->json([
+        'status'  => true,
+    ]);
+});
+
+Route::middleware('auth:sanctum')->post('/sso/is-login', function (Request $request) {
+    $id_sso = $request->id_sso;
+    $user = $request->user();
+    if ($id_sso == $request->user()->id) { 
+        $user->tokens()->delete();
+        return response()->json([
+            'status' => true,
+            'data'   => $user,
+        ]);
+    }
+    else {
+        $user->tokens()->delete();
+        return response()->json([
+            'status' => false,
+        ]);
+    }
+});
 
 require __DIR__.'/web-sso.php';

@@ -29,12 +29,15 @@ Route::get('/sso/is-login', function (Request $request) {
 Route::get('/about', [ PagesController::class, "about" ])->name('pages.about');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    
     Route::get('/sso/user', function (Request $request) {
+        $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
+        $token = $request->user()->createToken($script)->plainTextToken;
         return response()->json([
             'status' => Auth::check(),
             'data'   => [
-                'user' => Auth::user(),
-                'key'  => session('key', false)
+                'user'  => Auth::user(),
+                'key'   => $token,
             ]
         ]);
     });

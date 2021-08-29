@@ -10,6 +10,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\RegisterResponse;
+use Laravel\Fortify\Contracts\LogoutResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,10 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
             {
-                //return redirect('/');
+                // return redirect('/');
+                // $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
+                // $token = $request->user()->createToken($script)->plainTextToken;
+                // session(['token' => $token]);
                 return response()->json([
                     'status' => true,
                 ]);
@@ -33,10 +37,21 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
             public function toResponse($request)
             {
-                //return redirect('/');
+                // return redirect('/');
+                // $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
+                // $token = $request->user()->createToken($script)->plainTextToken;
+                // session(['token' => $token]);
                 return response()->json([
                     'status' => true,
                 ]);
+            }
+        });
+
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
+            public function toResponse($request)
+            {
+                // $request->session()->forget('token');
+                return redirect('/');
             }
         });
     }
