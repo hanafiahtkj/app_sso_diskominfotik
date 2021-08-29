@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +38,7 @@ Route::post('/sanctum/token', function (Request $request) {
     ]);
 });
 
-Route::post('/sso/is-login', function (Request $request) {
-    return response()->json([
-        'status'  => true,
-    ]);
-});
+Route::post('/sso/register', [UserController::class, "register"]);
 
 Route::middleware('auth:sanctum')->post('/sso/is-login', function (Request $request) {
     $id_sso = $request->id_sso;
