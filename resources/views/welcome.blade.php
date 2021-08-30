@@ -35,7 +35,7 @@
         <div class="overflow-hidden sm:rounded-lg">
             <div class="row">
             @foreach ($ket->aplikasi as $app)
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-3">
                 <article class="article article-style-b">
                     <div class="article-header">
                     <div class="article-image" data-background="{{ asset(Storage::url($app->path)) }}" style="background-image: url(&quot;{{ asset(Storage::url($app->path)) }}&quot;);">

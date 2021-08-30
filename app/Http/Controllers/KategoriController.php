@@ -32,15 +32,25 @@ class KategoriController extends Controller
             ]);
         }
 
-        $kategori = Kategori::create([
-            'nama'               => $request->input('nama'),
-            'keterangan'         => $request->input('keterangan'),
-            'urut'               => $request->input('urut'),
-        ]);
-
+        if ($id = $request->id) {
+            $kategori = Kategori::find($id);
+            $kategori->update([
+                'nama'               => $request->input('nama'),
+                'keterangan'         => $request->input('keterangan'),
+                'urut'               => $request->input('urut'),
+            ]);
+        }
+        else {
+            $kategori = Kategori::create([
+                'nama'               => $request->input('nama'),
+                'keterangan'         => $request->input('keterangan'),
+                'urut'               => $request->input('urut'),
+            ]);
+        }
+        
         return response()->json([
             'status' => true,
-            'data'   => $kategori,
+            'data'   => Kategori::all(),
         ]);
     }
 

@@ -85,10 +85,10 @@
               <div class="card-body">
                 <label for="form-urut">Kategori</label>
                 <div class="input-group mb-4">
-                  <select class="custom-select" id="id_kategori" name="id_kategori" v-model="id_kategori">
+                  <select class="custom-select" @change="cancelKategori()" id="id_kategori" name="id_kategori" v-model="id_kategori">
                     <option value="" selected>Pilih...</option>
                     <template v-for="(ket, index) in kategori">
-                      <option :value="ket.id" :key="index">@{{ ket.nama }}</option>
+                      <option :value="ket.id" :key="index">@{{ ket.urut }} | @{{ ket.nama }}</option>
                     </template>
                   </select>
                   <div class="input-group-append">
@@ -100,6 +100,8 @@
                       <a class="dropdown-item" href="#" @click="deleteKategori()">Hapus</a>
                       <div role="separator" class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#" @click="addKategori()">Tambah</a>
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" @click="editKategori()">Ubah</a>
                     </div>
                   </div>
                   <div class="invalid-feedback feedback-id_kategori"></div>
@@ -173,15 +175,20 @@
           this.is_display = true;
           this.fkategori = {};
         },
-        editKategori: function (index) 
+        editKategori: function () 
         {
           this.is_display = true;
-          this.fkategori = {
-            id         : kategori[index].id,
-            nama       : kategori[index].nama,
-            keterangan : kategori[index].keterangan,
-            urut       : kategori[index].urut,
-          };
+          for (var key in this.kategori) {
+            var entry = this.kategori[key];
+            if (entry.id === this.id_kategori) {
+              this.fkategori = {
+                id         : this.kategori[key].id,
+                nama       : this.kategori[key].nama,
+                keterangan : this.kategori[key].keterangan,
+                urut       : this.kategori[key].urut,
+              };
+            }
+          }
         },
         deleteKategori: function () 
         {
@@ -236,7 +243,7 @@
             dataType: "json",
             success: function(data, textStatus, jqXHR) {
               if (data['status'] == true) {
-                self.kategori.push(data['data']);
+                self.kategori = data['data'];
                 self.is_display = false;
               }
             },

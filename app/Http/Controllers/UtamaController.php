@@ -12,7 +12,7 @@ class UtamaController extends Controller
     {
         $data = [
             'kategori' => Kategori::all(),
-            'settings' => Settings::all()->pluck('value', 'field'),
+            'settings' => Settings::all()->sortBy('urut')->pluck('value', 'field'),
         ];
         return view('welcome', $data);
     }

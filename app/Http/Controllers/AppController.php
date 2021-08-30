@@ -50,7 +50,7 @@ class AppController extends Controller
             'keterangan'         => 'required',
             'base_url'           => 'required',
             'base_url_sso'       => 'required',
-            'foto'               => 'required',
+            'foto'               => 'required|mimes:jpg,bmp,png',
         ];
 
         $validator = Validator::make($request->all(), $validasi);
@@ -117,7 +117,7 @@ class AppController extends Controller
             'keterangan'         => 'required',
             'base_url'           => 'required',
             'base_url_sso'       => 'required',
-            //'foto'               => 'required',
+            'foto'               => 'mimes:jpg,bmp,png',
         ];
 
         $validator = Validator::make($request->all(), $validasi);
