@@ -6,7 +6,7 @@ $user = auth()->user();
 <nav class="navbar navbar-expand-lg main-navbar">
 <div class="container">
     <!-- <a href="{{ url('') }}" class="navbar-brand d-none d-md-none"><img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt=""></a> -->
-    <a class="navbar-brand d-none d-lg-block" href="{{ url('') }}"><img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt=""></a>
+    <a class="navbar-brand sidebar-gone-hide" href="{{ url('') }}"><img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt=""></a>
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     </div>
