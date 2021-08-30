@@ -17,7 +17,7 @@
 
             <div class="mt-6">
             @auth
-                <a href="{{ url('/user/profile') }}" class="btn btn-warning icon-left mr-2"><i class="far fa-user"></i> Profil</a>
+                <a href="{{ url('/user/profile') }}" class="btn btn-outline-warning icon-left mr-2">Profil</a>
             @else
                 <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Login</a>
                 <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Register</a>
@@ -35,16 +35,16 @@
         <div class="overflow-hidden sm:rounded-lg">
             <div class="row">
             @foreach ($ket->aplikasi as $app)
-                <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                 <article class="article article-style-b">
                     <div class="article-header">
-                    <div class="article-image" data-background="{{ asset(Storage::url($app->path)) }}" style="background-image: url(&quot;{{ asset(Storage::url($app->path)) }}&quot;);">
-                    </div>
+                        <div class="article-image" data-background="{{ asset(Storage::url($app->path)) }}" style="background-image: url(&quot;{{ asset(Storage::url($app->path)) }}&quot;);">
+                        </div>
+                        <div class="article-title">
+                            <h2><a href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">{{ $app->nama }}</a></h2>
+                        </div>
                     </div>
                     <div class="article-details">
-                    <div class="article-title">
-                        <h2><a href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">{{ $app->nama }}</a></h2>
-                    </div>
                     <p style="min-height: 120px;">{{ $app->keterangan }}</p>
                     <div class="article-cta">
                         <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
