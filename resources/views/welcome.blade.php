@@ -44,7 +44,7 @@
                             <h2><a href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">{{ $app->nama }}</a></h2>
                         </div>
                     </div>
-                    <div class="article-details">
+                    <div class="article-details d-none d-md-block">
                     <p style="min-height: 120px;">{{ $app->keterangan }}</p>
                     <div class="article-cta">
                         <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
