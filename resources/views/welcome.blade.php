@@ -19,8 +19,8 @@
             @auth
                 <a href="{{ url('/user/profile') }}" class="btn btn-warning icon-left mr-2"><i class="far fa-user"></i> Profil</a>
             @else
-                <a href="{{ route('login') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Login</a>
-                <a href="{{ route('register') }}" class="btn btn-success icon-left mr-2" style="width: 100px;">Register</a>
+                <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Login</a>
+                <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Register</a>
             @endauth
             </div>
         </div>
