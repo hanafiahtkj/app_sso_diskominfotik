@@ -260,7 +260,7 @@ $(function() {
         main_sidebar.find('.navbar-nav').addClass('sidebar-menu').removeClass('navbar-nav');
         main_sidebar.find('.sidebar-menu .nav-item.dropdown.show a').click();
         main_sidebar.find('.sidebar-brand').remove();
-        main_sidebar.find('.sidebar-menu').before($('<div>', {
+        main_sidebar.find('.sidebar-menu').first().before($('<div>', {
           class: 'sidebar-brand'
         }).append(
           $('<a>', {
