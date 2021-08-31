@@ -4,6 +4,12 @@
     }
 }
 
+@media (max-width: 1020px) {
+    .navbar {
+        position: fixed;
+    }
+}
+
 .navbar .nav-link, .navbar .nav-link.nav-link-user {
     color: #6c757d;
 }
