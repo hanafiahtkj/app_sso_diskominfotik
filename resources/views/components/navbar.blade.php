@@ -5,7 +5,6 @@ $user = auth()->user();
 <div class="navbar-bg bg-transparent"></div>
 <nav class="navbar navbar-expand-lg main-navbar fixed-top" style="background-color: #f4f6f9;">
 <div class="container">
-    <!-- <a href="{{ url('') }}" class="navbar-brand d-none d-md-none"><img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt=""></a> -->
     <a class="navbar-brand sidebar-gone-hide" href="{{ url('') }}"><img src="{{ asset('img/logo.png') }}" width="202" height="51" class="d-inline-block align-top" alt=""></a>
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
