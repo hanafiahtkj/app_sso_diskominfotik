@@ -138,17 +138,19 @@ $user = auth()->user();
                     data: formData,
                     processData: false,
                     contentType: false,
-                    dataType: "json",
+                    //dataType: "json",
                     success: function(data, textStatus, jqXHR) {
                         console.log('Logout Berhasil!'); 
+                        location.reload();
                     },
                     error: function(data, textStatus, jqXHR) {
                         console.log('Logout Gagal!');
                     },
                 });
-                $("#wrapper1").hide();
-                $("#wrapper2").show();
-                $("#wrapper3").hide();
+                
+                // $("#wrapper1").hide();
+                // $("#wrapper2").show();
+                // $("#wrapper3").hide();
             });
 
             $("#btn-to-form-register").click(function(e){
