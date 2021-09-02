@@ -3,7 +3,7 @@ $user = auth()->user();
 @endphp
 
 <x-sso-layout> 
-    @if(Auth::check())
+    @if(Auth::check()) 
     <div id="wrapper1">
         <x-jet-authentication-card>
             <x-slot name="logo">

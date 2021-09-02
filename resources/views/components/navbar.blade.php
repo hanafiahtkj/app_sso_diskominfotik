@@ -1,6 +1,6 @@
 @php
 $user = auth()->user();
-@endphp
+@endphp 
 
 <div class="navbar-bg bg-transparent"></div>
 <nav class="navbar navbar-expand-lg main-navbar fixed-top" style="background-color: #f4f6f9;">

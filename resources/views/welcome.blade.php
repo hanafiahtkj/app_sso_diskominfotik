@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout> 
     <x-slot name="header_content"></x-slot>
 
     <div class="bg-white overflow-hidden sm:rounded-lg">
