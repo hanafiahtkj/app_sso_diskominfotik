@@ -1,7 +1,7 @@
 class BjmSSO {
             
     constructor(base_url = null) {
-        this.base_url = (base_url == null) ? 'http://sso.banjarmasinkota.test:8000' : base_url;
+        this.base_url = (base_url == null) ? 'http://sso.banjarmasinkota.go.id' : base_url;
     }
 
     async isLogin() {
