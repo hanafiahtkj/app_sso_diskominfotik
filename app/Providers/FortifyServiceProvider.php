@@ -26,10 +26,10 @@ class FortifyServiceProvider extends ServiceProvider
             {
                 // return redirect('/');
                 // $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
-                // $token = $request->user()->createToken($script)->plainTextToken;
-                // session(['token' => $token]);
+                // $token  = $request->user()->createToken($script)->plainTextToken;
                 return response()->json([
                     'status' => true,
+                    //'token'  => $token,
                 ]);
             }
         });
@@ -39,10 +39,10 @@ class FortifyServiceProvider extends ServiceProvider
             {
                 // return redirect('/');
                 // $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
-                // $token = $request->user()->createToken($script)->plainTextToken;
-                // session(['token' => $token]);
+                // $token  = $request->user()->createToken($script)->plainTextToken;
                 return response()->json([
                     'status' => true,
+                    //'token'  => $token,
                 ]);
             }
         });
@@ -50,7 +50,9 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
             public function toResponse($request)
             {
-                // $request->session()->forget('token');
+                // if ($request->user()->tokens) {
+                //     $request->user()->tokens()->delete();
+                // }
                 return redirect('/');
             }
         });

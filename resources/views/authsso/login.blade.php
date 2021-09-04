@@ -125,7 +125,7 @@ $user = auth()->user();
     </x-slot>
 
     <x-slot name="script">
-        <script> 
+        <script>  
         // jquery
         $(function() {
             $("#btn-to-form-login").click(function(e){
@@ -147,10 +147,6 @@ $user = auth()->user();
                         console.log('Logout Gagal!');
                     },
                 });
-                
-                // $("#wrapper1").hide();
-                // $("#wrapper2").show();
-                // $("#wrapper3").hide();
             });
 
             $("#btn-to-form-register").click(function(e){

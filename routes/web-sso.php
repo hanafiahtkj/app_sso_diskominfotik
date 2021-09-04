@@ -20,27 +20,48 @@ use App\Http\Controllers\DashboardController;
 Route::get('/sso/login', function () {
     return view('authsso.login');
 });
-Route::get('/sso/is-login', function (Request $request) {
-    return response()->json([
-        'status'  => Auth::check(),
-        'message' => Auth::check() ? 'SSO Sudah Login' : 'SSO Belum Login'
-    ]);
-});
+
 Route::get('/about', [ PagesController::class, "about" ])->name('pages.about');
 
-Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
-    
+Route::group([ "middleware" => ['auth:sanctum']], function() {
+
+    Route::get('/sso/is-login', function (Request $request) {
+        return response()->json([
+            'status'  => Auth::check(),
+            'message' => Auth::check() ? 'SSO Sudah Login' : 'SSO Belum Login'
+        ]);
+    });
+
     Route::get('/sso/user', function (Request $request) {
         $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
-        $token = $request->user()->createToken($script)->plainTextToken;
+        $key = $request->user()->createToken($script)->plainTextToken;
         return response()->json([
             'status' => Auth::check(),
             'data'   => [
                 'user'  => Auth::user(),
-                'key'   => $token,
+                'key'   => $key,
             ]
         ]);
     });
+
+    Route::post('/sso/is-valid', function (Request $request) {
+        $user = $request->user();
+        if ($id_sso == $request->user()->id) { 
+            $user->tokens()->where('token', $request->key)->delete();
+            return response()->json([
+                'status' => true,
+                'data'   => $user,
+            ]);
+        }
+        else {
+            $user->tokens()->delete();
+            return response()->json([
+                'status' => false,
+            ]);
+        }
+    });
+
+    Route::post('/sso/register', [UserController::class, "register"]);
 });
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified', 'role:Admin']], function() {
@@ -52,6 +73,7 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified', 'role:Admin']], func
     Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
     Route::get('/settings', [ SettingsController::class, "index" ])->name('settings.index'); 
 });
+
 
 
 

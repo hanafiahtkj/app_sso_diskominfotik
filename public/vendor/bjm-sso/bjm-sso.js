@@ -1,16 +1,25 @@
 class BjmSSO {
             
-    constructor(base_url = null) {
-        this.base_url = (base_url == null) ? 'http://sso.banjarmasinkota.go.id' : base_url;
+    constructor() {
+        this.base_url = 'http://sso.banjarmasinkota.go.id';
+        // this.base_url = 'http://sso.banjarmasinkota.test:8000';
+
+        this.apiCall = axios.create({
+            headers: {
+                "Content-type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
+            withCredentials: true
+        })
     }
 
     async isLogin() {
-        const response = await axios.get(this.base_url + '/sso/is-login',{withCredentials: true});
+        const response = await this.apiCall.get(this.base_url + '/sso/is-login');
         return response.data;
     }
 
     async getUser() {
-        const response = await axios.get(this.base_url + '/sso/user',{withCredentials: true});
+        const response = await this.apiCall.get(this.base_url + '/sso/user');
         return response.data;
     }
     

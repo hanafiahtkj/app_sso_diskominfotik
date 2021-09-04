@@ -32,30 +32,9 @@ Route::post('/sanctum/token', function (Request $request) {
         ]);
     }
 
-    //return $user->createToken($request->device_name)->plainTextToken;
+    return $user->createToken($request->device_name)->plainTextToken;
     return response()->json([
         'token'    => $user->createToken($request->device_name)->plainTextToken,
     ]);
 });
 
-Route::post('/sso/register', [UserController::class, "register"]);
-
-Route::middleware('auth:sanctum')->post('/sso/is-login', function (Request $request) {
-    $id_sso = $request->id_sso;
-    $user = $request->user();
-    if ($id_sso == $request->user()->id) { 
-        $user->tokens()->delete();
-        return response()->json([
-            'status' => true,
-            'data'   => $user,
-        ]);
-    }
-    else {
-        $user->tokens()->delete();
-        return response()->json([
-            'status' => false,
-        ]);
-    }
-});
-
-require __DIR__.'/web-sso.php';
