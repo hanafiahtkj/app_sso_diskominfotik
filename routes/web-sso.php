@@ -44,22 +44,7 @@ Route::group([ "middleware" => ['auth:sanctum']], function() {
         ]);
     });
 
-    Route::post('/sso/is-valid', function (Request $request) {
-        $user = $request->user();
-        if ($id_sso == $request->user()->id) { 
-            $user->tokens()->where('token', $request->key)->delete();
-            return response()->json([
-                'status' => true,
-                'data'   => $user,
-            ]);
-        }
-        else {
-            $user->tokens()->delete();
-            return response()->json([
-                'status' => false,
-            ]);
-        }
-    });
+    
 
     Route::post('/sso/register', [UserController::class, "register"]);
 });

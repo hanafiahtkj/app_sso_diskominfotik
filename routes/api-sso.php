@@ -38,3 +38,20 @@ Route::post('/sanctum/token', function (Request $request) {
     ]);
 });
 
+Route::middleware('auth:sanctum')->post('/sso/is-valid', function (Request $request) {
+    $user = $request->user();
+    if ($request->id_sso == $request->user()->id) { 
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            'status' => true,
+            'user' => $user,
+        ]);
+    }
+    else {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            'status' => false,
+        ]);
+    }
+});
+

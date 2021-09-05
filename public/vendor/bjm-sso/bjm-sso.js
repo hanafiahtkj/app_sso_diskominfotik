@@ -1,8 +1,8 @@
 class BjmSSO {
             
     constructor() {
-        this.base_url = 'http://sso.banjarmasinkota.go.id';
-        // this.base_url = 'http://sso.banjarmasinkota.test:8000';
+        //this.base_url = 'http://sso.banjarmasinkota.go.id';
+        this.base_url = 'http://sso.banjarmasinkota.go.id:8000';
 
         this.apiCall = axios.create({
             headers: {
@@ -10,7 +10,7 @@ class BjmSSO {
                 "Access-Control-Allow-Origin": "*",
             },
             withCredentials: true
-        })
+        });
     }
 
     async isLogin() {
@@ -32,9 +32,9 @@ class BjmSSO {
             return await new Promise(resolve => {
                 const interval = setInterval(() => {
                     if(self.ssoWindow.closed) {
-                        resolve(true);
                         console.log('close window');
                         clearInterval(interval);
+                        resolve(true);
                     }
                 }, 1000);
               });

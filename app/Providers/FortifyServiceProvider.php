@@ -24,35 +24,13 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
             {
-                // return redirect('/');
-                // $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
-                // $token  = $request->user()->createToken($script)->plainTextToken;
-                return response()->json([
-                    'status' => true,
-                    //'token'  => $token,
-                ]);
-            }
-        });
+                
+                if ($request->input('is_sso')) {
+                    return response()->json([
+                        'status' => true,
+                    ]);
+                }
 
-        $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
-            public function toResponse($request)
-            {
-                // return redirect('/');
-                // $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
-                // $token  = $request->user()->createToken($script)->plainTextToken;
-                return response()->json([
-                    'status' => true,
-                    //'token'  => $token,
-                ]);
-            }
-        });
-
-        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
-            public function toResponse($request)
-            {
-                // if ($request->user()->tokens) {
-                //     $request->user()->tokens()->delete();
-                // }
                 return redirect('/');
             }
         });
