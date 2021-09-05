@@ -1,8 +1,8 @@
 class BjmSSO {
             
     constructor() {
-        //this.base_url = 'http://sso.banjarmasinkota.go.id';
-        this.base_url = 'http://sso.banjarmasinkota.go.id:8000';
+        this.base_url = 'http://sso.banjarmasinkota.go.id';
+        //this.base_url = 'http://sso.banjarmasinkota.go.id:8000';
 
         this.apiCall = axios.create({
             headers: {
