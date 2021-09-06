@@ -38,14 +38,13 @@
                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                 <article class="article article-style-b">
                     <div class="article-header">
-                        <div class="article-image" data-background="{{ asset(Storage::url($app->path)) }}" style="background-image: url(&quot;{{ asset(Storage::url($app->path)) }}&quot;);">
-                        </div>
+                        <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}"><div class="article-image" data-background="{{ asset(Storage::url($app->path)) }}" style="background-image: url(&quot;{{ asset(Storage::url($app->path)) }}&quot;);"></div></a>
                         <div class="article-title">
                             <h2><a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">{{ $app->nama }}</a></h2>
                         </div>
                     </div>
                     <div class="article-details d-none d-md-block">
-                    <p style="min-height: 120px;">{{ $app->keterangan }}</p>
+                    <p style="min-height: 60px;">{{ $app->keterangan }}</p>
                     <div class="article-cta">
                         <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
                     </div>
