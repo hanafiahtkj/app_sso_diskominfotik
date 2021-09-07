@@ -18,8 +18,10 @@ class BjmSSO {
     }
 
     async isLogin() {
-        const response = await this.apiCall.get(this.base_url + '/sso/is-login');
-        return response.data;
+        await this.apiCall.get(this.base_url + '/sanctum/csrf-cookie').then(response => {
+            const response = await this.apiCall.get(this.base_url + '/sso/is-login');
+            return response.data;
+        });
     }
 
     async getUser() {
