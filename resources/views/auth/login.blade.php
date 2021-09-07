@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
             <div style="text-align:center;">
-                <h1>Login</h1>
+                <h1>Masuk</h1>
                 <p>Banjarmasin Dalam Genggaman</p>
             </div>
         </x-slot>
@@ -43,7 +43,7 @@
                 @endif
 
                 <x-jet-button class="ml-4" id="btn-simpan">
-                    {{ __('Login') }}
+                    {{ __('Masuk') }}
                 </x-jet-button>
             </div>
         </form>

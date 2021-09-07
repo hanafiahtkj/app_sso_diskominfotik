@@ -56,9 +56,9 @@
                   </div>
                   
                   <footer class="main-footer">
-                        <div class="footer-left">
-                            Copyright &copy; Dinas Kepemudaan dan Olahraga Kota Banjarmasin 2021
-                        </div>
+                    <div class="footer-center">
+                        <p>© Designed by <a href="https://getstisla.com/" rel="nofollow">Stisla</a> || Develoved by Diskominfotik Kota Banjarmsin</p>
+                    </div>
                   </footer>
             </div>
         </div>

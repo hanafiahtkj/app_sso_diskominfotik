@@ -14,7 +14,7 @@ $user = auth()->user();
                 @csrf
 
                 <div>
-                    <x-jet-label value="{{ __('Email') }}" />
+                    <x-jet-label value="{{ __('Anda sudah masuk di aplikasi SSO dengan Email') }}" />
                     <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email', $user->email)" readonly required autofocus />
                 </div>
 
@@ -26,7 +26,7 @@ $user = auth()->user();
                     
 
                     <x-jet-button class="ml-4" id="btn-login-1">
-                        {{ __('Login') }}
+                        {{ __('Masuk') }}
                     </x-jet-button>
                 </div>
             </form>
@@ -68,7 +68,7 @@ $user = auth()->user();
                             {{ __('Belum memiliki Akun?') }}
                         </a>
                     <x-jet-button class="ml-4" id="btn-login-2">
-                        {{ __('Login') }}
+                        {{ __('Masuk') }}
                     </x-jet-button>
                 </div>
             </form>
