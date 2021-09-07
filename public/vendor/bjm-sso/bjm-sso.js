@@ -1,8 +1,8 @@
 class BjmSSO {
             
     constructor() {
-        //this.base_url = 'https://sso.banjarmasinkota.go.id';
-        this.base_url = 'http://server.banjarmasinkota.go.id:8000';
+        this.base_url = 'https://sso.banjarmasinkota.go.id';
+        //this.base_url = 'http://server.banjarmasinkota.go.id:8000';
 
         this.apiCall = axios.create({
             headers: {
@@ -14,7 +14,6 @@ class BjmSSO {
     }
 
     loading() {
-        //document.body.appendChild('<div class="loadingsso">Loading&#8230;</div>');
         window.document.body.insertAdjacentHTML('afterbegin', '<div class="loadingsso">Loading&#8230;</div>');
     }
 
