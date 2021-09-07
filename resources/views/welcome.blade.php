@@ -3,11 +3,11 @@
 
     <div class="bg-white overflow-hidden sm:rounded-lg">
         <div class="p-6 sm:px-10 bg-white">
-            <div class="d-none d-sm-block">
+            <!-- <div class="d-none d-sm-block">
                 <img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt="">
-            </div>
+            </div> -->
 
-            <div class="mt-6 text-2xl">
+            <div class="mt-0 text-2xl">
                 {{ $settings['judul'] }}
             </div>
 
