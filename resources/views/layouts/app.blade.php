@@ -45,7 +45,7 @@
                     {{ $slot }}
 
                   <footer class="main-footer">
-                    <div class="footer-center">
+                    <div class="footer-left">
                         <p>© Designed by <a href="https://getstisla.com/" rel="nofollow">Stisla</a> || Develoved by Diskominfotik Kota Banjarmsin</p>
                     </div>
                   </footer>
