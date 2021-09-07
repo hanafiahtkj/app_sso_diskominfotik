@@ -8,6 +8,9 @@
     .navbar {
         position: fixed;
     }
+    .article .article-header .article-title h2 {
+        font-size: 12px!important;
+    }
 }
 
 .navbar .nav-link, .navbar .nav-link.nav-link-user {
