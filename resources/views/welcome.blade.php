@@ -17,10 +17,11 @@
 
             <div class="mt-6">
             @auth
-                <a href="{{ url('/user/profile') }}" class="btn btn-outline-warning icon-left mr-2">Profil</a>
+                <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary icon-left mr-2">Dasbor</a>
+                <a href="{{ url('/user/profile') }}" class="btn btn-outline-success icon-left mr-2">Profil</a>
             @else
-                <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Login</a>
-                <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Register</a>
+                <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Masuk</a>
+                <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Daftar</a>
             @endauth
             </div>
         </div>
@@ -40,7 +41,7 @@
                     <div class="article-header">
                         <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}"><div class="article-image" data-background="{{ asset(Storage::url($app->path)) }}" style="background-image: url(&quot;{{ asset(Storage::url($app->path)) }}&quot;);"></div></a>
                         <div class="article-title">
-                            <h2><a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">{{ $app->nama }}</a></h2>
+                            <h2>{{ $app->nama }}</h2>
                         </div>
                     </div>
                     <div class="article-details d-none d-md-block">

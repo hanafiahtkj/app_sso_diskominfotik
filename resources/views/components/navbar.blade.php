@@ -31,15 +31,15 @@ $user = auth()->user();
                     @csrf
 
                     <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault();this.closest('form').submit();">
-                        <i class="fas fa-sign-out-alt"></i> Logout
+                        <i class="fas fa-sign-out-alt"></i> Keluar
                     </a>
                 </form>
                 @else
                 <a href="/login" class="dropdown-item has-icon">
-                    Login
+                    Masuk
                 </a>
                 <a href="/register" class="dropdown-item has-icon">
-                    Register
+                    Daftar
                 </a>
                 @endauth
             </div>
