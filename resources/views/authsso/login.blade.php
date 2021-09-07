@@ -7,8 +7,7 @@ $user = auth()->user();
     <div id="wrapper1">
         <x-jet-authentication-card>
             <x-slot name="logo">
-                LOGO
-                <!-- <x-jet-authentication-card-logo /> -->
+                <x-jet-authentication-card-logo />
             </x-slot>
 
             <form method="POST" action="{{ route('login') }}">
@@ -38,8 +37,7 @@ $user = auth()->user();
     <div id="wrapper2" style="display: {{ (Auth::check()) ? 'none;' : 'block;' }}">
         <x-jet-authentication-card> 
             <x-slot name="logo">
-                LOGO
-                <!-- <x-jet-authentication-card-logo /> -->
+                <x-jet-authentication-card-logo />
             </x-slot>
 
             <x-jet-validation-errors class="mb-4" />
