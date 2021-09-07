@@ -41,7 +41,7 @@
                     <div class="article-header">
                         <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}"><div class="article-image" data-background="{{ asset(Storage::url($app->path)) }}" style="background-image: url(&quot;{{ asset(Storage::url($app->path)) }}&quot;);"></div></a>
                         <div class="article-title">
-                            <h2>{{ $app->nama }}</h2>
+                            <h2><a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">{{ $app->nama }}</a></h2>
                         </div>
                     </div>
                     <div class="article-details d-none d-md-block">

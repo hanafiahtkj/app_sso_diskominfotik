@@ -64,3 +64,12 @@
 .main-footer {
     margin-top: 20px;
 }
+
+section .section-title:before {
+    height: 10px!important;
+    width: 10px!important;
+}
+
+.section .section-lead {
+    margin-left: 25px!important;
+}
