@@ -2,12 +2,14 @@ class BjmSSO {
             
     constructor() {
         this.base_url = 'https://sso.banjarmasinkota.go.id';
-        //this.base_url = 'http://server.banjarmasinkota.go.id:8000';
+        // this.base_url = 'http://server.banjarmasinkota.go.id:8000';
+        //this.base_url = 'http://127.0.0.1:8000';
 
         this.apiCall = axios.create({
             headers: {
                 "Content-type": "application/json",
                 "Access-Control-Allow-Origin": "*",
+                "Accept": "application/json"
             },
             withCredentials: true
         });
@@ -18,10 +20,8 @@ class BjmSSO {
     }
 
     async isLogin() {
-        await this.apiCall.get(this.base_url + '/sanctum/csrf-cookie').then(res => {
-            const response = this.apiCall.get(this.base_url + '/sso/is-login');
-            return response.data;
-        });
+        const response = await this.apiCall.get(this.base_url + '/sso/is-login');
+        return response.data;
     }
 
     async getUser() {
