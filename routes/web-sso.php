@@ -44,8 +44,6 @@ Route::group([ "middleware" => ['auth:sanctum']], function() {
         ]);
     });
 
-    
-
     Route::post('/sso/register', [UserController::class, "register"]);
 });
 

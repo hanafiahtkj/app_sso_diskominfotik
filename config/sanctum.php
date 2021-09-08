@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'kesbangpol.banjarmasinkota.go.id:8001,localhost,127.0.0.1,::1')),
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'client.banjarmasinkota.go.id:8001,localhost,127.0.0.1,::1')),
 
     /*
     |--------------------------------------------------------------------------
