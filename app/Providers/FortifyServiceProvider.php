@@ -11,6 +11,7 @@ use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
+use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
 use Illuminate\Support\Facades\Auth;
 
 class FortifyServiceProvider extends ServiceProvider
