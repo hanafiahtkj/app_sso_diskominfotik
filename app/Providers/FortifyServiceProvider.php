@@ -11,6 +11,7 @@ use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
+use Illuminate\Support\Facades\Auth;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,9 @@ class FortifyServiceProvider extends ServiceProvider
                     ]);
                 }
 
+                if (Auth::user()->hasRole(['Admin'])) {
+                    return redirect('/dashboard');
+                }
                 return redirect('/');
             }
         });
