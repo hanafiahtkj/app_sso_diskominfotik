@@ -25,13 +25,22 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
             {
-                
                 if ($request->input('is_sso')) {
                     return response()->json([
                         'status' => true,
                     ]);
                 }
 
+                if (Auth::user()->hasRole(['Admin'])) {
+                    return redirect('/dashboard');
+                }
+                return redirect('/');
+            }
+        });
+
+        $this->app->instance(VerifyEmailViewResponse::class, new class implements VerifyEmailViewResponse {
+            public function toResponse($request)
+            {
                 if (Auth::user()->hasRole(['Admin'])) {
                     return redirect('/dashboard');
                 }
