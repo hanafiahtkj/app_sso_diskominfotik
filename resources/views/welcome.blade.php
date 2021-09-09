@@ -17,7 +17,9 @@
 
             <div class="mt-6">
             @auth
-                <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary icon-left mr-2">Dasbor</a>
+                @role('Admin')
+                    <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary icon-left mr-2">Dasbor</a>
+                @endrole
                 <a href="{{ url('/user/profile') }}" class="btn btn-outline-success icon-left mr-2">Profil</a>
             @else
                 <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Masuk</a>
