@@ -31,7 +31,7 @@ class AppController extends Controller
     {
         $data = [
             'app' => null,
-            'kategori' => Kategori::all(),
+            'kategori' => Kategori::orderBy('urut', 'asc')->get(),
         ];
         return view('pages.app.app-form', $data);
     }
