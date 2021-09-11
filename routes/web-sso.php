@@ -10,6 +10,7 @@ use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ Route::get('/sso/login', function () {
 
 Route::get('/about', [ PagesController::class, "about" ])->name('pages.about');
 
-Route::group([ "middleware" => ['auth:sanctum']], function() {
+Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
+
+    Route::get('/dashboard', [ DashboardController::class, "index" ])->name('dashboard');
 
     Route::get('/sso/is-login', function (Request $request) {
         return response()->json([
@@ -48,7 +51,7 @@ Route::group([ "middleware" => ['auth:sanctum']], function() {
 });
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified', 'role:Admin']], function() {
-    Route::get('/dashboard', [ DashboardController::class, "index" ])->name('dashboard');
+    Route::get('/admin-dashboard', [ AdminDashboardController::class, "index" ])->name('admin.dashboard');
     Route::resource('kategori', KategoriController::class)->middleware(['auth']);
     Route::resource('app', AppController::class)->middleware(['auth']);
     Route::get('/user', [ UserController::class, "index_view" ])->name('user');

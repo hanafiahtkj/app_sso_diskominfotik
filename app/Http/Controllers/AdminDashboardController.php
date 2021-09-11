@@ -7,14 +7,14 @@ use App\Models\Kategori;
 use App\Models\Settings;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class AdminDashboardController extends Controller
 {
     public function index()
     {
         $data = [
             'kategori' => Kategori::all(),
-            'settings' => Settings::all()->sortBy('urut')->pluck('value', 'field'),
+            'settings' => Settings::all()->pluck('value', 'field'),
         ];
-        return view('welcome', $data);
+        return view('pages.dashboard', $data);
     }
 }

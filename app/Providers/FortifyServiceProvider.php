@@ -38,16 +38,6 @@ class FortifyServiceProvider extends ServiceProvider
                 return redirect('/');
             }
         });
-
-        $this->app->instance(VerifyEmailViewResponse::class, new class implements VerifyEmailViewResponse {
-            public function toResponse($request)
-            {
-                if (Auth::user()->hasRole(['Admin'])) {
-                    return redirect('/dashboard');
-                }
-                return redirect('/');
-            }
-        });
     }
 
     /**

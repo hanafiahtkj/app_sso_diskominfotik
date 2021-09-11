@@ -42,11 +42,7 @@ $user = auth()->user();
 
             <x-jet-validation-errors class="mb-4" />
 
-            @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {{ session('status') }}
-                </div>
-            @endif
+            <div id="error_msg" class="mb-4 font-medium text-sm text-green-600" style="display:none"></div>
 
             <form id="form-login" method="POST" action="{{ route('login') }}">
                 @csrf
@@ -74,46 +70,6 @@ $user = auth()->user();
             </form>
         </x-jet-authentication-card>
     </div>
-
-    <!-- <div id="wrapper3" style="display: {{ (Auth::check()) ? 'none;' : 'block;' }}">
-        <x-jet-authentication-card>
-            <x-slot name="logo">
-                LOGO
-            </x-slot>
-
-            <x-jet-validation-errors class="mb-4" />
-
-            <form id="form-register" method="POST" action="{{ route('register') }}">
-                @csrf
-
-                <div>
-                    <x-jet-label value="{{ __('Nama') }}" />
-                    <x-jet-input class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                </div>
-
-                <div class="mt-4">
-                    <x-jet-label value="{{ __('Email') }}" />
-                    <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-                </div>
-
-                <div class="mt-4">
-                    <x-jet-label value="{{ __('Password') }}" />
-                    <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-                </div>
-
-                <div class="mt-4">
-                    <x-jet-label value="{{ __('Konfirmasi Password') }}" />
-                    <x-jet-input class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-                </div>
-
-                <div class="flex items-center justify-end mt-4">
-                    <x-jet-button class="ml-4" id="btn-register">
-                        {{ __('Register') }}
-                    </x-jet-button>
-                </div>
-            </form>
-        </x-jet-authentication-card>
-    </div> -->
 
     <x-slot name="style">
         <style> 
@@ -148,13 +104,6 @@ $user = auth()->user();
                 });
             });
 
-            // $("#btn-to-form-register").click(function(e){
-            //     e.preventDefault();
-            //     $("#wrapper1").hide();
-            //     $("#wrapper2").hide();
-            //     $("#wrapper3").show();
-            // });
-
             $("#btn-login-1").click(function(e){
                 e.preventDefault();
                 window.close();
@@ -162,6 +111,7 @@ $user = auth()->user();
 
             $("form#form-login").submit(function(e){
                 e.preventDefault();
+                $('#error_msg').hide();
                 var btn = $('#btn-register');
                 btn.addClass('btn-progress');
                 var formData = new FormData($(this)[0]);
@@ -180,8 +130,8 @@ $user = auth()->user();
                         }   
                     },
                     error: function(data, textStatus, jqXHR) {
-                        console.log(data);
-                        alert('Login Gagal!');
+                        console.log(textStatus);
+                        $('#error_msg').show().text('Email atau Password Tidak Ditemukan.');
                         btn.removeClass('btn-progress');
                     },
                 });
