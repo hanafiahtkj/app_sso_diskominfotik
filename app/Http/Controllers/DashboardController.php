@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         $data = [
-            'kategori' => Kategori::orderBy('urut', 'desc')->get(),
+            'kategori' => Kategori::orderBy('urut', 'asc')->get(),
             'settings' => Settings::all()->sortBy('urut')->pluck('value', 'field'),
         ];
         return view('welcome', $data);
