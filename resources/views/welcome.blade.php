@@ -11,7 +11,7 @@
                 {{ $settings['judul'] }}
             </div>
 
-            <div class="mt-6 text-gray-500 d-none d-sm-block">
+            <div class="mt-6 text-gray-500">
                 {{ $settings['keterangan'] }}
             </div>
 
