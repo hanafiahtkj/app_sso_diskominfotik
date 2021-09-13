@@ -2,7 +2,7 @@
     <x-slot name="header_content"></x-slot>
 
     <div class="bg-white overflow-hidden sm:rounded-lg">
-        <div class="p-6 sm:px-10 bg-white">
+        <div class="p-6 sm:px-10 bg-white text-center">
             <!-- <div class="d-none d-sm-block">
                 <img src="{{ asset('img/logo.png') }}" width="225" height="51" class="d-inline-block align-top" alt="">
             </div> -->
@@ -18,9 +18,9 @@
             <div class="mt-6">
             @auth
                 @role('Admin')
-                    <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary icon-left mr-2">Dasbor</a>
+                    <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Dasbor</a>
                 @endrole
-                <a href="{{ url('/user/profile') }}" class="btn btn-outline-success icon-left mr-2">Profil</a>
+                <a href="{{ url('/user/profile') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Profil</a>
             @else
                 <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Masuk</a>
                 <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Daftar</a>
