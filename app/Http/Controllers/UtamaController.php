@@ -11,7 +11,7 @@ class UtamaController extends Controller
     public function index()
     {
         $data = [
-            'kategori' => Kategori::orderBy('urut', 'asc')->get(),
+            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
             'settings' => Settings::all()->sortBy('urut')->pluck('value', 'field'),
         ];
         return view('welcome', $data);

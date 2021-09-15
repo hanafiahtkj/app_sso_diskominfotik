@@ -43,7 +43,7 @@
                 @include('components.sidebar')
 
                 <!-- Main Content -->
-                <div class="main-content">
+                <div class="main-content" id="app">
                     <section class="section">
                         @isset($header_content)
                             {{ $header_content }}
