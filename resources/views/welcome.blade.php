@@ -29,6 +29,25 @@
         </div>
     </div>
 
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card mb-0">
+            <div class="card-body">
+                <ul class="nav nav-pills" id="stts-tab">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-stts="all" href="#">Semua<span class="badge badge-white"></span></a>
+                    </li>
+                    @foreach ($kategori as $ket)
+                        <li class="nav-item">
+                            <a class="nav-link" data-stts="{{ $ket->id }}" href="#">{{ $ket->nama }}<span class="badge badge-white"></span></a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+
     @foreach ($kategori as $ket)
         <div class="py-0 pb-3 px-0 sm:px-0">
             <h2 class="section-title">{{ $ket->nama }}</h2>
@@ -47,7 +66,7 @@
                         </div>
                     </div>
                     <div class="article-details d-none d-md-block">
-                    <p style="min-height: 60px;">{{ $app->keterangan }}</p>
+                    <p style="min-height: 84px;">{{ $app->keterangan }}</p>
                     <div class="article-cta">
                         <a target="_blank" href="{!! (Auth::check()) ? $app->base_url_sso : $app->base_url !!}">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
                     </div>
@@ -57,5 +76,34 @@
             @endforeach
             </div>
     @endforeach
+
+    <x-slot name="script">
+        <script src="{{ asset('js/plugin.js') }}"></script>
+        <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script>
+        <script>
+        // ----- VUE JS ----- //
+        // let dataVue= {};
+        // var app = new Vue({
+        // el: '#app',
+        // data: dataVue,
+        // mounted () {
+            
+        // },
+        // methods: {
+            
+        // });
+
+        // jquery
+        $(function() {
+            $('#stts-tab .nav-link').on('click', function (e) {
+                e.preventDefault();
+                $('#stts-verif').val($(this).data('stts'));
+                $('#stts-tab .nav-link').removeClass('active').find('.badge-white').removeClass('badge-white').addClass('badge-primary');
+                $(this).addClass('active').find('.badge-primary').removeClass('badge-primary').addClass('badge-white');
+                //$('#table-rtlh').DataTable().ajax.reload()
+            }); 
+        }); 
+        </script>
+    </x-slot>
 
 </x-guest-layout>
