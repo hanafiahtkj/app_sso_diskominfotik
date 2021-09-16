@@ -43,7 +43,6 @@
                         </li>
                     @endforeach
                 </ul>
-                <input type="hidden" name="id_ket" id="id_ket" value="all" v-model="id_ket">
             </div>
             </div>
         </div>
@@ -58,10 +57,10 @@
         <div class="overflow-hidden sm:rounded-lg">
             <div class="row">
                 <template v-for="app in kat.aplikasi">
-                    <div class="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <div class="col-6 col-sm-4 col-md-4 col-lg-3" :key="app.id">
                         <article class="article article-style-b">
                             <div class="article-header">
-                                <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth"><div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="{ 'background-image': `url({{ asset(Storage::url('')) }}' + '/' + app.path)` }"></div></a>
+                                <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth"><div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div></a>
                                 <div class="article-title">
                                     <h2><a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth">@{{ app.nama }}</a></h2>
                                 </div>
@@ -100,6 +99,12 @@
         methods: {
             changeId: function (id) {
                 this.id_ket = id;
+            },
+            appBgImage(src) {
+                let bgImage = "{{ asset(Storage::url('')) }}" + "/" + src;
+                return {
+                    backgroundImage: `url("${bgImage}")`,
+                }
             },
         },
         computed: {
