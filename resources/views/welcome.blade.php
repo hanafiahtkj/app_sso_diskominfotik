@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row mt-4 fixed-bottom-c">
         <div class="col-12">
             <div class="card mb-0">
             <div class="card-body">
