@@ -16,7 +16,7 @@
     .fixed-bottom-c {
         position: fixed;
         right: 0;
-        bottom: 0;
+        top: 45px;
         left: 0;
         z-index: 1030;
     }
@@ -33,6 +33,29 @@
 
     .fixed-bottom-c .nav .nav-item {
         display: flex;
+        align-items: center;
+        border-right: 1px solid #e5e7eb;
+        width: 130px;
+        flex-direction: column;
+    }
+
+    .fixed-bottom-c .card {
+        background-color: #f4f6f9;
+    }
+
+    .fixed-bottom-c .nav-pills .nav-link {
+        border-radius: 0px;
+    }
+
+    .fixed-bottom-c .nav-pills .nav-item .nav-link.active {
+        box-shadow: none;
+        color: #27303f;
+        background-color: transparent;
+        border-bottom: 1px solid #888;
+    }
+
+    .section > *:first-child {
+        margin-top: 60px;
     }
 }
 
