@@ -29,11 +29,11 @@
         </div>
     </div>
 
-    <div class="row mt-4 fixed-bottom-c">
+    <div class="row mt-4 fixed-top-c">
         <div class="col-12">
             <div class="card mb-0">
             <div class="card-body">
-                <ul class="nav nav-pills" id="stts-tab">
+                <ul class="nav nav-pills stts-tab">
                     <li class="nav-item">
                         <a class="nav-link active" @click="changeId('all')" data-id="all" href="#">Semua<span class="badge badge-white"></span></a>
                     </li>
@@ -117,17 +117,6 @@
             }
         }
         });
-
-        // jquery
-        $(function() {
-            $('#stts-tab .nav-link').on('click', function (e) {
-                e.preventDefault();
-                //$('#id_ket').val($(this).data('id')).dispatchEvent(new Event('input'));
-                $('#stts-tab .nav-link').removeClass('active').find('.badge-white').removeClass('badge-white').addClass('badge-primary');
-                $(this).addClass('active').find('.badge-primary').removeClass('badge-primary').addClass('badge-white');
-                //$('#table-rtlh').DataTable().ajax.reload()
-            }); 
-        }); 
         </script>
     </x-slot>
 

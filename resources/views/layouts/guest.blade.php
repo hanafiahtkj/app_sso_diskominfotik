@@ -61,6 +61,27 @@
                         <p>Copyright © Diskominfotik Kota Banjarmasin</p>
                     </div>
                   </footer>
+
+                  <div class="row mt-4 fixed-bottom-c">
+                    <div class="col-12">
+                        <div class="card mb-0">
+                        <div class="card-body">
+                            <ul class="nav nav-pills stts-tab">
+                                <li class="nav-item">
+                                    <a class="nav-link"><div class="text-center" style="
+                                        line-height: 13px;
+                                    "><i class="fas fa-home fa-2x"></i></div><span>Beranda</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"><div class="text-center" style="
+                                        line-height: 13px;
+                                    "><i class="fas fa-user fa-2x"></i></div><span>Profil</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -84,6 +105,22 @@
 
         <livewire:scripts />
         <script src="{{ mix('js/app.js') }}" defer></script>
+
+        <script src="{{ asset('js/plugin.js') }}"></script>
+        <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script>
+        <script>
+
+        // jquery
+        $(function() {
+            $('.stts-tab .nav-link').on('click', function (e) {
+                e.preventDefault();
+                //$('#id_ket').val($(this).data('id')).dispatchEvent(new Event('input'));
+                $('.stts-tab .nav-link').removeClass('active').find('.badge-white').removeClass('badge-white').addClass('badge-primary');
+                $(this).addClass('active').find('.badge-primary').removeClass('badge-primary').addClass('badge-white');
+                //$('#table-rtlh').DataTable().ajax.reload()
+            }); 
+        }); 
+        </script>
 
         @isset($script)
             {{ $script }}
