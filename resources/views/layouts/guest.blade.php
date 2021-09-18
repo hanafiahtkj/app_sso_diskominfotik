@@ -56,9 +56,9 @@
                   </div>
                   
                   <footer class="main-footer">
-                        <div class="footer-left">
-                        {{-- <p>© Designed by <a href="https://getstisla.com/" rel="nofollow">Stisla</a> || Develoved by Diskominfotik Kota Banjarmsin</p> --}}
-                        <p>Copyright © Diskominfotik Kota Banjarmasin</p>
+                        <div class="footer-left d-none d-md-block">
+                        <p>© Designed by <a href="https://getstisla.com/" rel="nofollow">Stisla</a> || Develoved by Diskominfotik Kota Banjarmsin</p>
+                        {{-- <p>Copyright © Diskominfotik Kota Banjarmasin</p> --}}
                     </div>
                   </footer>
                   
