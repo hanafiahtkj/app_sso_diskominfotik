@@ -187,44 +187,27 @@
 
     @auth    
     <template v-if="route == '/profile'">
-        <div class="main-content main-profile">
-            <section class="section">
-            <div class="section-header">
-                <div class="section-header-back">
-                <a href="{{ url('/') }}" @click="changeRoute('/home')" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
-                </div>
         
-                <h1>{{ __('Profil') }}</h1>
-        
-                <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="{{ route('dashboard')  }}">Dasbor</a></div>
-                    <div class="breadcrumb-item">{{ __('Profil') }}</div>
-                </div>
-            </div>
-                                                    
-            <div class="section-body">
-                <div>
-                    <div class="max-w-7xl mx-auto py-0 sm:px-0 lg:px-0">
-                        @livewire('profile.update-profile-information-form')
-        
-                        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                            <x-jet-section-border />
-                        
-                            <div class="mt-10 sm:mt-0">
-                                @livewire('profile.update-password-form')
-                            </div>
-                        @endif
-        
-                        <x-jet-section-border />
-        
-                        <div class="mt-10 sm:mt-0">
-                            @livewire('profile.delete-user-form')
-                        </div>
+        <div>
+            <div class="max-w-7xl mx-auto py-0 sm:px-0 lg:px-0">
+                @livewire('profile.update-profile-information-form')
+
+                @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                    <x-jet-section-border />
+                
+                    <div class="mt-10 sm:mt-0">
+                        @livewire('profile.update-password-form')
                     </div>
+                @endif
+
+                <x-jet-section-border />
+
+                <div class="mt-10 sm:mt-0">
+                    @livewire('profile.delete-user-form')
                 </div>
             </div>
-            </section>
         </div>
+            
     </template>
     @endauth
     <x-slot name="script">
@@ -240,6 +223,10 @@
         };
 
         console.log(dataVue);
+
+        @if (request('r'))
+            localStorage.setItem("route", '/home');
+        @endif
         
         var app = new Vue({
         el: '#app',

@@ -122,10 +122,10 @@
 
     .nav-pills .nav-item .nav-link {
         color: #6b7280;
-    }
+    }  
 
-    .main-profile {
-        padding: 0px;
+    .section > *:first-child {
+        margin-top: 35px;
     }
 }
 
@@ -156,6 +156,7 @@
 	display: inline-block;
 	float: left;
 }
+
 .swal-title {
     color: rgba(0,0,0,.65);
     font-weight: 600;

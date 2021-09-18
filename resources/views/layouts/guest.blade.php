@@ -62,7 +62,7 @@
                     </div>
                   </footer>
                   
-                  @if(Route('welcome'))
+                  @if(request()->routeIs('welcome'))
                     @include('components.navbar-bottom')
                   @endif
             </div>
