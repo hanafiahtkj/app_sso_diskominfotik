@@ -81,8 +81,8 @@
         <x-jet-authentication-card>
             <x-slot name="logo">
                 <div style="text-align:center;">
-                    <h1>Masuk</h1>
-                    <p>Banjarmasin Dalam Genggaman</p>
+                    <h1><i class="fas fa-sign-in-alt fa-3x"></i></h1>
+                    {{-- <p>Banjarmasin Dalam Genggaman</p> --}}
                 </div>
             </x-slot>
 
@@ -142,8 +142,8 @@
         <x-jet-authentication-card>
             <x-slot name="logo">
                 <div style="text-align:center;">
-                    <h1>Daftar</h1>
-                    <p>Banjarmasin Dalam Genggaman</p>
+                    <h1><i class="fas fa-user-plus fa-3x"></i></h1>
+                    {{-- <p>Banjarmasin Dalam Genggaman</p> --}}
                 </div>
             </x-slot>
 
@@ -203,7 +203,8 @@
         el: '#app',
         data: dataVue,
         mounted () {
-            this.changeRoute('/home');
+            var route = localStorage.getItem("route") ? localStorage.getItem("route") : '/home';
+            this.changeRoute(route);
         },
         methods: {
             changeId: function (id) {
@@ -217,6 +218,7 @@
             },
             changeRoute: function (route) {
                 this.route = route;
+                localStorage.setItem("route", route);
                 if (route == '/home') {
                     head = document.head || document.getElementsByTagName('head')[0],
                     style = document.createElement('style');
@@ -242,6 +244,16 @@
             }
         }
         });
+        </script>
+        <script>
+            // jquery
+            $(function() {
+                $(document).on('click', '.stts-tab .nav-link', function (e) {
+                    e.preventDefault();
+                    $(this).parent().siblings().find('.nav-link').removeClass('active').find('.badge-white').removeClass('badge-white').addClass('badge-primary');
+                    $(this).addClass('active').find('.badge-primary').removeClass('badge-primary').addClass('badge-white');
+                }); 
+            }); 
         </script>
     </x-slot>
 

@@ -90,24 +90,12 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
 
         <script src="{{ asset('js/plugin.js') }}"></script>
-        <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script>
-        <script>
-
-        // jquery
-        $(function() {
-            $('.stts-tab .nav-link').on('click', function (e) {
-                e.preventDefault();
-                //$('#id_ket').val($(this).data('id')).dispatchEvent(new Event('input'));
-                $(this).parent().siblings().find('.nav-link').removeClass('active').find('.badge-white').removeClass('badge-white').addClass('badge-primary');
-                $(this).addClass('active').find('.badge-primary').removeClass('badge-primary').addClass('badge-white');
-                //$('#table-rtlh').DataTable().ajax.reload()
-            }); 
-        }); 
-        </script>
+        {{-- <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script> --}}
 
         @isset($script)
             {{ $script }}
         @endisset
+    
     </body>
 </html>
 
