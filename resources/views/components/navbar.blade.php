@@ -26,7 +26,7 @@ $user = auth()->user();
                 <a href="/user/profile" class="dropdown-item has-icon d-none d-sm-block">
                     <i class="far fa-user"></i> Profil
                 </a>
-                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider d-none d-sm-block"></div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
