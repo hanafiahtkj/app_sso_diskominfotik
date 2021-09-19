@@ -40,9 +40,9 @@
         flex-direction: column;
     }
 
-    .fixed-top-c .card {
+    /* .fixed-top-c .card {
         background-color: #f4f6f9;
-    }
+    } */
 
     .fixed-top-c .nav-pills .nav-link {
         border-radius: 0px;
@@ -95,9 +95,9 @@
         width: 50%;
     }
     
-    .fixed-bottom-c .card {
+    /* .fixed-bottom-c .card {
         background-color: #f4f6f9;
-    }
+    } */
     
     .fixed-bottom-c .nav-pills .nav-link {
         border-radius: 0px;
