@@ -23,7 +23,7 @@ $user = auth()->user();
             @endif
             <div class="dropdown-menu dropdown-menu-right">
                 @auth
-                <a href="/user/profile" class="dropdown-item has-icon">
+                <a href="/user/profile" class="dropdown-item has-icon d-none d-sm-block">
                     <i class="far fa-user"></i> Profil
                 </a>
                 <div class="dropdown-divider"></div>
@@ -35,10 +35,10 @@ $user = auth()->user();
                     </a>
                 </form>
                 @else
-                <a href="/login" class="dropdown-item has-icon">
+                <a href="/login" class="dropdown-item has-icon d-none d-sm-block">
                     Masuk
                 </a>
-                <a href="/register" class="dropdown-item has-icon">
+                <a href="/register" class="dropdown-item has-icon d-none d-sm-block">
                     Daftar
                 </a>
                 @endauth

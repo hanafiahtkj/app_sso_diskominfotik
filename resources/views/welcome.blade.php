@@ -13,7 +13,7 @@
                     {{ $settings['keterangan'] }}
                 </div>
 
-                <div class="mt-6">
+                <div class="mt-6 d-none d-sm-block">
                 @auth
                     @role('Admin')
                         <a href="{{ url('/dashboard') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Dasbor</a>
