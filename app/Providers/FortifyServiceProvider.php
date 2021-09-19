@@ -33,8 +33,15 @@ class FortifyServiceProvider extends ServiceProvider
                 }
 
                 if (Auth::user()->hasRole(['Admin'])) {
-                    return redirect('/dashboard');
+                    return redirect('/admin-dashboard');
                 }
+                return redirect('/?r=home');
+            }
+        });
+
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
+            public function toResponse($request)
+            {
                 return redirect('/?r=home');
             }
         });
