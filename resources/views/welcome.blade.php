@@ -60,9 +60,12 @@
                                 <div class="article-header">
                                     <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth"><div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div></a>
                                 </div>
-                                <div class="article-details">
-                                    <div class="article-title text-center">
+                                <div class="article-details d-none d-md-block">
+                                    <div class="article-title">
                                         <p style="min-height: 56px;">@{{ app.keterangan }}</p>
+                                        <div class="article-cta">
+                                            <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </article>

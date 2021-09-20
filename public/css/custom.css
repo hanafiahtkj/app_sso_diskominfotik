@@ -127,6 +127,10 @@
     .section > *:first-child {
         margin-top: 35px;
     }
+
+    .article .article-details {
+        padding: 10px!important;
+    }
 }
 
 /* .navbar .nav-link, .navbar .nav-link.nav-link-user {
@@ -154,7 +158,7 @@
     box-sizing: content-box;
     margin: 20px;
 	display: inline-block;
-	float: left;
+	/* float: left; */
 }
 
 .swal-title {
@@ -204,10 +208,6 @@ section .section-title:before {
 
 .article .article-header .article-image {
     background-color: #f6f6f6;
-}
-
-.article .article-details {
-    padding: 10px!important;
 }
 
 .article.article-style-b .article-details .article-title {
