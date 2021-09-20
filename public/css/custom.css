@@ -205,3 +205,11 @@ section .section-title:before {
 .article .article-header .article-image {
     background-color: #f6f6f6;
 }
+
+.article .article-details {
+    padding: 10px;
+}
+
+.article.article-style-b .article-details .article-title {
+    margin-bottom: 0px;
+}

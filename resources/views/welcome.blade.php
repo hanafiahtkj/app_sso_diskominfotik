@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="article-details">
                                     <div class="article-title text-center">
-                                        <p style="min-height: 84px;">@{{ app.keterangan }}</p>
+                                        <p style="min-height: 56px;">@{{ app.keterangan }}</p>
                                     </div>
                                 </div>
                             </article>
