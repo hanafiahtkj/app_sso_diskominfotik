@@ -57,7 +57,7 @@
                     <template v-for="app in kat.aplikasi">
                         <div class="col-6 col-sm-4 col-md-4 col-lg-3" :key="app.id">
                             <article class="article article-style-b">
-                                <div class="article-header">
+                                <div class="article-header m-3">
                                     <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth"><div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div></a>
                                 </div>
                                 <div class="article-details d-none d-md-block">

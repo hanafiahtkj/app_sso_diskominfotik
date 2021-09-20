@@ -213,3 +213,9 @@ section .section-title:before {
 .article.article-style-b .article-details .article-title {
     margin-bottom: 0px!important;
 }
+
+.article {
+    /* box-shadow: 0 4px 8px rgb(0 0 0 / 3%);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 3%); */
+    background-color: #f7f7f7
+}
