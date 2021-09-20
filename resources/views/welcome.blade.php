@@ -2,7 +2,7 @@
 
     <template v-if="route == '/home'">
 
-        <div class="bg-white overflow-hidden sm:rounded-lg">
+        <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg">
             <div class="p-6 sm:px-10 bg-white text-center">
             
                 <div class="mt-0 text-2xl">
@@ -238,6 +238,15 @@
         methods: {
             changeId: function (id) {
                 this.id_ket = id;
+
+                if (id == 'all') {
+                    var welcome = document.getElementById("welcome");
+                    welcome.classList.remove("d-none", "d-sm-block");
+                }
+                else {
+                    var welcome = document.getElementById("welcome");
+                    welcome.classList.add("d-none", "d-sm-block");
+                }
             },
             appBgImage(src) {
                 let bgImage = "{{ asset(Storage::url('')) }}" + "/" + src;
