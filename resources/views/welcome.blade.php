@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="article-details d-none d-md-block">
                                     <div class="article-title">
-                                        <p style="min-height: 56px;">@{{ app.keterangan }}</p>
+                                        <p style="min-height: 65px;">@{{ app.keterangan }}</p>
                                         <div class="article-cta">
                                             <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
                                         </div>
