@@ -219,13 +219,15 @@ section .section-title:before {
     box-shadow: 0 4px 8px rgb(0 0 0 / 3%); */
     background-color: #f7f7f7;
     border-radius: 10px;
-    border: 1px solid #e2e8f0;
+    border-left: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
 }
 
 .article .article-header {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 0px;
 }
 
 .article.article-style-b .article-details {
