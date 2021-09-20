@@ -13,13 +13,13 @@ $user = auth()->user();
     
     <ul class="navbar-nav navbar-right">
         
-        <li class="dropdown"><a href="#" data-turbolinks="false" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+        <li class="dropdown">@auth<a href="#" data-turbolinks="false" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             @if (!is_null($user))
                 <img alt="image" src="{{ $user->profile_photo_url }}" class="rounded-circle mr-1" style="display: inline!important;">
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ $user->name }}</div></a>
             @else
-                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}" class="rounded-circle mr-1" style="display: inline!important;">
-                <div class="d-sm-none d-lg-inline-block">Hi, Selamat datang</div></a>
+                {{-- <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}" class="rounded-circle mr-1" style="display: inline!important;"> --}}
+                <div class="d-sm-none d-lg-inline-block">Hi, Selamat datang</div></a>@endauth
             @endif
             <div class="dropdown-menu dropdown-menu-right">
                 @auth
