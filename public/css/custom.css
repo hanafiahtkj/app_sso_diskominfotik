@@ -222,6 +222,12 @@ section .section-title:before {
     border: 1px solid #e2e8f0;
 }
 
+.article .article-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
 .article.article-style-b .article-details {
     border-radius: 10px;
     border: 1px;
