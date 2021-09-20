@@ -207,9 +207,9 @@ section .section-title:before {
 }
 
 .article .article-details {
-    padding: 10px;
+    padding: 10px!important;
 }
 
 .article.article-style-b .article-details .article-title {
-    margin-bottom: 0px;
+    margin-bottom: 0px!important;
 }
