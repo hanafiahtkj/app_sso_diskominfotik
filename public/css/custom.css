@@ -201,3 +201,7 @@ section .section-title:before {
 .main-sidebar, .navbar, .main-content, .main-footer {
     transition: none;
 }
+
+.article .article-header .article-image {
+    background-color: #f6f6f6;
+}

@@ -59,9 +59,9 @@
                             <article class="article article-style-b">
                                 <div class="article-header">
                                     <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth"><div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div></a>
-                                    <div class="article-title">
+                                    {{-- <div class="article-title">
                                         <h2><a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth">@{{ app.nama }}</a></h2>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="article-details d-none d-md-block">
                                 <p style="min-height: 84px;">@{{ app.keterangan }}</p>
