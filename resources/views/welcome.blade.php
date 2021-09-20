@@ -63,11 +63,10 @@
                                         <h2><a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth">@{{ app.nama }}</a></h2>
                                     </div>
                                 </div>
-                                <div class="article-details d-none d-md-block">
-                                <p style="min-height: 84px;">@{{ app.keterangan }}</p>
-                                <div class="article-cta">
-                                    <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
-                                </div>
+                                <div class="article-details">
+                                    <div class="article-title">
+                                        <h2><a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth">@{{ app.keterangan }}</a></h2>
+                                    </div>
                                 </div>
                             </article>
                         </div>
