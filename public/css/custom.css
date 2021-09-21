@@ -41,7 +41,7 @@
 
     .fixed-top-c .card-body {
         overflow: scroll;
-        padding: 0px;
+        padding: 0px!important;
     }
 
     .fixed-top-c .nav .nav-item {
@@ -148,6 +148,10 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         border-bottom: 1px solid #e2e8f0;
+    }
+
+    #welcome {
+        border-radius: 10px;
     }
 }
 
