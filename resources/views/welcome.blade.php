@@ -33,7 +33,7 @@
                 <div class="card-body p-2">
                     <ul class="nav nav-pills stts-tab">
                         <li class="nav-item">
-                            <a class="nav-link active" @click="changeId('all')" data-id="all" href="#">Semua<span class="badge badge-white">12</span></a>
+                            <a class="nav-link active" @click="changeId('all')" data-id="all" href="#">Semua<span class="badge badge-white"></span></a>
                         </li>
                         @foreach ($kategori as $ket)
                             <li class="nav-item">
