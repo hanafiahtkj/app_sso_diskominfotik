@@ -12,7 +12,7 @@
     }
 }
 
-@media (max-width: 762px) {
+@media (max-width: 767px) {
     .navbar {
         position: fixed;
         left: 0px;
