@@ -40,7 +40,7 @@
     }
 
     .fixed-top-c .card-body {
-        overflow: scroll;
+        overflow: scroll!important;
         padding: 0px!important;
     }
 
@@ -48,7 +48,7 @@
         display: flex;
         align-items: center;
         border-right: 1px solid #e5e7eb;
-        width: 130px;
+        width: 150px;   
         flex-direction: column;
     }
 
