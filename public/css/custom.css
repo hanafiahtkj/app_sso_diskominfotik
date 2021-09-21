@@ -2,6 +2,10 @@
     background-color: #6777ef;
 }
 
+.bg-primary {
+    background-color: #2969b0 !important;
+}
+
 @media (min-width: 1280px) {
     .container {
         max-width: 1024px;
