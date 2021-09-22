@@ -8,13 +8,13 @@ $user = auth()->user();
         <div class="card-body">
             <ul class="nav nav-pills stts-tab">
                 <li class="nav-item">
-                    <a class="nav-link active" @click="changeRoute('/home')"><div class="text-center" style="
+                    <a class="nav-link" v-bind:class="{ 'active' : route == '/home'}" @click="changeRoute('/home')"><div class="text-center" style="
                         line-height: 13px;
                     "><i class="fas fa-home fa-2x"></i></div><span>Beranda</span></a>
                 </li>
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" @click="changeRoute('/profile', true)"><div class="text-center" style="
+                    <a class="nav-link" v-bind:class="{ 'active' : route == '/profile'}" @click="changeRoute('/profile', true)"><div class="text-center" style="
                         line-height: 13px;
                     "><i class="fas fa-user fa-2x"></i></div><span>Profil</span></a>
                 </li>
