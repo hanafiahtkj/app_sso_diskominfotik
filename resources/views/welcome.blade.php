@@ -221,6 +221,11 @@
         };
 
         console.log(dataVue);
+
+        @if (request('r'))
+            localStorage.setItem("route", '/home');
+            window.history.pushState({}, 'Aplikasi Dalam Genggaman', '{{ url('/') }}');
+        @endif
         
         var app = new Vue({
         el: '#app',
