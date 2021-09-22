@@ -221,18 +221,13 @@
         };
 
         console.log(dataVue);
-
-        @if (request('r'))
-            localStorage.setItem("route", '/home');
-            window.history.pushState({}, 'Aplikasi Dalam Genggaman', '{{ url('/') }}');
-        @endif
         
         var app = new Vue({
         el: '#app',
         data: dataVue,
         mounted () {
-            localStorage.setItem("is_reload", false);
-            var route = localStorage.getItem("route") ? localStorage.getItem("route") : '/home';
+            // localStorage.setItem("is_reload", false);
+            var route = localStorage.getItem("route") ? localStorage.getItem("route") : this.route;
             this.changeRoute(route);
         },
         methods: {
@@ -254,8 +249,8 @@
                     backgroundImage: `url("${bgImage}")`,
                 }
             },
-            changeRoute: function (route) {
-                this.route = route;
+            changeRoute: function (route, reload = false) {
+                this.route = route;;
                 localStorage.setItem("route", route);
                 if (route == '/home') {
                     head = document.head || document.getElementsByTagName('head')[0],
@@ -265,9 +260,7 @@
                     head.appendChild(style);
                 }
                 else {
-                    var is_reload = localStorage.getItem("is_reload");
-                    if (route == '/profile' && is_reload == false) {
-                        localStorage.setItem("is_reload", true);
+                    if (route == '/profile' && reload == true) {
                         location.reload();
                     }
 

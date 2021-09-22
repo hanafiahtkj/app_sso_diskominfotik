@@ -14,7 +14,7 @@ $user = auth()->user();
                 </li>
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" @click="changeRoute('/profile')"><div class="text-center" style="
+                    <a class="nav-link" @click="changeRoute('/profile', true)"><div class="text-center" style="
                         line-height: 13px;
                     "><i class="fas fa-user fa-2x"></i></div><span>Profil</span></a>
                 </li>
