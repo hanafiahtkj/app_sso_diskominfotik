@@ -24,7 +24,7 @@ $user = auth()->user();
                         line-height: 13px;
                     "><i class="fas fa-user fa-2x"></i></div><span>Akun</span></a>
                 </li>
-                @endauth
+                @endauth   
             </ul>
         </div>
         </div>
