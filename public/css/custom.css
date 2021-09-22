@@ -68,6 +68,11 @@
         border-bottom: 2px solid #2969b0;
     }
 
+    .fixed-top-c .nav-pills .nav-item .nav-link {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
     /* .section > *:first-child {
         margin-top: 60px;
     } */

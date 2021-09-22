@@ -6,7 +6,7 @@
             {{ $description }}
         </p>
     </div> -->
-    <div class="px-0 sm:px-0">
+    <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">{{ $title }}</h2>
         <p class="section-lead">{{ $description }}</p>
     </div>

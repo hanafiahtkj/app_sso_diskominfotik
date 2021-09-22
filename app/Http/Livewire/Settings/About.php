@@ -28,9 +28,9 @@ class About extends Component
         Pages::query()
         ->where('id', $this->page_id)
         ->update([
-            'judul' => 'about',
+            'judul'  => 'about',
             "konten" => $this->pages->konten,
-            'slug' => 'about'
+            'slug'   => 'about'
         ]);
 
         $this->emit('saved');

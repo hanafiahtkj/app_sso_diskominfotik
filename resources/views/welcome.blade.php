@@ -80,7 +80,7 @@
         <x-jet-authentication-card>
             <x-slot name="logo">
                 <div style="text-align:center;">
-                    <h1><i class="fas fa-sign-in-alt fa-3x"></i></h1>
+                    <h1><i class="fas fa-sign-in-alt fa-3x text-primary"></i></h1>
                     {{-- <p>Banjarmasin Dalam Genggaman</p> --}}
                 </div>
             </x-slot>
@@ -141,7 +141,7 @@
         <x-jet-authentication-card>
             <x-slot name="logo">
                 <div style="text-align:center;">
-                    <h1><i class="fas fa-user-plus fa-3x"></i></h1>
+                    <h1><i class="fas fa-user-plus fa-3x text-primar"></i></h1>
                     {{-- <p>Banjarmasin Dalam Genggaman</p> --}}
                 </div>
             </x-slot>
@@ -186,7 +186,6 @@
 
     @auth    
     <template v-if="route == '/profile'">
-        
         <div>
             <div class="max-w-7xl mx-auto py-0 sm:px-0 lg:px-0">
                 @livewire('profile.update-profile-information-form')
@@ -205,10 +204,10 @@
                     @livewire('profile.delete-user-form')
                 </div>
             </div>
-        </div>
-            
+        </div>   
     </template>
     @endauth
+
     <x-slot name="script">
         <script src="{{ asset('js/plugin.js') }}"></script>
         <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script>
@@ -232,6 +231,7 @@
         el: '#app',
         data: dataVue,
         mounted () {
+            localStorage.setItem("is_reload", false);
             var route = localStorage.getItem("route") ? localStorage.getItem("route") : '/home';
             this.changeRoute(route);
         },
@@ -265,6 +265,12 @@
                     head.appendChild(style);
                 }
                 else {
+                    var is_reload = localStorage.getItem("is_reload");
+                    if (route == '/profile' && is_reload == false) {
+                        localStorage.setItem("is_reload", true);
+                        location.reload();
+                    }
+
                     var style = document.getElementById("style-home");
                     if (style != null) {
                         style.remove();
