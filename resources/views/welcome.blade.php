@@ -1,6 +1,6 @@
 <x-guest-layout> 
 
-    <template v-if="route == '/home'">
+    <div v-show ="route == '/home'">
 
         <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg">
             <div class="p-6 sm:px-10 bg-white text-center">
@@ -29,7 +29,7 @@
 
         <div class="py-0 pb-3 px-0 sm:px-0">
             <h2 class="section-title">Aplikasi</h2>
-            <p class="section-lead">Aplikasi yang ada di lingkup banjarmasinkota.go.id.</p>
+            <p class="section-lead">Aplikasi yang ada di banjarmasinkota.go.id.</p>
         </div>
 
         <div class="overflow-hidden sm:rounded-lg">
@@ -66,100 +66,102 @@
         </div>
 
         <div class="py-0 pb-3 px-0 sm:px-0">
-            <h2 class="section-title">Berita Terbaru</h2>
-            <p class="section-lead">Berita Terbaru banjarmasinkota.go.id.</p>
+            <h2 class="section-title">Berita terkini</h2>
+            <p class="section-lead">Berita terkini di banjarmasinkota.go.id.</p>
         </div>
 
         <div class="overflow-hidden sm:rounded-lg">
             <div class="row">
-                <div class="owl-carousel owl-theme" id="berita-carousel">
-                    {{-- <div class="col-6 col-sm-4 col-md-4 col-lg-3"> --}}
-                        <article class="article article-style-b">
-                            <div class="article-header mb-4">
-                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                <div class="article-title">
-                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                </div>
-                            </div>
-                            <div class="article-details">
-                                <div class="article-title">
-                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                    <div class="article-cta">
-                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                <div class="col-12">
+                    <div class="owl-carousel owl-theme" id="berita-carousel">
+                        {{-- <div class="col-6 col-sm-4 col-md-4 col-lg-3"> --}}
+                            <article class="article article-style-b">
+                                <div class="article-header">
+                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                    <div class="article-title">
+                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <article class="article article-style-b">
-                            <div class="article-header mb-4">
-                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                <div class="article-title">
-                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                </div>
-                            </div>
-                            <div class="article-details">
-                                <div class="article-title">
-                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                    <div class="article-cta">
-                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                <div class="article-details">
+                                    <div class="article-title">
+                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
+                                        <div class="article-cta">
+                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <article class="article article-style-b">
-                            <div class="article-header mb-4">
-                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                <div class="article-title">
-                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                </div>
-                            </div>
-                            <div class="article-details">
-                                <div class="article-title">
-                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                    <div class="article-cta">
-                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                            </article>
+                            <article class="article article-style-b">
+                                <div class="article-header">
+                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                    <div class="article-title">
+                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <article class="article article-style-b">
-                            <div class="article-header mb-4">
-                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                <div class="article-title">
-                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                </div>
-                            </div>
-                            <div class="article-details">
-                                <div class="article-title">
-                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                    <div class="article-cta">
-                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                <div class="article-details">
+                                    <div class="article-title">
+                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
+                                        <div class="article-cta">
+                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <article class="article article-style-b">
-                            <div class="article-header mb-4">
-                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                <div class="article-title">
-                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                </div>
-                            </div>
-                            <div class="article-details">
-                                <div class="article-title">
-                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                    <div class="article-cta">
-                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                            </article>
+                            <article class="article article-style-b">
+                                <div class="article-header">
+                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                    <div class="article-title">
+                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        
-                    {{-- </div> --}}
+                                <div class="article-details">
+                                    <div class="article-title">
+                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
+                                        <div class="article-cta">
+                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="article article-style-b">
+                                <div class="article-header">
+                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                    <div class="article-title">
+                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                    </div>
+                                </div>
+                                <div class="article-details">
+                                    <div class="article-title">
+                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
+                                        <div class="article-cta">
+                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="article article-style-b">
+                                <div class="article-header">
+                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                    <div class="article-title">
+                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                    </div>
+                                </div>
+                                <div class="article-details">
+                                    <div class="article-title">
+                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
+                                        <div class="article-cta">
+                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                        {{-- </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
-    </template>
+    </div>
 
     <template v-if="route == '/app'">
         <div class="row fixed-top-c">
@@ -192,7 +194,7 @@
                     <template v-for="app in kat.aplikasi">
                         <div class="col-6 col-sm-4 col-md-4 col-lg-3" :key="app.id">
                             <article class="article article-style-b">
-                                <div class="article-header mb-4">
+                                <div class="article-header header-radius mb-4">
                                     <a target="_blank" :href="@auth app.base_url_sso @else app.base_url @endauth"><div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div></a>
                                 </div>
                                 <div class="article-details d-none d-md-block">
@@ -320,7 +322,7 @@
     </template>
 
     @auth    
-    <template v-if="route == '/profile'">
+    <div v-show ="route == '/profile'">
         <div>
             <div class="max-w-7xl mx-auto py-0 sm:px-0 lg:px-0">
                 @livewire('profile.update-profile-information-form')
@@ -340,7 +342,7 @@
                 </div>
             </div>
         </div>   
-    </template>
+    </div>
     @endauth
 
     <x-slot name="style">
@@ -390,22 +392,27 @@
             changeRoute: function (route, reload = false) {
                 this.route = route;;
                 localStorage.setItem("route", route);
+
+                var style = document.getElementById("style-home");
+                if (style != null) {
+                    style.remove();
+                }
+
+                head = document.head || document.getElementsByTagName('head')[0],
+                style = document.createElement('style');
+                style.setAttribute("id", "style-home");
+
                 if (route == '/app') {
-                    head = document.head || document.getElementsByTagName('head')[0],
-                    style = document.createElement('style');
-                    style.setAttribute("id", "style-home");
+                    
                     style.innerHTML = "@media (max-width: 767px) { .section > *:first-child {margin-top: 70px!important;} }";
                     head.appendChild(style);
                 }
                 else {
-                    if (route == '/profile' && reload == true) {
-                        location.reload();
-                    }
-
-                    var style = document.getElementById("style-home");
-                    if (style != null) {
-                        style.remove();
-                    }
+                    // if (route == '/profile' && reload == true) {
+                    //     location.reload();
+                    // }
+                    style.innerHTML = "@media (max-width: 767px) { .section > *:first-child {margin-top: 18px!important;} }";
+                    head.appendChild(style);
                 }
             },
         },
