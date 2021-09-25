@@ -27,17 +27,152 @@
             </div>
         </div>
 
-        <div class="row mt-4 fixed-top-c">
+        <div class="py-0 pb-3 px-0 sm:px-0">
+            <h2 class="section-title">Aplikasi</h2>
+            <p class="section-lead">Aplikasi yang ada di lingkup banjarmasinkota.go.id.</p>
+        </div>
+
+        <div class="overflow-hidden sm:rounded-lg">
+            <div class="row" id="app-kategori">
+                @foreach ($kategori as $ket)
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <a href="javascript:void(0)" @click="changeId({{ $ket->id }})">
+                        <article class="article">
+                            <div class="article-header">
+                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">
+                                </div>
+                                <div class="article-title">
+                                <h2 class="text-white">{{ $ket->nama }}</h2>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+                @endforeach
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <a href="javascript:void(0)" @click="changeId('all')">
+                        <article class="article">
+                            <div class="article-header">
+                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">
+                                </div>
+                                <div class="article-title">
+                                <h2 class="text-white">Semua</h2>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-0 pb-3 px-0 sm:px-0">
+            <h2 class="section-title">Berita Terbaru</h2>
+            <p class="section-lead">Berita Terbaru banjarmasinkota.go.id.</p>
+        </div>
+
+        <div class="overflow-hidden sm:rounded-lg">
+            <div class="row">
+                <div class="owl-carousel owl-theme" id="berita-carousel">
+                    {{-- <div class="col-6 col-sm-4 col-md-4 col-lg-3"> --}}
+                        <article class="article article-style-b">
+                            <div class="article-header mb-4">
+                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                <div class="article-title">
+                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                </div>
+                            </div>
+                            <div class="article-details">
+                                <div class="article-title">
+                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                    <div class="article-cta">
+                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article article-style-b">
+                            <div class="article-header mb-4">
+                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                <div class="article-title">
+                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                </div>
+                            </div>
+                            <div class="article-details">
+                                <div class="article-title">
+                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                    <div class="article-cta">
+                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article article-style-b">
+                            <div class="article-header mb-4">
+                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                <div class="article-title">
+                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                </div>
+                            </div>
+                            <div class="article-details">
+                                <div class="article-title">
+                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                    <div class="article-cta">
+                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article article-style-b">
+                            <div class="article-header mb-4">
+                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                <div class="article-title">
+                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                </div>
+                            </div>
+                            <div class="article-details">
+                                <div class="article-title">
+                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                    <div class="article-cta">
+                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article article-style-b">
+                            <div class="article-header mb-4">
+                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                <div class="article-title">
+                                    <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                </div>
+                            </div>
+                            <div class="article-details">
+                                <div class="article-title">
+                                    <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                    <div class="article-cta">
+                                        <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                    {{-- </div> --}}
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template v-if="route == '/app'">
+        <div class="row fixed-top-c">
             <div class="col-12">
                 <div class="card mb-0">
                 <div class="card-body p-2">
                     <ul class="nav nav-pills stts-tab">
                         <li class="nav-item">
-                            <a class="nav-link active" @click="changeId('all')" data-id="all" href="#">Semua<span class="badge badge-white"></span></a>
+                            <a class="nav-link" v-bind:class="{ 'active' : id_ket == 'all'}" @click="changeId('all')" data-id="all" href="javascript:void(0)">Semua<span class="badge badge-white"></span></a>
                         </li>
                         @foreach ($kategori as $ket)
                             <li class="nav-item">
-                                <a class="nav-link" @click="changeId({{ $ket->id }})" data-stts="{{ $ket->id }}" href="#">{{ $ket->nama }}<span class="badge badge-white"></span></a>
+                                <a class="nav-link" v-bind:class="{ 'active' : id_ket == '{{ $ket->id }}'}" @click="changeId({{ $ket->id }})" data-stts="{{ $ket->id }}" href="javascript:void(0)">{{ $ket->nama }}<span class="badge badge-white"></span></a>
                             </li>
                         @endforeach
                     </ul>
@@ -208,7 +343,13 @@
     </template>
     @endauth
 
+    <x-slot name="style">
+        <link rel="stylesheet" href="{{ asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}">
+    </x-slot>
+
     <x-slot name="script">
+        <script src="{{ asset('vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('js/plugin.js') }}"></script>
         <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script>
         <script>
@@ -238,15 +379,7 @@
         methods: {
             changeId: function (id) {
                 this.id_ket = id;
-
-                if (id == 'all') {
-                    var welcome = document.getElementById("welcome");
-                    welcome.classList.remove("d-none", "d-sm-block");
-                }
-                else {
-                    var welcome = document.getElementById("welcome");
-                    welcome.classList.add("d-none", "d-sm-block");
-                }
+                this.changeRoute('/app');
             },
             appBgImage(src) {
                 let bgImage = "{{ asset(Storage::url('')) }}" + "/" + src;
@@ -257,11 +390,11 @@
             changeRoute: function (route, reload = false) {
                 this.route = route;;
                 localStorage.setItem("route", route);
-                if (route == '/home') {
+                if (route == '/app') {
                     head = document.head || document.getElementsByTagName('head')[0],
                     style = document.createElement('style');
                     style.setAttribute("id", "style-home");
-                    style.innerHTML = "@media (max-width: 767px) { .section > *:first-child {margin-top: 60px!important;} }";
+                    style.innerHTML = "@media (max-width: 767px) { .section > *:first-child {margin-top: 70px!important;} }";
                     head.appendChild(style);
                 }
                 else {
@@ -295,6 +428,25 @@
                     $(this).parent().siblings().find('.nav-link').removeClass('active').find('.badge-white').removeClass('badge-white').addClass('badge-primary');
                     $(this).addClass('active').find('.badge-primary').removeClass('badge-primary').addClass('badge-white');
                 }); 
+                $("#berita-carousel").owlCarousel({
+                    items: 12,
+                    margin: 20,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    loop: true,
+                    // center: true,
+                    responsive: {
+                    0: {
+                        items: 2
+                    },
+                    578: {
+                        items: 3
+                    },
+                    768: {
+                        items: 4
+                    }
+                    }
+                });
             }); 
         </script>
     </x-slot>

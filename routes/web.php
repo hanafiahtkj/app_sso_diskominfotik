@@ -19,6 +19,10 @@ Route::get('/', [ UtamaController::class, "index" ])->name('welcome');
 
 Route::get('/?r=home', [ UtamaController::class, "index" ])->name('welcome2');
 
+Route::get('/app/{id}', [ UtamaController::class, "app" ])->name('app');
+
+Route::get('/app/{id}?r=home', [ UtamaController::class, "app" ])->name('app2');
+
 Route::get('/about', [ UtamaController::class, "index" ])->name('about');
 
 require __DIR__.'/web-sso.php';
