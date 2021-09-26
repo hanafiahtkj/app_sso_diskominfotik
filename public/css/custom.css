@@ -162,6 +162,23 @@
     #welcome {
         border-radius: 10px;
     }
+
+    .article.article-style-b .article-details .article-title a {
+        font-size: 14px;
+    }
+
+    .main-sidebar .sidebar-brand {
+        display: flex;
+        align-items: center;
+        /* flex-direction: column; */
+        width: 100%;
+        text-align: center;
+        height: 150px;
+        line-height: 60px;
+        padding-left: 1.5rem!important;
+        background-color: #9c27b0 !important;
+        background-image: linear-gradient(to right, #2196f3 , #9c27b0, #e91e63, #ff5722, #ffeb3b);
+    }
 }
 
 /* .navbar .nav-link, .navbar .nav-link.nav-link-user {
@@ -277,4 +294,8 @@ section .section-title:before {
 .bg-navbar {
     background-color: #9c27b0 !important;
     background-image: linear-gradient(to right, #2196f3 , #9c27b0, #e91e63, #ff5722, #ffeb3b);
+}
+
+.min-h-screen {
+    min-height: unset;
 }
