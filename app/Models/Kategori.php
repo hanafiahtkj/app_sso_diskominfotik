@@ -15,6 +15,8 @@ class Kategori extends Model
         'nama',
         'keterangan',
         'urut',
+        'path',
+        'file_name',
     ];
 
     public function aplikasi()

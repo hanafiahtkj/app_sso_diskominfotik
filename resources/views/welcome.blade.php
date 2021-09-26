@@ -39,7 +39,7 @@
                     <a href="javascript:void(0)" @click="changeId({{ $ket->id }})">
                         <article class="article">
                             <div class="article-header">
-                                <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">
+                                <div class="article-image" data-background="url('{{ isset($ket->path) ? asset(Storage::url($ket->path)) : '' }}')" style="background-image: url(&quot;{{ isset($ket->path) ? asset(Storage::url($ket->path)) : '' }}&quot;);">
                                 </div>
                                 <div class="article-title">
                                 <h2 class="text-white">{{ $ket->nama }}</h2>

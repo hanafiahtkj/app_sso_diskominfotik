@@ -106,7 +106,7 @@
                   </div>
                   <div class="invalid-feedback feedback-id_kategori"></div>
                 </div>
-                <template v-if="is_display == true">
+                <div v-show ="is_display == true">
                 <hr>
                 <div class="form-group mt-4">
                   <label for="form-urut">No Urut</label>
@@ -123,10 +123,19 @@
                   <textarea class="form-control" id="form-keterangan2" rows="4" v-model="fkategori.keterangan"></textarea>
                   <div class="invalid-feedback feedback-keterangan"></div>
                 </div>
+                <div class="form-group">
+                  <label>Logo</label>
+                  <div class="mt-2">
+                    <div id="image-preview2" class="image-preview">
+                      <label for="image-upload2" id="image-label2">Choose File</label>
+                      <input type="file" name="foto2" id="image-upload2">
+                    </div>
+                  </div>
+                </div>
                 <input type="hidden" name="id_kategori" v-model="fkategori.id">
                 <button type="button" class="btn btn-primary mr-2" @click="simpanKategori()">Simpan</button>
                 <button type="button" class="btn btn-light" @click="cancelKategori()">Batal</button>
-                </template>
+              </div>
               </div>
             </div>
           </div>
@@ -174,19 +183,25 @@
         {
           this.is_display = true;
           this.fkategori = {};
+          $("#image-upload2").val('');
+          $('#image-preview2').css({"background-image" : "url('')", "background-size" : "cover", "background-position" : "center center"});
         },
         editKategori: function () 
         {
+          $("#image-upload2").val('');
+          $('#image-preview2').css({"background-image" : "url('')", "background-size" : "cover", "background-position" : "center center"});
           this.is_display = true;
           for (var key in this.kategori) {
             var entry = this.kategori[key];
-            if (entry.id === this.id_kategori) {
+            if (entry.id == this.id_kategori) {
               this.fkategori = {
                 id         : this.kategori[key].id,
                 nama       : this.kategori[key].nama,
                 keterangan : this.kategori[key].keterangan,
                 urut       : this.kategori[key].urut,
               };
+              var url = (this.kategori[key].path != null) ? "{{ asset(Storage::url('')) }}/" + this.kategori[key].path : "'xx'";
+              $('#image-preview2').css({"background-image" : "url('" + url + "')", "background-size" : "cover", "background-position" : "center center"});
             }
           }
         },
@@ -233,6 +248,7 @@
           for ( var key in this.fkategori ) {
             formData.append(key, this.fkategori[key]);
           }
+          formData.append('foto', $('#image-upload2')[0].files[0]);
           formData.append('_token', '{{ csrf_token() }}');
           $.ajax({
             type: 'POST',
@@ -292,6 +308,16 @@
         input_field: "#image-upload",   // Default: .image-upload
         preview_box: "#image-preview",  // Default: .image-preview
         label_field: "#image-label",    // Default: .image-label
+        label_default: "Choose File",   // Default: Choose File
+        label_selected: "Change File",  // Default: Change File
+        no_label: false,                // Default: false
+        success_callback: null          // Default: null
+      });
+
+      $.uploadPreview({
+        input_field: "#image-upload2",   // Default: .image-upload
+        preview_box: "#image-preview2",  // Default: .image-preview
+        label_field: "#image-label2",    // Default: .image-label
         label_default: "Choose File",   // Default: Choose File
         label_selected: "Change File",  // Default: Change File
         no_label: false,                // Default: false
