@@ -30,7 +30,7 @@
         <div class="row mt-4 fixed-top-c">
             <div class="col-12">
                 <div class="card mb-0">
-                <div class="card-body p-2">
+                <div class="card-body p-0">
                     <ul class="nav nav-pills stts-tab">
                         <li class="nav-item">
                             <a class="nav-link active" @click="changeId('all')" data-id="all" href="#">Semua<span class="badge badge-white"></span></a>
