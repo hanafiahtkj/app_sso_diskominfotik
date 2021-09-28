@@ -75,87 +75,24 @@
                 <div class="col-12">
                     <div class="owl-carousel owl-theme" id="berita-carousel">
                         {{-- <div class="col-6 col-sm-4 col-md-4 col-lg-3"> --}}
+                        @foreach ($berita as $item)
                             <article class="article article-style-b">
                                 <div class="article-header">
-                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
+                                    <div class="article-image" data-background="{{ $item->gambar }}" style="background-image: url(&quot;{{ $item->gambar }}&quot;);"></div>
                                     <div class="article-title">
-                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
+                                        <h2><a target="_blank" href="{{ $item->alamat }}">{{ $item->judul }}</a></h2>
                                     </div>
                                 </div>
                                 <div class="article-details">
                                     <div class="article-title">
                                         {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
                                         <div class="article-cta">
-                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                            <a target="_blank" href="{{ $item->alamat }}">Selengkapnya <i class="fas fa-chevron-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </article>
-                            <article class="article article-style-b">
-                                <div class="article-header">
-                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                    <div class="article-title">
-                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                    </div>
-                                </div>
-                                <div class="article-details">
-                                    <div class="article-title">
-                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
-                                        <div class="article-cta">
-                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article article-style-b">
-                                <div class="article-header">
-                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                    <div class="article-title">
-                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                    </div>
-                                </div>
-                                <div class="article-details">
-                                    <div class="article-title">
-                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
-                                        <div class="article-cta">
-                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article article-style-b">
-                                <div class="article-header">
-                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                    <div class="article-title">
-                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                    </div>
-                                </div>
-                                <div class="article-details">
-                                    <div class="article-title">
-                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
-                                        <div class="article-cta">
-                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article article-style-b">
-                                <div class="article-header">
-                                    <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);"></div>
-                                    <div class="article-title">
-                                        <h2><a href="javascript:void(0)">Excepteur sint occaecat cupidatat non proident</a></h2>
-                                    </div>
-                                </div>
-                                <div class="article-details">
-                                    <div class="article-title">
-                                        {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
-                                        <div class="article-cta">
-                                            <a target="_blank" href="javascript:void(0)">Selengkapnya <i class="fas fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            
+                        @endforeach
                         {{-- </div> --}}
                     </div>
                 </div>
