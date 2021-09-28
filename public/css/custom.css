@@ -32,7 +32,8 @@
     }
 
     .article .article-header .article-title h2 {
-        font-size: 12px!important;
+        font-size: 10px!important;
+        line-height: 15px!important;
     }
 
     .fixed-top-c {
