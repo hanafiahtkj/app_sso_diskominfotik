@@ -67,7 +67,7 @@
 
         <div class="py-0 pb-3 px-0 sm:px-0">
             <h2 class="section-title">Berita Terkini</h2>
-            <p class="section-lead">Berita terkini di banjarmasinkota.go.id.</p>
+            <p class="section-lead">Dari website berita.banjarmasinkota.go.id</p>
         </div>
 
         <div class="overflow-hidden sm:rounded-lg">
