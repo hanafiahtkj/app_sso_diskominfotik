@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
 
         <livewire:styles />
+
         <!-- Scripts -->
         <script defer src="{{ asset('vendor/alpine.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
@@ -58,7 +59,6 @@
                   <footer class="main-footer">
                         <div class="footer-left d-none d-md-block">
                         <p>© Designed by <a href="https://getstisla.com/" rel="nofollow">Stisla</a> || Develoved by Diskominfotik Kota Banjarmsin</p>
-                        {{-- <p>Copyright © Diskominfotik Kota Banjarmasin</p> --}}
                     </div>
                   </footer>
                   
@@ -87,10 +87,12 @@
         <script src="{{ asset('stisla/js/scripts.js') }}"></script>
 
         <livewire:scripts />
+        
+        <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
+
         <script src="{{ mix('js/app.js') }}" defer></script>
 
         <script src="{{ asset('js/plugin.js') }}"></script>
-        {{-- <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script> --}}
 
         @isset($script)
             {{ $script }}

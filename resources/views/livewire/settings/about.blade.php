@@ -10,7 +10,14 @@
 
         <x-slot name="form">
             <div class="form-group col-span-6 sm:col-span-5">
-                <textarea id="konten" class="summernote-simple mt-1 block w-full form-control shadow-none" rows="3" wire:model.defer="pages.konten" style="height:250px!important"></textarea>
+                <x-jet-label for="judul" value="{{ __('Judul') }}" />
+                <x-jet-input id="judul" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="pages.judul" />
+                <x-jet-input-error for="pages.judul" class="mt-2" />
+            </div>
+
+            <div class="form-group col-span-6 sm:col-span-5" wire:ignore>
+                <x-jet-label for="konten" value="{{ __('Konten') }}" />
+                <textarea id="konten" class="summernote-simple-liveware mt-1 block w-full form-control shadow-none" rows="3" wire:model.defer="pages.konten" style="height:250px!important">{{ $pages->konten }}</textarea>
                 <x-jet-input-error for="pages.konten" class="mt-2" />
             </div>
         </x-slot>
@@ -34,5 +41,21 @@
 
     <x-slot name="script">
         <script src="{{ asset('vendor/summernote-0.8.18/summernote-bs4.js') }}"></script>
+        <script>
+            $(".summernote-simple-liveware").summernote({
+                dialogsInBody: true,
+                minHeight: 150,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough']],
+                    ['para', ['paragraph']]
+                ],
+                callbacks: {
+                    onChange: function(contents, $editable) {
+                        @this.set('pages.konten', contents);
+                    }
+                }
+            });
+        </script>
     </x-slot>
 </div>

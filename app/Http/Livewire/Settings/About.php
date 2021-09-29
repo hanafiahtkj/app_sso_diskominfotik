@@ -17,6 +17,7 @@ class About extends Component
     protected function getRules()
     {
         return [
+            'pages.judul' => 'required',
             'pages.konten' => 'required'
         ];
     }
@@ -28,7 +29,7 @@ class About extends Component
         Pages::query()
         ->where('id', $this->page_id)
         ->update([
-            'judul'  => 'about',
+            'judul'  => $this->pages->judul,
             "konten" => $this->pages->konten,
             'slug'   => 'about'
         ]);
