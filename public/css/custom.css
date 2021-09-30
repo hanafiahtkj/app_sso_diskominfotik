@@ -301,3 +301,7 @@ section .section-title:before {
 .min-h-screen {
     min-height: unset;
 }
+
+.article .article-header .article-title h2 {
+    font-size: inherit;
+}
