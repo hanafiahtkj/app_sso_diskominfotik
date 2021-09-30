@@ -6,16 +6,17 @@ use Livewire\Component;
 use App\Models\User;
 use App\Models\Kategori;
 use App\Models\Settings;
+use App\Models\Aplikasi;
 
 class Home extends Component
 {
     public $settings;
-    public $kategori;
+    public $aplikasi;
     public $berita;
 
     public function mount()
     {
-        $this->kategori = Kategori::with('aplikasi')->orderBy('urut', 'asc')->get();
+        $this->aplikasi = Aplikasi::where('id_kategori', 9)->get();
         $this->settings = Settings::all()->sortBy('urut')->pluck('value', 'field');
         $this->berita   = $this->_getBerita();
     }

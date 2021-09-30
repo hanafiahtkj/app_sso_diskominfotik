@@ -305,3 +305,7 @@ section .section-title:before {
 .article .article-header .article-title h2 {
     font-size: inherit;
 }
+
+.article.article-style-b .article-details .article-title a {
+    font-size: 14px;
+}

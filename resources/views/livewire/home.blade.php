@@ -31,15 +31,15 @@
 
     <div class="overflow-hidden sm:rounded-lg">
         <div class="row" id="app-kategori">
-            @foreach ($kategori as $ket)
+            @foreach ($aplikasi as $app)
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a href="javascript:void(0)" @click="changeId({{ $ket->id }})">
+                <a href="javascript:void(0)">
                     <article class="article">
                         <div class="article-header">
-                            <div class="article-image" data-background="url('{{ isset($ket->path) ? asset(Storage::url($ket->path)) : '' }}')" style="background-image: url(&quot;{{ isset($ket->path) ? asset(Storage::url($ket->path)) : '' }}&quot;);">
+                            <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-image: url(&quot;{{ isset($ket->path) ? asset(Storage::url($ket->path)) : '' }}&quot;);">
                             </div>
                             <div class="article-title">
-                            <h2 class="text-white">{{ $ket->nama }}</h2>
+                            <h2 class="text-white">{{ $app->nama }}</h2>
                             </div>
                         </div>
                     </article>
@@ -77,7 +77,7 @@
                             <div class="article-header">
                                 <div class="article-image" data-background="{{ $item->gambar }}" style="background-image: url(&quot;{{ $item->gambar }}&quot;);"></div>
                                 <div class="article-title">
-                                    <h2><a target="_blank" href="{{ $item->alamat }}">{{ $item->judul }}</a></h2>
+                                    <h2><a target="_blank" href="{{ $item->alamat }}">{{\Illuminate\Support\Str::limit($item->judul, 100)}}</a></h2>
                                 </div>
                             </div>
                             <div class="article-details">
