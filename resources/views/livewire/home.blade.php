@@ -33,7 +33,7 @@
         <div class="row" id="app-kategori">
             @foreach ($aplikasi as $app)
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a href="javascript:void(0)">
+                <a target="_blank" href="@auth {{ $app->base_url_sso}} @else {{ $app->base_url }} @endauth">
                     <article class="article">
                         <div class="article-header">
                             <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-image: url(&quot;{{ isset($ket->path) ? asset(Storage::url($ket->path)) : '' }}&quot;);">
