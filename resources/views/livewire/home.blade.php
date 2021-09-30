@@ -36,7 +36,7 @@
                 <a target="_blank" href="@auth {{ $app->base_url_sso}} @else {{ $app->base_url }} @endauth">
                     <article class="article">
                         <div class="article-header">
-                            <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-image: url(&quot;{{ isset($ket->path) ? asset(Storage::url($ket->path)) : '' }}&quot;);">
+                            <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-image: url(&quot;{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}&quot;);">
                             </div>
                             <div class="article-title">
                             <h2 class="text-white">{{ $app->nama }}</h2>
