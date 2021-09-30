@@ -28,12 +28,14 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
+        {{-- <x-jet-action-message class="mr-3" on="saved">
             {{ __('Tersimpan.') }}
-        </x-jet-action-message>
+        </x-jet-action-message> --}}
 
         <x-jet-button>
             {{ __('Simpan') }}
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>
+
+<x-notify-message on="saved" type="success" :message="__('Tersimpan.')" />

@@ -35,27 +35,28 @@
 
     <x-notify-message on="saved" type="success" :message="__($button['submit_response_notyf'])" />
 
-    <x-slot name="style">
-        <link rel="stylesheet" href="{{ asset('vendor/summernote-0.8.18/summernote-bs4.css') }}">
-    </x-slot>
-
-    <x-slot name="script">
-        <script src="{{ asset('vendor/summernote-0.8.18/summernote-bs4.js') }}"></script>
-        <script>
-            $(".summernote-simple-liveware").summernote({
-                dialogsInBody: true,
-                minHeight: 150,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough']],
-                    ['para', ['paragraph']]
-                ],
-                callbacks: {
-                    onChange: function(contents, $editable) {
-                        @this.set('pages.konten', contents);
-                    }
-                }
-            });
-        </script>
-    </x-slot>
 </div>
+
+<x-slot name="style">
+    <link rel="stylesheet" href="{{ asset('vendor/summernote-0.8.18/summernote-bs4.css') }}">
+</x-slot>
+
+<x-slot name="script">
+    <script src="{{ asset('vendor/summernote-0.8.18/summernote-bs4.js') }}"></script>
+    <script>
+        $(".summernote-simple-liveware").summernote({
+            dialogsInBody: true,
+            minHeight: 150,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['para', ['paragraph']]
+            ],
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    @this.set('pages.konten', contents);
+                }
+            }
+        });
+    </script>
+</x-slot>
