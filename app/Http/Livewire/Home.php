@@ -40,7 +40,7 @@ class Home extends Component
 
         curl_close($curl);
 
-        return json_decode($response);
+        return ($response) ? json_decode($response) : [];
     }
 
     public function render()

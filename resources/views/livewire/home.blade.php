@@ -38,9 +38,6 @@
                         <div class="article-header">
                             <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-image: url(&quot;{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}&quot;);">
                             </div>
-                            <div class="article-title">
-                            <h2 class="text-white">{{ $app->nama }}</h2>
-                            </div>
                         </div>
                     </article>
                 </a>
@@ -51,9 +48,6 @@
                     <article class="article">
                         <div class="article-header">
                             <div class="article-image" data-background="{{ asset('img/products/product-3-50.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">
-                            </div>
-                            <div class="article-title">
-                            <h2 class="text-white">Semua</h2>
                             </div>
                         </div>
                     </article>
