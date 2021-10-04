@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\UsersAplikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -53,5 +54,16 @@ Route::middleware('auth:sanctum')->post('/sso/is-valid', function (Request $requ
             'status' => false,
         ]);
     }
+});
+
+Route::post('/sso/register-app', function (Request $req) {
+    $data = new UsersAplikasi;
+    $data->id_user = $req->id_user;
+    $data->id_aplikasi = $req->id_aplikasi;
+    $data->save();
+
+    return response()->json([
+        'status' => ($data != null) ? true : false,
+    ]);
 });
 
