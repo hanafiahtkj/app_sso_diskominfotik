@@ -132,7 +132,6 @@
                     </div>
                   </div>
                 </div>
-                <input type="hidden" name="id_kategori" v-model="fkategori.id">
                 <button type="button" class="btn btn-primary mr-2" @click="simpanKategori()">Simpan</button>
                 <button type="button" class="btn btn-light" @click="cancelKategori()">Batal</button>
               </div>
