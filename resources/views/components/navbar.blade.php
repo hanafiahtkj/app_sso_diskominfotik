@@ -9,7 +9,7 @@ $user = auth()->user();
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     </div>
-    <a href="{{ url('') }}" @click="changeRoute('/home')" class="navbar-brand sidebar-gone-show nav-collapse-toggle nav-link"><img src="{{ asset('img/logo.png') }}" width="202" height="51" class="d-inline-block align-top" alt=""></a>
+    <a href="{{ route('welcome') }}" class="navbar-brand sidebar-gone-show nav-collapse-toggle nav-link"><img src="{{ asset('img/logo.png') }}" width="202" height="51" class="d-inline-block align-top" alt=""></a>
     
     <ul class="navbar-nav navbar-right">
         

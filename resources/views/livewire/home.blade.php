@@ -44,7 +44,7 @@
             </div>
             @endforeach
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a href="javascript:void(0)" @click="changeId('all')">
+                <a href="{{ route('apps') }}">
                     <article class="article">
                         <div class="article-header">
                             <div class="article-image" data-background="{{ asset('img/plusx.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">

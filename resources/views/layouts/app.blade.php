@@ -51,6 +51,8 @@
                         {{-- <p>Copyright © Diskominfotik Kota Banjarmasin</p> --}}
                     </div>
                   </footer>
+
+                  @include('components.navbar-bottom')
             </div>
         </div>
 

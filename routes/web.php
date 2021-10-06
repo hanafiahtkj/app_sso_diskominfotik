@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ UtamaController::class, "index" ])->name('welcome');
 
-Route::get('/?r=home', [ UtamaController::class, "index" ])->name('welcome2');
+Route::get('/apps', [ UtamaController::class, "apps" ])->name('apps');
 
 Route::get('/about', [ UtamaController::class, "index" ])->name('about');
 

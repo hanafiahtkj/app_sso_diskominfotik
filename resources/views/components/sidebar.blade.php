@@ -2,7 +2,7 @@
 $links = [
     [
         "icon" => "fas fa-home",
-        "href" => "welcome2",
+        "href" => "welcome",
         "text" => "Beranda",
         "is_multi" => false,
     ],

@@ -15,4 +15,13 @@ class UtamaController extends Controller
         ];
         return view('welcome', $data);
     }
+
+    public function apps()
+    {
+        $data = [
+            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
+        ];
+
+        return view('apps', $data);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Kategori;
 
 class GuestLayout extends Component
 {
@@ -13,6 +14,10 @@ class GuestLayout extends Component
      */
     public function render()
     {
-        return view('layouts.guest');
+        $data = [
+            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
+        ];
+
+        return view('layouts.guest', $data);
     }
 }
