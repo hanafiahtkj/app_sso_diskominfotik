@@ -14,13 +14,13 @@ $user = auth()->user();
                 </li>
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}" ><div class="text-center" style="
+                    <a class="nav-link" href="{{ url('/user/profile') }}" ><div class="text-center" style="
                         line-height: 13px;
                     "><i class="fas fa-user fa-2x"></i></div><span>Profil</span></a>
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}"><div class="text-center" style="
+                    <a class="nav-link {{ Request::routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}"><div class="text-center" style="
                         line-height: 13px;
                     "><i class="fas fa-user fa-2x"></i></div><span>Akun</span></a>
                 </li>
