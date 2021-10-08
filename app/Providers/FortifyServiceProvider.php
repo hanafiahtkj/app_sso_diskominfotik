@@ -26,6 +26,10 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
             {
+                if ($request->input('redirect')) {
+                    return redirect($request->input('redirect'));
+                }
+                
                 if ($request->input('is_sso')) {
                     return response()->json([
                         'status' => true,
@@ -34,10 +38,6 @@ class FortifyServiceProvider extends ServiceProvider
 
                 if (Auth::user()->hasRole(['Admin'])) {
                     return redirect('/admin-dashboard');
-                }
-
-                if ($request->input('redirect')) {
-                    return redirect($request->input('redirect'));
                 }
 
                 return redirect('/');
