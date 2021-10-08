@@ -15,7 +15,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ url('/login').((request()->get('redirect')) ? '?redirect='.request()->get('redirect') : '' ) }}">
             @csrf
 
             <div>
