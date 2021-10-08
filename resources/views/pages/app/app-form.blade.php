@@ -49,13 +49,6 @@
                 <div class="invalid-feedback feedback-nama"></div>
               </div>
               <div class="form-group">
-                <div class="form-check">
-                  <label for="form-nama">SSO?</label>
-                  <input class="form-check-input" name="is_sso" type="checkbox" value="1" id="form_is_sso" {{ isset($app) ? (($app->is_sso == 1) ? 'checked' : '') : '' }}>
-                </div>
-                <div class="invalid-feedback feedback-is_sso"></div>
-              </div>
-              <div class="form-group">
                 <label for="form-base_url">Base Url</label>
                 <input type="text" name="base_url" class="form-control" id="form-base_url" value="{{ isset($app) ? $app->base_url : '' }}">
                 <div class="invalid-feedback feedback-base_url"></div>
@@ -77,6 +70,15 @@
                     <label for="image-upload" id="image-label">Choose File</label>
                     <input type="file" name="foto" id="image-upload">
                   </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="d-block">SSO?</label>
+                <div class="form-check">
+                  <input class="form-check-input" name="is_sso" type="checkbox" value="1" id="form_is_sso" {{ isset($app) ? (($app->is_sso == 1) ? 'checked' : '') : '' }}>
+                  <label class="form-check-label" for="defaultCheck1">
+                    Ya
+                  </label>
                 </div>
               </div>
             </div>

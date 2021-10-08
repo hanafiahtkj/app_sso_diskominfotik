@@ -38,7 +38,7 @@
                     {{ $app->base_url_sso}} 
                 @else 
                     @if($app->is_sso == 1) 
-                        {{ url('login?redirect='.$base_url_sso) }} 
+                        {{ url('login?redirect='.$app->base_url_sso) }} 
                     @else 
                         {{ $app->base_url }} 
                     @endif 
