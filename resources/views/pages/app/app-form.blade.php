@@ -49,8 +49,10 @@
                 <div class="invalid-feedback feedback-nama"></div>
               </div>
               <div class="form-group">
-                <label for="form-nama">SSO?</label>
-                <input class="form-check-input" type="checkbox" value="1" id="form_is_sso" {{ isset($app) ? (($app->is_sso == 1) ? 'checked' : '') : '' }}>
+                <div class="form-check">
+                  <label for="form-nama">SSO?</label>
+                  <input class="form-check-input" name="is_sso" type="checkbox" value="1" id="form_is_sso" {{ isset($app) ? (($app->is_sso == 1) ? 'checked' : '') : '' }}>
+                </div>
                 <div class="invalid-feedback feedback-is_sso"></div>
               </div>
               <div class="form-group">
