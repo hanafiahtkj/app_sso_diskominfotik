@@ -45,13 +45,12 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="form-nama">Nama Aplikasi</label>
-                <input class="form-check-input" type="checkbox" value="1" id="form_is_sso" {{ isset($app) ? (($app->is_sso == 1) ? 'checked' : '') : '' }}>
                 <input type="text" name="nama" class="form-control" id="form-nama" value="{{ isset($app) ? $app->nama : '' }}">
                 <div class="invalid-feedback feedback-nama"></div>
               </div>
               <div class="form-group">
                 <label for="form-nama">SSO?</label>
-                <input type="text" name="is_sso" class="form-control" id="form-is_sso" value="{{ isset($app) ? $app->nama : '' }}">
+                <input class="form-check-input" type="checkbox" value="1" id="form_is_sso" {{ isset($app) ? (($app->is_sso == 1) ? 'checked' : '') : '' }}>
                 <div class="invalid-feedback feedback-is_sso"></div>
               </div>
               <div class="form-group">
