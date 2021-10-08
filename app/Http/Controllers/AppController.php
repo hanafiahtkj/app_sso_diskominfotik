@@ -64,6 +64,7 @@ class AppController extends Controller
 
         $app = [
             'nama'               => $request->input('nama'),
+            'is_sso'             => $request->input('is_sso'),
             'id_kategori'        => $request->input('id_kategori'),
             'keterangan'         => $request->input('keterangan'),
             'base_url'           => $request->input('base_url'),
@@ -131,6 +132,7 @@ class AppController extends Controller
 
         $app = [
             'nama'               => $request->input('nama'),
+            'is_sso'             => $request->input('is_sso'),
             'id_kategori'        => $request->input('id_kategori'),
             'keterangan'         => $request->input('keterangan'),
             'base_url'           => $request->input('base_url'),

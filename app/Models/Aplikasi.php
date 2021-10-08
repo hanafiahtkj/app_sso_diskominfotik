@@ -19,11 +19,8 @@ class Aplikasi extends Model
         'base_url_sso',
         'path',
         'file_name',
+        'is_sso',
     ];
-
-    // protected $appends = [
-    //     'profile_photo_url',
-    // ];
 
     public static function search($query)
     {
