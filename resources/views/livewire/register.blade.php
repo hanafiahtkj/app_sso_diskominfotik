@@ -1,10 +1,7 @@
 <div>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <div style="text-align:center;">
-                <h1><i class="fas fa-user-plus fa-3x text-primar"></i></h1>
-                {{-- <p>Banjarmasin Dalam Genggaman</p> --}}
-            </div>
+            <x-jet-authentication-card-logo />
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
