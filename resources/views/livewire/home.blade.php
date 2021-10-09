@@ -33,7 +33,7 @@
         <div class="row" id="app-kategori">
             @foreach ($aplikasi as $app)
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a target="_blank" href="
+                <a href="
                 @auth 
                     {{ $app->base_url_sso}} 
                 @else 
@@ -80,14 +80,14 @@
                             <div class="article-header">
                                 <div class="article-image" data-background="{{ $item->gambar }}" style="background-image: url(&quot;{{ $item->gambar }}&quot;);"></div>
                                 <div class="article-title">
-                                    <h2><a target="_blank" href="{{ $item->alamat }}">{{\Illuminate\Support\Str::limit($item->judul, 100)}}</a></h2>
+                                    <h2><a href="{{ $item->alamat }}">{{\Illuminate\Support\Str::limit($item->judul, 100)}}</a></h2>
                                 </div>
                             </div>
                             <div class="article-details">
                                 <div class="article-title">
                                     {{-- <p style="min-height: 65px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> --}}
                                     <div class="article-cta">
-                                        <a target="_blank" href="{{ $item->alamat }}">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                        <a href="{{ $item->alamat }}">Selengkapnya <i class="fas fa-chevron-right"></i></a>
                                     </div>
                                 </div>
                             </div>
