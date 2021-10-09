@@ -26,7 +26,7 @@
 
     <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">Pelayanan Publik</h2>
-        <p class="section-lead">Aplikasi Pelayanan Publik di banjarmasinkota.go.id.</p>
+        <p class="section-lead">Aplikasi Pelayanan Publik</p>
     </div>
 
     <div class="overflow-hidden sm:rounded-lg">
