@@ -14,9 +14,7 @@ class GuestLayout extends Component
      */
     public function render()
     {
-        $data = [
-            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
-        ];
+        $data = [];
 
         return view('layouts.guest', $data);
     }

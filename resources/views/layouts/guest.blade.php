@@ -81,9 +81,11 @@
         <script defer src="{{ asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
         <script defer src="{{ asset('stisla/js/modules/chart.min.js') }}"></script>
         <script defer src="{{ asset('vendor/select2/select2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/jQuery-Touch-Events/jquery.mobile-events.min.js') }}"></script>
 
         <script src="{{ asset('stisla/js/stisla.js') }}"></script>
         <script src="{{ asset('stisla/js/scripts.js') }}"></script>
+        <script src="{{ asset('stisla/js/custom.js') }}"></script>
 
         <livewire:scripts />
 
@@ -94,72 +96,6 @@
         @isset($script)
             {{ $script }}
         @endisset
-
-        <script src="{{ asset('js/plugin.js') }}"></script>
-        <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script>
-        <script>
-        
-            // ----- VUE JS ----- //
-            let dataVue= {
-                id_ket : 'all',
-                kategori : @json($kategori),
-                // route  : '/home',
-            };
-
-            console.log(dataVue);
-            
-            var app = new Vue({
-                el: '#app',
-                data: dataVue,
-                mounted () {
-                    // var route = localStorage.getItem("route") ? localStorage.getItem("route") : this.route;
-                    // this.changeRoute(route);
-                },
-                methods: {
-                    changeId: function (id) {
-                        this.id_ket = id;
-                        //this.changeRoute('/apps');
-                    },
-                    appBgImage(src) {
-                        let bgImage = "{{ asset(Storage::url('')) }}" + "/" + src;
-                        return {
-                            backgroundImage: `url("${bgImage}")`,
-                        }
-                    },
-                    // changeRoute: function (route, reload = false) {
-                        // this.route = route;
-                        // localStorage.setItem("route", route);
-
-                        // var style = document.getElementById("style-home");
-                        // if (style != null) {
-                        //     style.remove();
-                        // }
-
-                        // head = document.head || document.getElementsByTagName('head')[0],
-                        // style = document.createElement('style');
-                        // style.setAttribute("id", "style-home");
-
-                        // if (route == '/apps') {
-                        //     style.innerHTML = "@media (max-width: 767px) { .section > *:first-child {margin-top: 70px!important;} }";
-                        //     head.appendChild(style);
-                        // }
-                        // else {
-                        //     style.innerHTML = "@media (max-width: 767px) { .section > *:first-child {margin-top: 18px!important;} }";
-                        //     head.appendChild(style);
-                        // }
-                    // },
-                },
-                computed: {
-                    filteredKategori() {
-                        let tempKategori = this.kategori
-                        tempKategori = tempKategori.filter((item) => {
-                            return ((item.id == this.id_ket) || (this.id_ket == 'all'))
-                        })
-                        return tempKategori;
-                    }
-                }
-            });
-        </script>
     
     </body>
 </html>

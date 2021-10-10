@@ -6,3 +6,7 @@
  */
 
 "use strict";
+
+$('.article').on('singletap', function(e) { 
+    $(this).addClass('active');
+});

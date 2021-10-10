@@ -71,9 +71,11 @@
         <script defer src="{{ asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
         <script defer src="{{ asset('stisla/js/modules/chart.min.js') }}"></script>
         <script defer src="{{ asset('vendor/select2/select2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/jQuery-Touch-Events/jquery.mobile-events.min.js') }}"></script>
 
         <script src="{{ asset('stisla/js/stisla.js') }}"></script>
         <script src="{{ asset('stisla/js/scripts.js') }}"></script>
+        <script src="{{ asset('stisla/js/custom.js') }}"></script>
 
         <livewire:scripts />
 

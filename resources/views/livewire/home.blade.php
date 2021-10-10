@@ -33,7 +33,7 @@
         <div class="row" id="app-kategori">
             @foreach ($aplikasi as $app)
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a href="
+                <a class="onTap" href="
                 @auth 
                     {{ $app->base_url_sso}} 
                 @else 

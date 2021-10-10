@@ -27,19 +27,4 @@
   </section>
 </div>
 
-  <x-slot name="extra_css">
-    <link rel="stylesheet" href="{{ asset('plugins/DataTables/datatables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/DataTables/DataTables-1.10.24/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/iziToast/dist/css/iziToast.min.css') }}">
-  </x-slot>
-
-  <x-slot name="extra_js">
-    <!-- <script src="{{ asset('plugins/DataTables/datatables.min.js') }}"></script>
-    <script src="{{ asset('plugins/DataTables/DataTables-1.10.24/js/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('plugins/iziToast/dist/js/iziToast.min.js') }}"></script> -->
-    <script>
-    </script>
-  </x-slot>
-
 </x-app-layout>

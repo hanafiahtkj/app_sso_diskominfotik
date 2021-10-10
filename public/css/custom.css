@@ -192,6 +192,32 @@ body {
         background-color: #2969b0 !important;
         background-image: unset!important;
     } */
+
+    /* a.active .article .article-header .article-image {
+        border-bottom: 1px solid #2969b0;
+    }
+    
+    a.active .article {
+        border-left: 1px solid #2969b0;
+        border-right: 1px solid #2969b0;
+    }
+    
+    a.active .article .article-header {
+        border-top: 1px solid #2969b0;
+    } */
+
+    .article.active .article-header .article-image {
+        border-bottom: 1px solid #2969b0;
+    }
+    
+    .article.active {
+        border-left: 1px solid #2969b0;
+        border-right: 1px solid #2969b0;
+    }
+    
+    .article.active .article-header {
+        border-top: 1px solid #2969b0;
+    }
 }
 
 /* .navbar .nav-link, .navbar .nav-link.nav-link-user {

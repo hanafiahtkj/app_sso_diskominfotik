@@ -26,11 +26,11 @@
 
         <div class="overflow-hidden sm:rounded-lg">
             <div class="row">
-                <template v-for="app in kat.aplikasi">
+                <template v-for="(app, index) in kat.aplikasi">
                     <div class="col-6 col-sm-4 col-md-4 col-lg-3" :key="app.id">
-                        <article class="article article-style-b">
+                        <article class="article article-style-b" v-bind:class="{ active: app.isActive }">
                             <div class="article-header header-radius mb-4">
-                                <a :href="@auth 
+                                <a onClick="changeClass(this)" :href="@auth 
                                     app.base_url_sso 
                                 @else 
                                     (app.is_sso == 1) ? '{{ url("login?redirect=")}}' + app.base_url_sso : app.base_url
