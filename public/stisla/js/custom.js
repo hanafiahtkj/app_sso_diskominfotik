@@ -7,6 +7,6 @@
 
 "use strict";
 
-$('.article').on('singletap', function(e) { 
+$('.article').on('tapstart', function(e) { 
     $(this).addClass('active');
 });
