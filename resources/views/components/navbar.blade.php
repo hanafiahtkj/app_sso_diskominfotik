@@ -5,11 +5,11 @@ $user = auth()->user();
 <div class="navbar-bg bg-transparent"></div>
 <nav class="navbar navbar-expand-lg main-navbar fixed-top bg-navbar">
 <div class="container">
-    <a class="navbar-brand sidebar-gone-hide" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 51px;"></a>
+    <a class="navbar-brand sidebar-gone-hide" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 55px;"></a>
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     </div>
-    <a href="{{ route('welcome') }}" class="navbar-brand sidebar-gone-show nav-collapse-toggle nav-link"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 51px;"></a>
+    <a href="{{ route('welcome') }}" class="navbar-brand sidebar-gone-show nav-collapse-toggle nav-link"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 55px;"></a>
     
     <ul class="navbar-nav navbar-right">
         
