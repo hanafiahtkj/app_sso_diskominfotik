@@ -1,6 +1,6 @@
 <div>
     <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg">
-        <div class="p-6 sm:px-10 bg-white text-center">
+        <div class="p-6 sm:px-10 bg-light text-center">
         
             <div class="mt-0 text-2xl">
                 {{ $settings['judul'] }}
@@ -13,12 +13,12 @@
             <div class="mt-6 d-none d-sm-block">
             @auth
                 @role('Admin')
-                    <a href="{{ url('/admin-dashboard') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Dasbor</a>
+                    <a href="{{ url('/admin-dashboard') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Dasbor</a>
                 @endrole
-                <a href="{{ url('/user/profile') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Profil</a>
+                <a href="{{ url('/user/profile') }}" class="btn btn-success icon-left mr-2" style="width: 100px;">Profil</a>
             @else
-                <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Masuk</a>
-                <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Daftar</a>
+                <a href="{{ route('login') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Masuk</a>
+                <a href="{{ route('register') }}" class="btn btn-success icon-left mr-2" style="width: 100px;">Daftar</a>
             @endauth
             </div>
         </div>

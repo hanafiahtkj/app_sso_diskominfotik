@@ -182,8 +182,7 @@ body {
         height: 150px;
         line-height: 60px;
         padding-left: 1.5rem!important;
-        background-color: #9c27b0;
-        background-image: linear-gradient(to right, #2196f3 , #9c27b0, #e91e63, #ff5722, #ffeb3b);
+        background-color: #2969b0 !important;
         /* background-color: #2969b0 !important;
         background-image: unset!important; */
     }
@@ -346,3 +345,7 @@ section .section-title:before {
 .article.article-style-b .article-details .article-title a {
     font-size: 14px;
 }
+
+/* .navbar .nav-link.nav-link-user, .navbar .nav-link {
+    color: rgba(107, 114, 128, var(--text-opacity))
+} */
