@@ -16,7 +16,7 @@ class Home extends Component
 
     public function mount()
     {
-        $this->aplikasi = Aplikasi::where('id_kategori', 9)->get();
+        $this->aplikasi = Aplikasi::where('id_kategori', 14)->get();
         $this->settings = Settings::all()->sortBy('urut')->pluck('value', 'field');
         $this->berita   = $this->_getBerita();
     }
