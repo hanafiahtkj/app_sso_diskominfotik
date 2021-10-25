@@ -1,4 +1,29 @@
 <div>
+    <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg mb-3">
+        <div class="p-6 sm:px-10 bg-light text-center">
+        
+            <div class="mt-0 text-2xl">
+                {{ $settings['judul'] }}
+            </div>
+{{-- 
+            <div class="mt-6 text-gray-500 d-none d-sm-block">
+                {{ $settings['keterangan'] }}
+            </div>
+
+            <div class="mt-6 d-none d-sm-block">
+            @auth
+                @role('Admin')
+                    <a href="{{ url('/admin-dashboard') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Dasbor</a>
+                @endrole
+                <a href="{{ url('/user/profile') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Profil</a>
+            @else
+                <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Masuk</a>
+                <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Daftar</a>
+            @endauth --}}
+            </div>
+        </div>
+    </div>
+
     <div class="row fixed-top-c">
         <div class="col-12">
             <div class="card mb-0">
@@ -36,7 +61,7 @@
                                     (app.is_sso == 1) ? '{{ url("login?redirect=")}}' + app.base_url_sso : app.base_url
                                 @endauth"><div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div></a>
                             </div>
-                            <div class="article-details d-none d-md-block">
+                            {{-- <div class="article-details d-none d-md-block">
                                 <div class="article-title">
                                     <p style="min-height: 65px;">@{{ app.keterangan }}</p>
                                     <div class="article-cta">
@@ -47,7 +72,7 @@
                                         @endauth">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </article>
                     </div>
                 </template>
