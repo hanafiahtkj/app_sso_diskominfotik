@@ -1,8 +1,12 @@
 <div>
     <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg mb-3">
-        <div class="p-6 sm:px-10 bg-light text-center">
-        
-            <div class="mt-0 text-2xl">
+        <div class="p-6 sm:px-10 bg-primary">
+            
+            <div class="mt-0 text-2xl text-white">
+                Hai, Selamat Datang
+            </div>
+
+            <div class="mt-0 text-1xl text-white">
                 {{ $settings['judul'] }}
             </div>
             {{-- 
