@@ -11,6 +11,13 @@
                     margin-top: 70px!important;
                 } 
             }
+
+            @media (min-width: 768px) {
+                iframe .container-fluid .col-md-10 {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
         </style>
     </x-slot>
 

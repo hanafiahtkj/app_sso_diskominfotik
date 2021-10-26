@@ -118,4 +118,11 @@
         </div>
     </div>
 
+    <div class="py-0 pb-3 px-0 sm:px-0">
+        <h2 class="section-title">Informasi Rumah Sakit</h2>
+        <p class="section-lead">Informasi Bed Rumah Sakit Banjarmasin</p>
+    </div>
+
+    <iframe src="https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&amp;propinsi=63prop&amp;kabkota=6371" height="500px" width="100%"></iframe>
+
 </div>
