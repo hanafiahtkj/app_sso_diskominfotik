@@ -65,7 +65,7 @@
                                     (app.is_sso == 1) ? '{{ url("login?redirect=")}}' + app.base_url_sso : app.base_url
                                 @endauth">
                                 <div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div>
-                                <div class="article-title">
+                                <div class="article-title text-white">
                                     <h2>@{{ app.keterangan }}</h2>
                                 </div>
                                 </a>
