@@ -58,7 +58,7 @@
                 <template v-for="(app, index) in kat.aplikasi">
                     <div class="col-6 col-sm-4 col-md-4 col-lg-3" :key="app.id">
                         <article class="article article-style-b" v-bind:class="{ active: app.isActive }">
-                            <div class="article-header header-radius mb-4">
+                            <div class="article-header header-radius">
                                 <a onClick="changeClass(this)" :href="@auth 
                                     app.base_url_sso 
                                 @else 
