@@ -44,6 +44,7 @@
                         let bgImage = "{{ asset(Storage::url('')) }}" + "/" + src;
                         return {
                             backgroundImage: `url("${bgImage}")`,
+                            backgroundSize: 'contain',
                         }
                     },
                 },
