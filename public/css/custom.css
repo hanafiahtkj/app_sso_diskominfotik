@@ -163,12 +163,6 @@ body {
         padding: 10px!important;
     }
 
-    .article .header-radius {
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        /* border-bottom: 1px solid #e2e8f0!important; */
-    }
-
     .article.article-style-b .article-details .article-title a {
         font-size: 14px;
     }
@@ -222,6 +216,12 @@ body {
 /* .navbar .nav-link, .navbar .nav-link.nav-link-user {
     color: #6c757d;
 } */
+
+.article .header-radius {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* border-bottom: 1px solid #e2e8f0!important; */
+}
 
 .section .section-header {
     box-shadow: unset;
