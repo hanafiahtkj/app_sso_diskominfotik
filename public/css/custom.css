@@ -307,6 +307,7 @@ section .section-title:before {
     border-radius: 10px;
     border-left: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .article .article-header {
