@@ -1,5 +1,5 @@
 <div>
-    <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg mb-3">
+    {{-- <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg mb-3">
         <div class="p-6 sm:px-10 bg-primary">
             
             <div class="mt-0 text-2xl text-white">
@@ -8,7 +8,7 @@
 
             <div class="mt-0 text-1xl text-white">
                 {{ $settings['judul'] }}
-            </div>
+            </div> --}}
             {{-- 
             <div class="mt-6 text-gray-500 d-none d-sm-block">
                 {{ $settings['keterangan'] }}
@@ -25,6 +25,17 @@
                 <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Daftar</a>
             @endauth --}}
             {{-- </div> --}}
+        {{-- </div>
+    </div> --}}
+
+    <div class="alert alert-dismissible show fade alert-primary alert-has-icon">
+        <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+        <div class="alert-body">
+            <button class="close" data-dismiss="alert">
+                <span>×</span>
+            </button>
+          <div class="alert-title">Hai, Selamat Datang</div>
+          {{ $settings['judul'] }}
         </div>
     </div>
 
@@ -66,7 +77,7 @@
                                 @endauth">
                                 <div class="article-image" :data-background="'{{ asset(Storage::url('')) }}' + '/' + app.path" :style="appBgImage(app.path)"></div>
                                 <div class="article-title text-white">
-                                    <h2>@{{ app.keterangan }}</h2>
+                                    <h5>@{{ app.keterangan }}</h5>
                                 </div>
                                 </a>
                             </div>
@@ -130,4 +141,68 @@
 
     <iframe src="https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&amp;propinsi=63prop&amp;kabkota=6371" height="500px" width="100%"></iframe>
 
+    <div class="py-0 pb-3 px-0 sm:px-0">
+        <h2 class="section-title">Polling</h2>
+        <p class="section-lead">Aplikasi Banjarmasin Dalam Genggaman</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-6 ">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h4>Pendapat anda tentang Aplikasi Banjarmasin Dalam Genggaman ?</h4>
+                </div>
+                <div class="card-body">
+                    <form action="polling" method="POST" style="">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="polling" id="exampleRadios1" value="1" checked="">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Sangat Baik
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="polling" id="exampleRadios2" value="2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Baik
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="polling" id="exampleRadios3" value="3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                Cukup
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="polling" id="exampleRadios4" value="4">
+                            <label class="form-check-label" for="exampleRadios4">
+                                Kurang
+                            </label>
+                        </div>
+        
+                        <div align="center" class="mt-3 mb-3">
+                            <button class="btn btn-primary" name="vote">Kirim</button>
+                        </div>
+                    </form>
+                    
+                    <hr>
+
+                    <div class="progress mt-3 mb-3">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">25%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" data-width="50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" data-width="75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" data-width="100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
