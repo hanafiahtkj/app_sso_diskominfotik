@@ -32,10 +32,10 @@ class Apps extends Component
         $total = DB::table('polling')->count();
 
         $this->polling = [
-            'sangatbaik' => round(($query->sangatbaik * 100) / $total),
-            'baik'       => round(($query->baik * 100) / $total),
-            'cukup'      => round(($query->cukup * 100) / $total),
-            'kurang'     => round(($query->kurang * 100) / $total),
+            'sangatbaik' => ( $total == 0 ) ? 0 : round(($query->sangatbaik * 100) / $total),
+            'baik'       => ( $total == 0 ) ? 0 : round(($query->baik * 100) / $total),
+            'cukup'      => ( $total == 0 ) ? 0 : round(($query->cukup * 100) / $total),
+            'kurang'     => ( $total == 0 ) ? 0 : round(($query->kurang * 100) / $total),
         ];
     }
 
