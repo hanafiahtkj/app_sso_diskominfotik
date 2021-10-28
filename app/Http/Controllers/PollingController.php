@@ -33,6 +33,8 @@ class PollingController extends Controller
 
         $polling = Polling::create($poll);
 
+        session(['polling' => true]);
+
         return response()
           ->json([
             'status' => true,

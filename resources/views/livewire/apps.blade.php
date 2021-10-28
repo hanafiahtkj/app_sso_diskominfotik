@@ -153,6 +153,7 @@
                     <h4>Pendapat anda tentang Aplikasi Banjarmasin Dalam Genggaman?</h4>
                 </div>
                 <div class="card-body">
+                    @if (session('polling') != true ) 
                     <form id="form-polling" action="{{ route('polling') }}" method="POST" style="">
                         @csrf
                         <div class="form-check">
@@ -184,6 +185,9 @@
                             <button id="btn-simpan" class="btn btn-primary" name="vote">Kirim</button>
                         </div>
                     </form>
+                    @else
+                        <h1 style="text-align: center;" class="mb-3">Terimakasih atas masukan anda</h1>
+                    @endif
                     
                     <hr class="mb-3">
 
