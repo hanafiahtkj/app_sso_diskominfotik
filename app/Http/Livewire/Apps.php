@@ -5,18 +5,38 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Kategori;
 use App\Models\Settings;
+use DB;
 
 class Apps extends Component
 {
     public $settings;
     public $kategori;
     public $berita;
+    public $polling;
     
     public function mount()
     {
         $this->kategori = Kategori::with('aplikasi')->orderBy('urut', 'asc')->get();
         $this->settings = Settings::all()->sortBy('urut')->pluck('value', 'field');
         $this->berita   = $this->_getBerita();
+
+        $query = DB::table('polling')
+                ->select(
+                    DB::raw('SUM(sangatbaik) as sangatbaik'),
+                    DB::raw('SUM(baik) as baik'),
+                    DB::raw('SUM(cukup) as cukup'),
+                    DB::raw('SUM(kurang) as kurang')
+                )
+                ->first();
+
+        $total = DB::table('polling')->count();
+
+        $this->polling = [
+            'sangatbaik' => round(($query->sangatbaik * 100) / $total),
+            'baik'       => round(($query->baik * 100) / $total),
+            'cukup'      => round(($query->cukup * 100) / $total),
+            'kurang'     => round(($query->kurang * 100) / $total),
+        ];
     }
 
     protected function _getBerita() 

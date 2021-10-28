@@ -22,6 +22,7 @@
     </x-slot>
 
     <x-slot name="script">
+        <script src="{{ asset('vendor/sweetalert2/dist/sweetalert.min.js') }}"></script>
         <script src="{{ asset('vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('vendor/vuejs/vue.min.js') }}"></script>
         <script>
@@ -85,6 +86,39 @@
                             items: 4
                         }
                     }
+                });
+
+                $("form#form-polling").submit(function(e){
+                    e.preventDefault();
+                    var btn = $('#btn-simpan');
+                    btn.addClass('btn-progress');
+                    var formData = new FormData($(this)[0]);
+                    formData.append('_token', '{{ csrf_token() }}');
+                    $.ajax({
+                        type: "POST",
+                        url: $(this).attr('action'),
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        dataType: "json",
+                        success: function(data, textStatus, jqXHR) {
+                            if (data['status'] == true) {
+                                alert('ok');
+                                // swal({
+                                //     title: "Tersimpan!", 
+                                //     icon: "success",
+                                // })
+                                // .then((value) => {
+                                    
+                                // });
+                                location.reload();
+                            }
+                            btn.removeClass('btn-progress');
+                        },
+                        error: function(data, textStatus, jqXHR) {
+                            alert(jqXHR + ' , Proses Dibatalkan!');
+                        },
+                    });
                 });
             }); 
         </script>

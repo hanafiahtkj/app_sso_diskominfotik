@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtamaController;
+use App\Http\Controllers\PollingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,7 @@ Route::get('/', [ UtamaController::class, "apps" ])->name('welcome');
 // Route::get('/apps', [ UtamaController::class, "apps" ])->name('apps');
 
 Route::get('/about', [ UtamaController::class, "index" ])->name('about');
+
+Route::post('/polling/simpan', [ PollingController::class, "simpan" ])->name('polling');
 
 require __DIR__.'/web-sso.php';

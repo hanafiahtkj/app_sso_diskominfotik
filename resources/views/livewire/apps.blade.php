@@ -150,10 +150,11 @@
         <div class="col-12 col-md-6 ">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h4>Pendapat anda tentang Aplikasi Banjarmasin Dalam Genggaman ?</h4>
+                    <h4>Pendapat anda tentang Aplikasi Banjarmasin Dalam Genggaman?</h4>
                 </div>
                 <div class="card-body">
-                    <form action="polling" method="POST" style="">
+                    <form id="form-polling" action="{{ route('polling') }}" method="POST" style="">
+                        @csrf
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="polling" id="exampleRadios1" value="1" checked="">
                             <label class="form-check-label" for="exampleRadios1">
@@ -180,26 +181,27 @@
                         </div>
         
                         <div align="center" class="mt-3 mb-3">
-                            <button class="btn btn-primary" name="vote">Kirim</button>
+                            <button id="btn-simpan" class="btn btn-primary" name="vote">Kirim</button>
                         </div>
                     </form>
                     
-                    <hr>
+                    <hr class="mb-3">
 
-                    <div class="progress mt-3 mb-3">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0</div>
-                    </div>
+                    <span class="skill m3-4">Sangat Baik</span>
                     <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">25%</div>
+                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $polling['sangatbaik'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['sangatbaik'] }}%;">{{ $polling['sangatbaik'] }}%</div>
                     </div>
+                    <span class="skill m3-4">Baik</span>
                     <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" data-width="50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                        <div class="progress-bar bg-primary" role="progressbar" data-width="{{ $polling['baik'] }}%" aria-valuenow="{{ $polling['baik'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['baik'] }}%;">{{ $polling['baik'] }}%</div>
                     </div>
+                    <span class="skill m3-4">Cukup</span>
                     <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" data-width="75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
+                        <div class="progress-bar bg-warning" role="progressbar" data-width="{{ $polling['cukup'] }}%" aria-valuenow="{{ $polling['cukup'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['cukup'] }}%;">{{ $polling['cukup'] }}%</div>
                     </div>
+                    <span class="skill m3-4">Kurang</span>
                     <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" data-width="100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                        <div class="progress-bar bg-danger" role="progressbar" data-width="{{ $polling['kurang'] }}%" aria-valuenow="{{ $polling['kurang'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['kurang'] }}%;">{{ $polling['kurang'] }}%</div>
                     </div>
                 </div>
             </div>
