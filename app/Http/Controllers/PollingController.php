@@ -33,7 +33,7 @@ class PollingController extends Controller
 
         $polling = Polling::create($poll);
 
-        return response()->cookie('polling', 'display: none;', time() + 31556926)
+        return response()
           ->json([
             'status' => true,
         ]);
