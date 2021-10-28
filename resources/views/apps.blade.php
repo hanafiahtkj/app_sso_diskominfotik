@@ -60,7 +60,16 @@
                     filteredKategori() {
                         let tempKategori = this.kategori
                         tempKategori = tempKategori.filter((item) => {
-                            return ((item.id == this.id_ket) || (this.id_ket == 'all'))
+                            if (item.id == this.id_ket) {
+                                return true;
+                            }
+
+                            if (this.id_ket == 'all') {
+                                if(item.id == 100) {
+                                    return false;
+                                }
+                                return true;
+                            }
                         })
                         return tempKategori;
                     }
@@ -103,7 +112,7 @@
                         dataType: "json",
                         success: function(data, textStatus, jqXHR) {
                             if (data['status'] == true) {
-                                alert('ok');
+                                // alert('ok');
                                 // swal({
                                 //     title: "Tersimpan!", 
                                 //     icon: "success",
