@@ -8,7 +8,7 @@ $user = auth()->user();
     <a class="navbar-brand sidebar-gone-hide" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 55px;"></a>
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show mr-3 mt-3" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
-        <a href="{{ route('welcome') }}" class="navbar-brand sidebar-gone-show nav-collapse-toggle nav-link"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 55px;"></a>
+        <a href="{{ route('welcome') }}" class="navbar-brand sidebar-gone-show nav-link"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 55px;"></a>
     </div>
     
     <ul class="navbar-nav navbar-right">
