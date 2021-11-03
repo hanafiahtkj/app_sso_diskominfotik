@@ -52,7 +52,7 @@
                 </a>
             </div>
             @endforeach
-            <div class="col-6 col-sm-4 col-md-4 col-lg-3">
+            {{-- <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                 <a href="{{ route('apps') }}">
                     <article class="article">
                         <div class="article-header">
@@ -61,7 +61,7 @@
                         </div>
                     </article>
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
 

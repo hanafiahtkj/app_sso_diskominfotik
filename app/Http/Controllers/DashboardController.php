@@ -7,14 +7,4 @@ use App\Models\Kategori;
 use App\Models\Settings;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
-{
-    public function index()
-    {
-        $data = [
-            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
-            'settings' => Settings::all()->sortBy('urut')->pluck('value', 'field'),
-        ];
-        return view('welcome', $data);
-    }
-}
+class DashboardController extends UtamaController{}

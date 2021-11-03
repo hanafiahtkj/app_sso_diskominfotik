@@ -233,7 +233,7 @@ body {
     background-color: #2969b0;
 }
 
-.swal-icon {
+/* .swal-icon {
     width: 80px;
     height: 80px;
     border-width: 4px;
@@ -245,9 +245,9 @@ body {
     margin: 20px;
 	display: inline-block;
 	/* float: left; */
-}
+/* } */
 
-.swal-title {
+/* .swal-title {
     color: rgba(0,0,0,.65);
     font-weight: 600;
     text-transform: none;
@@ -260,9 +260,10 @@ body {
     margin-bottom: 0;
     margin: 45px 0px;
 }
+*/ 
 .swal-footer {
     text-align: right;
-}
+} 
 .article .article-header .article-title {
     text-align: center;
     /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, #2969b08a 98%, #a4cafe 100%); */

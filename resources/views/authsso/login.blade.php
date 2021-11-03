@@ -125,7 +125,13 @@ $user = auth()->user();
                     success: function(data, textStatus, jqXHR) {
                         //$(".is-invalid").removeClass("is-invalid");
                         if (data['status'] == true) {
-                            alert(data['status']);
+                            // alert(data['status']);
+                            swal({
+                                title: "Berhasil!",
+                                text: "Login Berhasil!",
+                                icon: "success",
+                                button: "Close!",
+                            });
                             window.close();
                         }   
                     },

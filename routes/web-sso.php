@@ -26,7 +26,7 @@ Route::get('/about', [ PagesController::class, "about" ])->name('pages.about');
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
 
-    Route::get('/dashboard', [ DashboardController::class, "index" ])->name('dashboard');
+    Route::get('/dashboard', [ DashboardController::class, "apps" ])->name('dashboard');
 
     Route::get('/sso/is-login', function (Request $request) {
         return response()->json([
