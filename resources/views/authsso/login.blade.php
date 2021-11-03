@@ -80,7 +80,7 @@ $user = auth()->user();
     </x-slot>
 
     <x-slot name="script">
-        <script defer src="{{ asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
+        <script src="{{ asset('vendor/sweetalert2/dist/sweetalert.min.js') }}"></script>
         <script>  
         // jquery
         $(function() {
@@ -127,12 +127,14 @@ $user = auth()->user();
                         //$(".is-invalid").removeClass("is-invalid");
                         if (data['status'] == true) {
                             // alert(data['status']);
+                            
                             swal({
                                 title: "Berhasil!",
                                 text: "Login Berhasil!",
                                 icon: "success",
                                 button: "Close!",
                             });
+
                             window.close();
                         }   
                     },
