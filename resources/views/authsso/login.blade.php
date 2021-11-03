@@ -80,6 +80,7 @@ $user = auth()->user();
     </x-slot>
 
     <x-slot name="script">
+        <script defer src="{{ asset('vendor/sweetalert/sweetalert.min.js') }}"></script>
         <script>  
         // jquery
         $(function() {
