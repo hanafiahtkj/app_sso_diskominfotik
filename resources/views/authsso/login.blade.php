@@ -140,7 +140,7 @@ $user = auth()->user();
                     },
                     error: function(data, textStatus, jqXHR) {
                         console.log(textStatus);
-                        $('#error_msg').show().text('Email atau Password Tidak Ditemukan.');
+                        $('#error_msg').show().text('Email atau Password Salah.');
                         btn.removeClass('btn-progress');
                     },
                 });
