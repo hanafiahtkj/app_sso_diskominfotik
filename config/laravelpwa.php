@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => 'BANJARMASIN DALAM GENGGAMAN',
+    'name' => 'Banjarmasin Dalam Genggaman',
     'manifest' => [
-        'name' => env('APP_NAME', 'My PWA App'),
-        'short_name' => 'PWA',
+        'name' => env('APP_NAME', 'Banjarmasin Dalam Genggaman'),
+        'short_name' => 'Banjarmasin Dalam Genggaman',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
