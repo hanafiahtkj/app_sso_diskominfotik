@@ -36,7 +36,7 @@
 
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         
-        @laravelPWA
+        {{-- @laravelPWA --}}
     
     </head>
     <body class="layout-3">
