@@ -37,7 +37,7 @@
 
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
-        {{-- @laravelPWA --}}
+        @laravelPWA
 
         <link rel="manifest" href="manifest.json" />
         <script type="module">
