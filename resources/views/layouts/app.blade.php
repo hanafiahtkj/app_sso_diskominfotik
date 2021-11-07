@@ -35,6 +35,14 @@
         @endisset
 
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
+        <script type="module">
+            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+            const el = document.createElement('pwa-update');
+            document.body.appendChild(el);
+        </script>
+
+        <link rel="manifest" href="manifest.json" />
     
     </head>
     <body class="layout-3">
