@@ -39,12 +39,6 @@
 
         <link rel="manifest" href="manifest.json" />
 
-        <script type="module">
-            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-            const el = document.createElement('pwa-update');
-            document.body.appendChild(el);
-        </script>
-
         <script type="text/javascript">
             // Initialize the service worker
             if ('serviceWorker' in navigator) {
@@ -59,6 +53,12 @@
                 });
             }
         </script>  
+
+        <script type="module">
+            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+            const el = document.createElement('pwa-update');
+            document.body.appendChild(el);
+        </script>
         
     </head>
     <body class="layout-3">
