@@ -1,32 +1,4 @@
 <div>
-    {{-- <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg mb-3">
-        <div class="p-6 sm:px-10 bg-primary">
-            
-            <div class="mt-0 text-2xl text-white">
-                Hai, Selamat Datang
-            </div>
-
-            <div class="mt-0 text-1xl text-white">
-                {{ $settings['judul'] }}
-            </div> --}}
-            {{-- 
-            <div class="mt-6 text-gray-500 d-none d-sm-block">
-                {{ $settings['keterangan'] }}
-            </div>
-
-            <div class="mt-6 d-none d-sm-block">
-            @auth
-                @role('Admin')
-                    <a href="{{ url('/admin-dashboard') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Dasbor</a>
-                @endrole
-                <a href="{{ url('/user/profile') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Profil</a>
-            @else
-                <a href="{{ route('login') }}" class="btn btn-outline-primary icon-left mr-2" style="width: 100px;">Masuk</a>
-                <a href="{{ route('register') }}" class="btn btn-outline-success icon-left mr-2" style="width: 100px;">Daftar</a>
-            @endauth --}}
-            {{-- </div> --}}
-        {{-- </div>
-    </div> --}}
 
     <div class="alert alert-dismissible show fade alert-primary alert-has-icon">
         <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
@@ -70,7 +42,7 @@
                     <div class="col-6 col-sm-4 col-md-4 col-lg-3" :key="app.id">
                         <article class="article article-style-b" v-bind:class="{ active: app.isActive }">
                             <div class="article-header header-radius">
-                                <a onClick="changeClass(this)" :href="@auth 
+                                <a onClick="changeClass(this)" target="_blank" :href="@auth 
                                     app.base_url_sso 
                                 @else 
                                     (app.is_sso == 1) ? '{{ url("login?redirect=")}}' + app.base_url_sso : app.base_url
