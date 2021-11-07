@@ -53,18 +53,6 @@
                                 </div>
                                 </a>
                             </div>
-                            {{-- <div class="article-details d-none d-md-block">
-                                <div class="article-title">
-                                    <p style="min-height: 65px;">@{{ app.keterangan }}</p>
-                                    <div class="article-cta">
-                                        <a :href="@auth 
-                                            app.base_url_sso 
-                                        @else 
-                                            (app.is_sso == 1) ? '{{ url("login?redirect=")}}' + app.base_url_sso : app.base_url
-                                        @endauth">Masuk ke Aplikasi <i class="fas fa-chevron-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </article>
                     </div>
                 </template>
