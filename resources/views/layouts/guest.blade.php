@@ -29,7 +29,6 @@
 
         <!-- Scripts -->
         <script defer src="{{ asset('vendor/alpine.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
         @isset($style)
             {{ $style }}
@@ -54,11 +53,11 @@
             }
         </script>  
 
-        <script type="module">
+        {{-- <script type="module">
             import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
             const el = document.createElement('pwa-update');
             document.body.appendChild(el);
-        </script>
+        </script> --}}
         
     </head>
     <body class="layout-3">

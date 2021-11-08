@@ -34,6 +34,8 @@
             {{ $style }}
         @endisset
 
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
         <link rel="manifest" href="manifest.json" />
 
         <script type="text/javascript">
@@ -51,11 +53,11 @@
             }
         </script>  
 
-        <script type="module">
+        {{-- <script type="module">
             import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
             const el = document.createElement('pwa-update');
             document.body.appendChild(el);
-        </script>
+        </script> --}}
     
     </head>
     <body class="layout-3">
