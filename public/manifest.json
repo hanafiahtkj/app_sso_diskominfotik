@@ -87,7 +87,11 @@
       "description": "Shortcut Link 2 Description",
       "url": "/shortcutlink2",
       "icons": [
-        []
+        {
+          "src": "/images/icons/icon-72x72.png",
+          "type": "image/png",
+          "purpose": "any"
+        }
       ]
     }
   ]
