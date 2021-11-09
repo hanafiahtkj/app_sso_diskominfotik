@@ -3,8 +3,8 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "xyz.appmaker.jivdkj",
-      "sha256_cert_fingerprints": ["2D:37:C3:87:F4:17:47:93:9E:5D:8A:F1:E0:4A:7E:8E:4F:E1:D5:A7:94:B9:13:51:8D:76:AB:F5:BE:82:47:10"]
+      "package_name": "xyz.appmaker.afckiw",
+      "sha256_cert_fingerprints": ["6E:CF:AD:DD:03:4F:D6:E4:5A:FE:EF:FC:57:B8:B1:62:EC:C7:CC:3B:49:71:BE:7C:0A:66:D9:CE:B1:86:6F:CC"]
     }
   }
 ]
