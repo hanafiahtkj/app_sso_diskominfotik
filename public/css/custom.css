@@ -221,8 +221,8 @@ body {
     }
 
     .iframe {
-        margin-left: -35px;
-        margin-right: -45px;
+        margin-left: -40px;
+        margin-right: -40px;
         display: flex;
         align-items: center;
     }
