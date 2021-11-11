@@ -211,6 +211,11 @@ body {
     .article.active .article-header {
         border-top: 1px solid #2969b0;
     }
+
+    .iframe {
+        margin-left: -30px;
+        margin-right: -30px;
+    }
 }
 
 /* .navbar .nav-link, .navbar .nav-link.nav-link-user {
