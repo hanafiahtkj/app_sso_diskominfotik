@@ -216,10 +216,15 @@ body {
         border-top: 1px solid #2969b0;
     }
 
+    .iframe-wrapper {
+        overflow: hidden;
+    }
+
     .iframe {
-        margin-left: -35px
-        ;
+        margin-left: -35px;
         margin-right: -50px;
+        display: flex;
+        align-items: center;
     }
 }
 
