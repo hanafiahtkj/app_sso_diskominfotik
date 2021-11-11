@@ -213,8 +213,9 @@ body {
     }
 
     .iframe {
-        margin-left: -30px;
-        margin-right: -50px;
+        margin-left: -35px
+        ;
+        margin-right: -60px;
     }
 }
 
