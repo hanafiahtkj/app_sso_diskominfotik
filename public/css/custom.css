@@ -19,11 +19,6 @@ body {
     border: 1px solid #e2e8f0;
 }
 
-.iframe {
-    margin-right: -30px;
-    margin-left: -5px;
-}
-
 @media (min-width: 1280px) {
     .container {
         max-width: 1195px;
@@ -226,8 +221,8 @@ body {
     }
 
     .iframe {
-        margin-left: -35px;
-        margin-right: -45px;
+        margin-left: -40px;
+        margin-right: -40px;
         display: flex;
         align-items: center;
     }
@@ -374,4 +369,9 @@ section .section-title:before {
 
 #welcome .bg-light {
     background-color: #f5f5f5 !important;
+}
+
+.iframe {
+    margin-right: -30px;
+    margin-left: -5px;
 }
