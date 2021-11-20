@@ -7,14 +7,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\Api\ApiHomeController;
+
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| API Untuk Web SSO
 |--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
 |
 */
 
@@ -67,3 +65,13 @@ Route::post('/sso/register-app', function (Request $req) {
     ]);
 });
 
+// Api untuk Android/ios
+
+/*
+|--------------------------------------------------------------------------
+| API Untuk Mobile/Android/IOS SSO
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
