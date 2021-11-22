@@ -15,4 +15,28 @@ class ApiHomeController extends Controller
         $data = Kategori::with('aplikasi')->orderBy('urut', 'asc')->get();
         return response()->json($data);
     }
+
+    public function getBerita()
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://berita.banjarmasinkota.go.id/api-berita',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+
+        $response = ($response) ? json_decode($response) : [];
+
+        return response()->json($response);
+    }
 }

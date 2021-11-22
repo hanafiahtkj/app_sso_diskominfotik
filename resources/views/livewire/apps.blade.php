@@ -55,6 +55,11 @@
                             </div>
                         </article>
                     </div>
+                    <template v-if="id_ket == 8">
+                        <div class="iframe col-12">
+                            <iframe src="https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&amp;propinsi=63prop&amp;kabkota=6371" height="500px" width="100%"></iframe>
+                        </div>
+                    </template>
                 </template>
             </div>
         </div>
@@ -94,14 +99,10 @@
         </div>
     </div>
 
-    <div class="py-0 pb-3 px-0 sm:px-0">
+    {{-- <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">Informasi Rumah Sakit</h2>
         <p class="section-lead">Informasi Bed Rumah Sakit Banjarmasin</p>
-    </div>
-
-    <div class="iframe">
-        <iframe src="https://yankes.kemkes.go.id/app/siranap/rumah_sakit?jenis=1&amp;propinsi=63prop&amp;kabkota=6371" height="500px" width="100%"></iframe>
-    </div>
+    </div> --}}
     
     <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">Polling</h2>

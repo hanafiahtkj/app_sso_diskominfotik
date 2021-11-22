@@ -75,3 +75,4 @@ Route::post('/sso/register-app', function (Request $req) {
 */
 
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
+Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]);
