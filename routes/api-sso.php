@@ -16,27 +16,6 @@ use App\Http\Controllers\Api\ApiHomeController;
 |
 */
 
-Route::post('/login', function (Request $request) {
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-        'device_name' => 'required',
-    ]);
-
-    $user = User::where('email', $request->email)->first();
-
-    if (! $user || ! Hash::check($request->password, $user->password)) {
-        throw ValidationException::withMessages([
-            'email' => ['The provided credentials are incorrect.'],
-        ]);
-    }
-
-    //return $user->createToken($request->device_name)->plainTextToken;
-    return response()->json([
-        'token'    => $user->createToken($request->device_name)->plainTextToken,
-    ]);
-});
-
 Route::middleware('auth:sanctum')->post('/sso/is-valid', function (Request $request) {
     $user = $request->user();
     if ($request->id_sso == $request->user()->id) { 
@@ -74,5 +53,45 @@ Route::post('/sso/register-app', function (Request $req) {
 |
 */
 
+Route::post('/login', function (Request $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+        'deviceName' => 'required',
+    ]);
+
+    $user = User::where('email', $request->email)->first();
+
+    if (! $user || ! Hash::check($request->password, $user->password)) {
+        throw ValidationException::withMessages([
+            'email' => ['The provided credentials are incorrect.'],
+        ]);
+    }
+
+    return response()->json([
+        'token'    => $user->createToken($request->deviceName)->plainTextToken,
+    ]);
+});
+
+Route::post('/sanctum/token', function (Request $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+        'device_name' => 'required',
+    ]);
+
+    $user = User::where('email', $request->email)->first();
+
+    if (! $user || ! Hash::check($request->password, $user->password)) {
+        throw ValidationException::withMessages([
+            'email' => ['The provided credentials are incorrect.'],
+        ]);
+    }
+
+    //return $user->createToken($request->device_name)->plainTextToken;
+
+});
+
+
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
-Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]);
+Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]); 
