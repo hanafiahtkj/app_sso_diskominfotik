@@ -50,6 +50,28 @@ class FortifyServiceProvider extends ServiceProvider
                 return redirect('/');
             }
         });
+
+        $this->app->instance(VerifyEmailViewResponse::class, new class implements VerifyEmailViewResponse {
+            public function toResponse($request)
+            {
+                if ($request->user()->hasVerifiedEmail()) {
+                    return $request->wantsJson()
+                        ? new JsonResponse('', 204)
+                        : redirect()->intended(Fortify::redirects('email-verification').'?verified=1');
+                }
+        
+                if ($request->user()->markEmailAsVerified()) {
+                    return response()->json([
+                        'status' => true,
+                    ]);
+                    //event(new Verified($request->user()));
+                }
+        
+                return $request->wantsJson()
+                    ? new JsonResponse('', 202)
+                    : redirect()->intended(Fortify::redirects('email-verification').'?verified=1');
+            }
+        });
     }
 
     /**
