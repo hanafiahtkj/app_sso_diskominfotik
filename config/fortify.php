@@ -91,6 +91,10 @@ return [
         'login' => null,
     ],
 
+    'redirects' => [
+        'email-verification' => '/home',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Features
