@@ -92,7 +92,7 @@ return [
     ],
 
     'redirects' => [
-        'email-verification' => '/home',
+        'email-verification' => '/user/profile',
     ],
 
     /*
