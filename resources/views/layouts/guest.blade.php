@@ -119,17 +119,6 @@
         @isset($script)
             {{ $script }}
         @endisset
-
-        @if (request('verified', 0))
-        <script>
-            swal({
-                title: "Berhasil!",
-                text: "Verifikasi Email Berhasil!",
-                icon: "success",
-                button: "Close!",
-            });
-        @endif
-        </script>
     
     </body>
 </html>

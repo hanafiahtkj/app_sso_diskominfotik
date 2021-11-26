@@ -92,8 +92,7 @@ return [
     ],
 
     'redirects' => [
-        'register' => '/user/profile',
-        'email-verification' => '/user/profile',
+        'email-verification' => '/success-verifikasi',
     ],
 
     /*

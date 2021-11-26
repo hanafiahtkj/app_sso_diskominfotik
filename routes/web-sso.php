@@ -28,6 +28,10 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
 
     Route::get('/dashboard', [ DashboardController::class, "apps" ])->name('dashboard');
 
+    Route::get('/success-verifikasi', function () {
+        return view('pages.success-verifikasi');
+    });
+
     Route::get('/sso/is-login', function (Request $request) {
         return response()->json([
             'status'  => Auth::check(),
