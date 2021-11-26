@@ -92,7 +92,7 @@ return [
     ],
 
     'redirects' => [
-        'register' => '/user/profile',
+        'register' => '/success-verifikasi',
         'email-verification' => '/success-verifikasi',
     ],
 
