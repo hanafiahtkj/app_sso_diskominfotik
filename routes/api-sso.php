@@ -57,7 +57,7 @@ Route::post('/login', function (Request $request) {
     $request->validate([
         'email' => 'required|email',
         'password' => 'required',
-        'deviceName' => 'required',
+        'device_name' => 'required',
     ]);
 
     $user = User::where('email', $request->email)->first();
