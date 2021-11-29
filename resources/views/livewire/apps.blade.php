@@ -43,7 +43,11 @@
                         <article class="article article-style-b" v-bind:class="{ active: app.isActive }">
                             <div class="article-header header-radius">
                                 <a onClick="changeClass(this)" target="_blank" :href="@auth 
-                                    app.base_url_sso 
+                                    @if (Auth::user()->email_verified_at != null)
+                                        (app.is_sso == 1) ? app.base_url_sso : app.base_url 
+                                    @else
+                                        (app.is_sso == 1) ? '{{ route("verification.notice") }}' : app.base_url
+                                    @endif
                                 @else 
                                     (app.is_sso == 1) ? '{{ url("login?redirect=")}}' + app.base_url_sso : app.base_url
                                 @endauth">
