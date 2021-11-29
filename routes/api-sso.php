@@ -69,7 +69,7 @@ Route::post('/login', function (Request $request) {
     }
 
     return response()->json([
-        'token'    => $user->createToken($request->deviceName)->plainTextToken,
+        'token'    => $user->createToken($request->device_name)->plainTextToken,
     ]);
 });
 
