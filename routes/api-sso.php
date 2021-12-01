@@ -63,9 +63,11 @@ Route::post('/login', function (Request $request) {
     $user = User::where('email', $request->email)->first();
 
     if (! $user || ! Hash::check($request->password, $user->password)) {
-        throw ValidationException::withMessages([
-            'email' => ['The provided credentials are incorrect.'],
-        ]);
+        return response()->json([
+            'message' => [
+                'error' => 'Email dengan Password tidak ditemukan'
+            ]
+        ], 400);
     }
 
     return response()->json([
@@ -74,7 +76,7 @@ Route::post('/login', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    return response()->json($request->user());
 });
 
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
