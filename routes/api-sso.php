@@ -64,20 +64,18 @@ Route::post('/login', function (Request $request) {
 
     if (! $user || ! Hash::check($request->password, $user->password)) {
         return response()->json([
-            'message' => [
-                'error' => 'Email dengan Password tidak ditemukan'
-            ]
+            'error' => 'Email dengan Password tidak ditemukan'
         ], 400);
     }
 
     return response()->json([
-        'token'    => $user->createToken($request->device_name)->plainTextToken,
+        'token' => $user->createToken($request->device_name)->plainTextToken,
     ]);
-});
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return response()->json($request->user());
 });
 
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
 Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]); 
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return response()->json($request->user());
+});
