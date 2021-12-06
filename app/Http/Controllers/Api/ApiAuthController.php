@@ -22,38 +22,70 @@ class ApiAuthController extends Controller
         $user = User::where('email', $request->email)->first();
     
         if (! $user || ! Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages([
-                'email' => ['Email atau Password tidak ditemukan.'],
-            ]);
+            return response()->json([
+                'error' => 'Email dengan Password tidak ditemukan'
+            ], 400);
         }
     
-        //return $user->createToken($request->device_name)->plainTextToken;
         return response()->json([
             'token' => $user->createToken($request->device_name)->plainTextToken,
         ]);
     }
 
-    public function getBerita()
+    public function user(Request $request)
     {
-        $curl = curl_init();
+        return response()->json($request->user());
+    }
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://berita.banjarmasinkota.go.id/api-berita',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-        ));
+    public function updateInfoProfile(Request $request)
+    {
+        $request->validate([
+            'id'    => 'required',
+            'name'  => 'required',
+            'email' => 'required|email',
+        ]);
 
-        $response = curl_exec($curl);
+        $validator = Validator::make($request->all(), $validasi);
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'Gagal mengubah informasi profil!'
+            ], 400);
+        }
+    
+        $id = $request->id;
+        $user = User::find($id);
+        if ($user) {
+            $data = ['name' => $request->name];
+            $user->update($data);
+            return response()->json([
+                'status' => true
+            ]);
+        }   
+    }
 
-        curl_close($curl);
+    public function updateUserPassword(Request $request)
+    {
+        $request->validate([
+            'id'               => 'required',
+            'current_password' => 'current_password',
+            'password'         => 'required',
+        ]);
 
-        $response = ($response) ? json_decode($response) : [];
+        $validator = Validator::make($request->all(), $validasi);
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'The provided password does not match your current password.'
+            ], 400);
+        }
+        
+        $id = $request->id;
+        $user = User::find($id);
+        $user->forceFill([
+            'password' => Hash::make($input['password']),
+        ])->save();
 
-        return response()->json($response);
+        return response()->json([
+            'status' => true
+        ]);
     }
 }

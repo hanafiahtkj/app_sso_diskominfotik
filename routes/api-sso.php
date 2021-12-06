@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Api\ApiHomeController;
 
 /*
@@ -15,7 +16,6 @@ use App\Http\Controllers\Api\ApiHomeController;
 |--------------------------------------------------------------------------
 |
 */
-
 Route::middleware('auth:sanctum')->post('/sso/is-valid', function (Request $request) {
     $user = $request->user();
     if ($request->id_sso == $request->user()->id) { 
@@ -44,38 +44,18 @@ Route::post('/sso/register-app', function (Request $req) {
     ]);
 });
 
-// Api untuk Android/ios
-
 /*
 |--------------------------------------------------------------------------
 | API Untuk Mobile/Android/IOS SSO
 |--------------------------------------------------------------------------
 |
 */
-
-Route::post('/login', function (Request $request) {
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-        'device_name' => 'required',
-    ]);
-
-    $user = User::where('email', $request->email)->first();
-
-    if (! $user || ! Hash::check($request->password, $user->password)) {
-        return response()->json([
-            'error' => 'Email dengan Password tidak ditemukan'
-        ], 400);
-    }
-
-    return response()->json([
-        'token' => $user->createToken($request->device_name)->plainTextToken,
-    ]);
-});
-
+Route::post('/login', [ ApiAuthController::class, "login" ]);
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
 Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]); 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return response()->json($request->user());
+Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
+    Route::get('/user', [ ApiAuthController::class, "user" ]);
+    Route::post('/updateInfoProfile', [ ApiAuthController::class, "updateInfoProfile" ]);
+    Route::post('/updateUserPassword', [ ApiAuthController::class, "updateUserPassword" ]);
 });
