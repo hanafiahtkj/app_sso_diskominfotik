@@ -14,11 +14,18 @@ class ApiAuthController extends Controller
 {
     public function login(Request $request)
     {
-        $request->validate([
+        $validasi = [
             'email' => 'required|email',
             'password' => 'required',
             'device_name' => 'required',
-        ]);
+        ];
+
+        $validator = Validator::make($request->all(), $validasi);
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'Login Gagal!'
+            ], 400);
+        }
     
         $user = User::where('email', $request->email)->first();
     
@@ -40,11 +47,11 @@ class ApiAuthController extends Controller
 
     public function updateInfoProfile(Request $request)
     {
-        $request->validate([
+        $validasi = [
             'id'    => 'required',
             'name'  => 'required',
             'email' => 'required|email',
-        ]);
+        ];
 
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
@@ -66,11 +73,11 @@ class ApiAuthController extends Controller
 
     public function updateUserPassword(Request $request)
     {
-        $request->validate([
+        $validasi = [
             'id'               => 'required',
             'current_password' => 'current_password',
             'password'         => 'required',
-        ]);
+        ];
 
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
