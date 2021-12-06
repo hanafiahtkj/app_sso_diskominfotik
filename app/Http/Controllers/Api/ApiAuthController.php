@@ -9,6 +9,7 @@ use App\Models\Settings;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class ApiAuthController extends Controller
 {
@@ -82,14 +83,21 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'The provided password does not match your current password.'
+                'error' => 'Terjadi Kesalahan!'
             ], 400);
         }
         
         $id = $request->id;
         $user = User::find($id);
+
+        if (! Hash::check($input['current_password'], $user->password)) {
+            return response()->json([
+                'error' => 'Pasword yang dimasukan salah!'
+            ], 400);
+        }
+
         $user->forceFill([
-            'password' => Hash::make($input['password']),
+            'password' => Hash::make($request->password),
         ])->save();
 
         return response()->json([
