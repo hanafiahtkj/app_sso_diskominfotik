@@ -66,7 +66,7 @@ class ApiAuthController extends Controller
         if ($user) {
             $data = [
                 'name' => $request->name,
-                'email'=> $request->name
+                'email'=> $request->email
             ];
             $user->update($data);
             return response()->json([
