@@ -64,7 +64,10 @@ class ApiAuthController extends Controller
         $id = $request->id;
         $user = User::find($id);
         if ($user) {
-            $data = ['name' => $request->name];
+            $data = [
+                'name' => $request->name,
+                'email'=> $request->name
+            ];
             $user->update($data);
             return response()->json([
                 'status' => true
