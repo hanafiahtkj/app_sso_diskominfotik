@@ -93,7 +93,7 @@ class ApiAuthController extends Controller
         $id = $request->id;
         $user = User::find($id);
 
-        if (! Hash::check($input['current_password'], $user->password)) {
+        if (! Hash::check($request->current_password, $user->password)) {
             return response()->json([
                 'error' => 'Pasword yang dimasukan salah!'
             ], 400);
