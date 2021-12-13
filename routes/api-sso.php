@@ -51,6 +51,7 @@ Route::post('/sso/register-app', function (Request $req) {
 |
 */
 Route::post('/login', [ ApiAuthController::class, "login" ]);
+Route::post('/register', [ ApiAuthController::class, "register" ]);
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
 Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]); 
 

@@ -107,4 +107,34 @@ class ApiAuthController extends Controller
             'status' => true
         ]);
     }
+
+    public function register(Request $request)
+    {
+        $validasi = [
+            'name'     => 'requiredstring|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
+            'password' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $validasi);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'Terjadi Kesalahan!'
+            ], 400);
+        }
+
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+        ]);
+
+        $user->assignRole('General');
+
+        return response()->json([
+            'id' => $user->id,
+            'token' => $user->createToken($request->input('email'))->plainTextToken,
+        ]);
+    }
 }
