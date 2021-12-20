@@ -24,7 +24,8 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Login Gagal!'
+                'error' => 'Login Gagal!',
+                'messages' => $validator->errors(),
             ], 400);
         }
     
@@ -57,7 +58,8 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Gagal mengubah informasi profil!'
+                'error' => 'Gagal mengubah informasi profil!',
+                'messages' => $validator->errors(),
             ], 400);
         }
     
@@ -86,7 +88,8 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Terjadi Kesalahan!'
+                'error' => 'Terjadi Kesalahan!',
+                'messages' => $validator->errors(),
             ], 400);
         }
         
@@ -118,11 +121,10 @@ class ApiAuthController extends Controller
 
         $validator = Validator::make($request->all(), $validasi);
 
-        var_dump($request->all()); die;
-
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Terjadi Kesalahan!'
+                'error' => 'Terjadi Kesalahan!',
+                'messages' => $validator->errors(),
             ], 400);
         }
 
