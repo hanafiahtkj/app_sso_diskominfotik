@@ -8,6 +8,7 @@ use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\Api\ApiAuthController;
+use App\Http\Controllers\Api\ApiRegisterController;
 use App\Http\Controllers\Api\ApiHomeController;
 
 /*
@@ -51,11 +52,12 @@ Route::post('/sso/register-app', function (Request $req) {
 |
 */
 Route::post('/login', [ ApiAuthController::class, "login" ]);
-Route::post('/register', [ ApiAuthController::class, "register" ]);
+Route::post('/register', [ ApiRegisterController::class, "register" ]);
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
 Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]); 
 
 Route::group([ "middleware" => ['auth:sanctum']], function() {
+    Route::post('/verification-notification', [ApiRegisterController::class, 'sendEmailVerificationNotification']);
     Route::get('/user', [ ApiAuthController::class, "user" ]);
     Route::post('/updateInfoProfile', [ ApiAuthController::class, "updateInfoProfile" ]);
     Route::post('/updateUserPassword', [ ApiAuthController::class, "updateUserPassword" ]);
