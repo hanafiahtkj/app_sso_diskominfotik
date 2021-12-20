@@ -116,9 +116,9 @@ class ApiAuthController extends Controller
             'password' => 'required',
         ];
 
-        dd($request->all());
-
         $validator = Validator::make($request->all(), $validasi);
+
+        var_dump($request->all()); die;
 
         if ($validator->fails()) {
             return response()->json([
