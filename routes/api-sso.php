@@ -52,12 +52,12 @@ Route::post('/sso/register-app', function (Request $req) {
 |
 */
 Route::post('/login', [ ApiAuthController::class, "login" ]);
-Route::post('/register', [ ApiRegisterController::class, "register" ]);
+Route::post('/register', [ ApiAuthController::class::class, "register" ]);
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
 Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]); 
 
 Route::group([ "middleware" => ['auth:sanctum']], function() {
-    Route::post('/verification-notification', [ApiRegisterController::class, 'sendEmailVerificationNotification']);
+    Route::post('/verification-notification', [ApiAuthController::class::class, 'sendEmailVerificationNotification']);
     Route::get('/user', [ ApiAuthController::class, "user" ]);
     Route::post('/updateInfoProfile', [ ApiAuthController::class, "updateInfoProfile" ]);
     Route::post('/updateUserPassword', [ ApiAuthController::class, "updateUserPassword" ]);
