@@ -19,9 +19,13 @@
         <div class="row" id="app-kategori">
             @foreach ($aplikasi as $app)
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a class="onTap" href="
+                <a class="onTap" target="_blank" href="
                 @auth 
-                    {{ $app->base_url_sso}} 
+                    @if (Auth::user()->email_verified_at != null)
+                        {{ ($app->is_sso == 1) ? url($app->base_url_sso) : url($app->base_url) }} 
+                    @else
+                        {{ ($app->is_sso == 1) ? route("verification.notice") : url($app->base_url) }}
+                    @endif
                 @else 
                     @if($app->is_sso == 1) 
                         {{ url('login?redirect='.$app->base_url_sso) }} 
@@ -32,6 +36,9 @@
                     <article class="article">
                         <div class="article-header">
                             <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-image: url(&quot;{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}&quot;);">
+                            </div>
+                            <div class="article-title text-white">
+                                <h5>{{ $app->keterangan }}</h5>
                             </div>
                         </div>
                     </article>

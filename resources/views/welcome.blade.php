@@ -5,6 +5,20 @@
     <x-slot name="style">
         <link rel="stylesheet" href="{{ asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}">
+        <style>
+            @media (max-width: 767px) { 
+                .section > *:first-child {
+                    margin-top: 70px!important;
+                } 
+            }
+
+            @media (min-width: 768px) {
+                iframe .container-fluid .col-md-10 {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
+        </style>
     </x-slot> 
 
     <x-slot name="script">
