@@ -30,7 +30,7 @@ class MalasngodingEmail extends Mailable
     public function build()
     {
        return $this->from('ssobanjarmasin@gmail.com')
-                   ->view('mail.html.layout')
+                   ->view('emailku')
                    ->with(
                     [
                         'nama' => 'Diki Alfarabi Hadi',
