@@ -72,7 +72,7 @@
                     @foreach ($berita as $item)
                         <article class="article article-style-b">
                             <div class="article-header">
-                                <div class="article-image" data-background="{{ $item->gambar }}" style="background-image: url(&quot;{{ $item->gambar }}&quot;); background-size: contain;"></div>
+                                <div class="article-image" data-background="{{ $item->gambar }}" style="background-size: contain; background-image: url(&quot;{{ $item->gambar }}&quot;);"></div>
                                 <div class="article-title">
                                     <h2><a href="{{ $item->alamat }}">{{\Illuminate\Support\Str::limit($item->judul, 100)}}</a></h2>
                                 </div>
