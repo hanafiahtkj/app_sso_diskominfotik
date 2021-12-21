@@ -149,6 +149,6 @@ class ApiAuthController extends Controller
 
         Mail::to("hanafiahtkj95@gmail.com")->send(new MalasngodingEmail());
 
-		return "Email telah dikirim";
+		return "Email telah dikirim";  
     }
 }
