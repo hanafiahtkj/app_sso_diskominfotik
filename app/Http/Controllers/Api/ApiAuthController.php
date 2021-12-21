@@ -139,7 +139,7 @@ class ApiAuthController extends Controller
         return response()->json([
             'id' => $user->id,
             'token' => $user->createToken($request->input('email'))->plainTextToken,
-        ], 201);
+        ]);
     }
 
     public function sendEmailVerificationNotification(Request $request) {
