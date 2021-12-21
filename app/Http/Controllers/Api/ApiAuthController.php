@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
+use App\Mail\MalasngodingEmail;
+use Illuminate\Support\Facades\Mail;
+
 class ApiAuthController extends Controller
 {
     public function login(Request $request)
@@ -143,6 +146,6 @@ class ApiAuthController extends Controller
     }
 
     public function sendEmailVerificationNotification(Request $request) {
-        $request->user()->sendEmailVerificationNotification();
+        
     }
 }
