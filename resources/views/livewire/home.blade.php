@@ -1,26 +1,12 @@
 <div>
-    <div id="welcome" class="bg-white overflow-hidden sm:rounded-lg">
-        <div class="p-6 sm:px-10 bg-light text-center">
-        
-            <div class="mt-0 text-2xl">
-                {{ $settings['judul'] }}
-            </div>
-
-            <div class="mt-6 text-gray-500 d-none d-sm-block">
-                {{ $settings['keterangan'] }}
-            </div>
-
-            <div class="mt-6 d-none d-sm-block">
-            @auth
-                @role('Admin')
-                    <a href="{{ url('/admin-dashboard') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Dasbor</a>
-                @endrole
-                <a href="{{ url('/user/profile') }}" class="btn btn-success icon-left mr-2" style="width: 100px;">Profil</a>
-            @else
-                <a href="{{ route('login') }}" class="btn btn-primary icon-left mr-2" style="width: 100px;">Masuk</a>
-                <a href="{{ route('register') }}" class="btn btn-success icon-left mr-2" style="width: 100px;">Daftar</a>
-            @endauth
-            </div>
+    <div class="alert alert-dismissible show fade alert-primary alert-has-icon">
+        <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+        <div class="alert-body">
+            <button class="close" data-dismiss="alert">
+                <span>×</span>
+            </button>
+          <div class="alert-title">Hai, Selamat Datang</div>
+          {{ $settings['judul'] }}
         </div>
     </div>
 
@@ -52,7 +38,7 @@
                 </a>
             </div>
             @endforeach
-            {{-- <div class="col-6 col-sm-4 col-md-4 col-lg-3">
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                 <a href="{{ route('apps') }}">
                     <article class="article">
                         <div class="article-header">
@@ -61,7 +47,7 @@
                         </div>
                     </article>
                 </a>
-            </div> --}}
+            </div>
         </div>
     </div>
 

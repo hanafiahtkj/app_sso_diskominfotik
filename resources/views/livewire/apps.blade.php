@@ -16,9 +16,9 @@
             <div class="card mb-0">
             <div class="card-body p-0">   
                 <ul class="nav nav-pills stts-tab">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" v-bind:class="{ 'active' : id_ket == 'all'}" @click="changeId('all')" data-id="all" href="javascript:void(0)">Semua<span class="badge badge-white"></span></a>
-                    </li>
+                    </li> --}}
                     @foreach ($kategori as $ket)
                         <li class="nav-item">
                             <a class="nav-link" v-bind:class="{ 'active' : id_ket == '{{ $ket->id }}'}" @click="changeId({{ $ket->id }})" data-stts="{{ $ket->id }}" href="javascript:void(0)">{{ $ket->nama }}<span class="badge badge-white"></span></a>

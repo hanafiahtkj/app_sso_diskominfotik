@@ -18,7 +18,7 @@ class UtamaController extends Controller
     }
 
     public function apps()
-    {
+    { 
         $data = [
             'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
         ];

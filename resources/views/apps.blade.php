@@ -32,7 +32,7 @@
         
             // ----- VUE JS ----- //
             let dataVue= {
-                id_ket : 'all',
+                id_ket : '93',
                 kategori : @json($kategori),
             };
 
