@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
-use App\Mail\MalasngodingEmail;
+use App\Mail\MalasNgodingEmail;
 use Illuminate\Support\Facades\Mail;
 
 class ApiAuthController extends Controller
@@ -147,7 +147,7 @@ class ApiAuthController extends Controller
 
     public function sendEmailVerificationNotification(Request $request) {
 
-        Mail::to("hanafiahtkj95@gmail.com")->send(new MalasngodingEmail());
+        Mail::to("hanafiahtkj95@gmail.com")->send(new MalasNgodingEmail());
 
 		return "Email telah dikirim";  
     }
