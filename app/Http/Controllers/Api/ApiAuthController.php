@@ -146,6 +146,7 @@ class ApiAuthController extends Controller
     }
 
     public function sendEmailVerificationNotification(Request $request) {
-        
+        Mail::to("hanafiahtkj95@gmail.com")->send(new MalasngodingEmail());
+		return "Email telah dikirim";
     }
 }
