@@ -7,18 +7,39 @@ use App\Models\User;
 use App\Models\Kategori;
 use App\Models\Settings;
 use App\Models\Aplikasi;
+use DB;
 
 class Home extends Component
 {
     public $settings;
     public $aplikasi;
     public $berita;
+    public $polling;
 
     public function mount()
     {
         $this->aplikasi = Aplikasi::where('id_kategori', 93)->get();
         $this->settings = Settings::all()->sortBy('urut')->pluck('value', 'field');
         $this->berita   = $this->_getBerita();
+
+        $query = DB::table('polling')
+                ->select(
+                    DB::raw('SUM(sangatbaik) as sangatbaik'),
+                    DB::raw('SUM(baik) as baik'),
+                    DB::raw('SUM(cukup) as cukup'),
+                    DB::raw('SUM(kurang) as kurang')
+                )
+                ->first();
+
+        $total = DB::table('polling')->count();
+
+        $this->polling = [
+            'sangatbaik' => ( $total == 0 ) ? 0 : round(($query->sangatbaik * 100) / $total),
+            'baik'       => ( $total == 0 ) ? 0 : round(($query->baik * 100) / $total),
+            'cukup'      => ( $total == 0 ) ? 0 : round(($query->cukup * 100) / $total),
+            'kurang'     => ( $total == 0 ) ? 0 : round(($query->kurang * 100) / $total),
+        ];
+
     }
 
     protected function _getBerita() 
