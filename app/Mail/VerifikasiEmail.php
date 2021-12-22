@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
  
-class MalasngodingEmail extends Mailable
+class VerifikasiEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,12 +31,13 @@ class MalasngodingEmail extends Mailable
      */
     public function build()
     {
-       return $this->from('ssobanjarmasin@gmail.com')
+       return $this->subject('BANJARMASIN-DALAM-GENGGAMAN')
+                   ->from('ssobanjarmasin@gmail.com', 'BANJARMASIN-DALAM-GENGGAMAN')
                    ->view('emailku')
                    ->with(
                     [
                         'user' => $this->user,
-                        'verfication_kode' => substr(md5(uniqid(rand(), true)), 6, 6),
+                        'verfication_kode' => strtoupper(substr(md5(uniqid(rand(), true)), 6, 6)),
                         'website' => 'https://sso.banjarmasinkota.go.id/',
                     ]);
     }

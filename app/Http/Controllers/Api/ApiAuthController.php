@@ -149,7 +149,7 @@ class ApiAuthController extends Controller
     {
         $user = $request->user();
 
-        Mail::to($user->email)->send(new MalasNgodingEmail($user));
+        Mail::to($user->email)->send(new VerifikasiEmail($user));
 
 		return response()->json([]);  
     }
