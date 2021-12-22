@@ -155,7 +155,7 @@ class ApiAuthController extends Controller
 
         $user->save();
 
-        Mail::to($user->email)->send(new VerifikasiEmail($user));
+        Mail::to($user->email)->send(new VerifikasiEmail($user, $verification_kode));
         
 		return response()->json([
             'status' => true,
