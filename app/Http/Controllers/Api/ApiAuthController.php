@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
-use App\Mail\MalasNgodingEmail;
+use App\Mail\VerifikasiEmail;
 use Illuminate\Support\Facades\Mail;
 
 class ApiAuthController extends Controller
