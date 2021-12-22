@@ -139,18 +139,21 @@ class ApiAuthController extends Controller
 
         $user->assignRole('General');
 
+        $this->_sendEmailVerificationNotification($user);
+
         return response()->json([
             'id' => $user->id,
             'token' => $user->createToken($request->input('email'))->plainTextToken,
         ]);
     }
 
-    public function sendEmailVerificationNotification(Request $request) 
+    function _sendEmailVerificationNotification(User $user) 
     {
-        $user = $request->user();
-
         Mail::to($user->email)->send(new VerifikasiEmail($user));
 
-		return response()->json([]);  
+		return response()->json([
+            'status' => true,
+            'messages' => 'Email Berhasil dikirim'
+        ]);  
     }
 }
