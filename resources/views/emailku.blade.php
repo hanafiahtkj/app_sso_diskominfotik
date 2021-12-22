@@ -3,7 +3,7 @@
 <p>Selamat datang di <a href="https://sso.banjarmasinkota.go.id/">sso.banjarmasinkota.go.id</a>Hanya beberapa langkah lagi sebelum kamu dapat menggunakan akun Anda.</p>
 <p>Gunakan Kode dibawah ini untuk memverifikasi email kamu.</p>
 
-<p>Kode Verifikasi : {{ $verfication_kode }}</p> --}}
+<p>Kode Verifikasi : {{ $verification_kode }}</p> --}}
 
 <div id=":p2" class="ii gt" jslog="20277; u014N:xr6bB; 4:W251bGwsbnVsbCxbXV0.">
     <div id=":p1" class="a3s aiL msg-8748574857467462906">
@@ -43,7 +43,7 @@
                                                                             <tbody>
                                                                                <tr>
                                                                                   <td style="box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'">
-                                                                                     <a href="#">{{ $verfication_kode }}</a>
+                                                                                     <a href="#">{{ $verification_kode }}</a>
                                                                                   </td>
                                                                                </tr>
                                                                             </tbody>

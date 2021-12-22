@@ -149,9 +149,9 @@ class ApiAuthController extends Controller
 
     function _sendEmailVerificationNotification(User $user) 
     {
-        $verfication_kode = strtoupper(substr(md5(uniqid(rand(), true)), 6, 6));
+        $verification_kode = strtoupper(substr(md5(uniqid(rand(), true)), 6, 6));
         
-        $user->verfication_kode = $verfication_kode;
+        $user->verification_kode = $verification_kode;
 
         $user->save();
 

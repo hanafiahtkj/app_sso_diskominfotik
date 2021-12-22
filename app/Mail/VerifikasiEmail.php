@@ -13,7 +13,7 @@ class VerifikasiEmail extends Mailable
 
     var $user;
 
-    var $verfication_kode;
+    var $verification_kode;
  
  
     /**
@@ -21,11 +21,11 @@ class VerifikasiEmail extends Mailable
      *
      * @return void    
      */   
-    public function __construct($user, $verfication_kode)
+    public function __construct($user, $verification_kode)
     {
         $this->user = $user;
 
-        $this->verfication_kode = $verfication_kode;
+        $this->verification_kode = $verification_kode;
     }
  
     /**
@@ -36,12 +36,12 @@ class VerifikasiEmail extends Mailable
     public function build()
     {
        return $this->subject('BANJARMASIN-DALAM-GENGGAMAN')
-                   ->from('ssobanjarmasin@gmail.com', 'BANJARMASIN-DALAM-GENGGAMAN')
+                   ->from('ssobanjarmasin@gmail.com', 'Verifikasi Email')
                    ->view('emailku')
                    ->with(
                     [
                         'user' => $this->user,
-                        'verfication_kode' => $this->verfication_kode,
+                        'verification_kode' => $this->verification_kode,
                         'website' => 'https://sso.banjarmasinkota.go.id/',
                     ]);
     }
