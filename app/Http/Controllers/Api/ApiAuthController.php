@@ -149,8 +149,14 @@ class ApiAuthController extends Controller
 
     function _sendEmailVerificationNotification(User $user) 
     {
-        Mail::to($user->email)->send(new VerifikasiEmail($user));
+        $verfication_kode = strtoupper(substr(md5(uniqid(rand(), true)), 6, 6));
+        
+        $user->verfication_kode = $verfication_kode;
 
+        $user->save();
+
+        Mail::to($user->email)->send(new VerifikasiEmail($user));
+        
 		return response()->json([
             'status' => true,
             'messages' => 'Email Berhasil dikirim'

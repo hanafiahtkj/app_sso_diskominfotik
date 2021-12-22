@@ -12,6 +12,8 @@ class VerifikasiEmail extends Mailable
     use Queueable, SerializesModels;
 
     var $user;
+
+    var $verfication_kode;
  
  
     /**
@@ -19,9 +21,11 @@ class VerifikasiEmail extends Mailable
      *
      * @return void    
      */   
-    public function __construct($user)
+    public function __construct($user, $verfication_kode)
     {
         $this->user = $user;
+
+        $this->verfication_kode = $verfication_kode;
     }
  
     /**
@@ -37,7 +41,7 @@ class VerifikasiEmail extends Mailable
                    ->with(
                     [
                         'user' => $this->user,
-                        'verfication_kode' => strtoupper(substr(md5(uniqid(rand(), true)), 6, 6)),
+                        'verfication_kode' => $this->verfication_kode,
                         'website' => 'https://sso.banjarmasinkota.go.id/',
                     ]);
     }
