@@ -10,6 +10,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class MalasngodingEmail extends Mailable
 {
     use Queueable, SerializesModels;
+
+    var $user;
  
  
     /**
@@ -17,9 +19,9 @@ class MalasngodingEmail extends Mailable
      *
      * @return void    
      */   
-    public function __construct()
+    public function __construct($user)
     {
-        
+        $this->user = $user;
     }
  
     /**
@@ -33,8 +35,9 @@ class MalasngodingEmail extends Mailable
                    ->view('emailku')
                    ->with(
                     [
-                        'nama' => 'Diki Alfarabi Hadi',
-                        'website' => 'www.malasngoding.com',
+                        'user' => $this->user,
+                        'verfication_kode' => substr(md5(uniqid(rand(), true)), 6, 6),
+                        'website' => 'https://sso.banjarmasinkota.go.id/',
                     ]);
     }
 }
