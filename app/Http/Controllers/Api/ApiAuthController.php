@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Mail\VerifikasiEmail;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class ApiAuthController extends Controller
 {
@@ -161,5 +162,40 @@ class ApiAuthController extends Controller
             'status' => true,
             'messages' => 'Email Berhasil dikirim'
         ]);  
+    }
+
+    public function sendEmailVerificationNotification(Request $request) 
+    {
+        $user = $request->user();
+        
+        $verification_kode = strtoupper(substr(md5(uniqid(rand(), true)), 6, 6));
+        
+        $user->verification_kode = $verification_kode;
+
+        $user->save();
+
+        Mail::to($user->email)->send(new VerifikasiEmail($user, $verification_kode));
+        
+		return response()->json([
+            'status' => true,
+            'messages' => 'Email Berhasil dikirim'
+        ]);  
+    }
+
+    public function emailVerify(Request $request)
+    {
+        $user = $request->user();
+        $verification_kode = $request->input('verification');
+
+        $status = false;
+        if ($user->verification_kode == $verification_kode) {
+            $user>forceFill(['email_verified_at' => Carbon::now()->toDateTimeString()]);
+            $user->save();
+            $status = true;
+        }
+
+        return response()->json([
+            'status' => $status,
+        ]);
     }
 }
