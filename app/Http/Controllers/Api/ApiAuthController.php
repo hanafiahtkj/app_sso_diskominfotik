@@ -167,7 +167,7 @@ class ApiAuthController extends Controller
     public function sendEmailVerificationNotification(Request $request) 
     {
         $user = $request->user();
-        
+
         $verification_kode = strtoupper(substr(md5(uniqid(rand(), true)), 6, 6));
         
         $user->verification_kode = $verification_kode;
@@ -185,7 +185,7 @@ class ApiAuthController extends Controller
     public function emailVerify(Request $request)
     {
         $user = $request->user();
-        $verification_kode = $request->input('verification');
+        $verification_kode = $request->input('verification_kode');
 
         $status = false;
         if ($user->verification_kode == $verification_kode) {
