@@ -189,7 +189,7 @@ class ApiAuthController extends Controller
 
         $status = false;
         if ($user->verification_kode == $verification_kode) {
-            $user>forceFill(['email_verified_at' => Carbon::now()->toDateTimeString()]);
+            $user->forceFill(['email_verified_at' => Carbon::now()->toDateTimeString()]);
             $user->save();
             $status = true;
         }
