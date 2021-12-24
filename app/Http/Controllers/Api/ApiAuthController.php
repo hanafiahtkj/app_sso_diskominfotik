@@ -49,7 +49,7 @@ class ApiAuthController extends Controller
     public function checkVerifiedStatus(Request $request)
     {
         return response()->json([
-            'status' => $request->user()->hasVerifiedEmail()
+            'message' => 'Your email address is not verified'
         ], ($request->user()->hasVerifiedEmail() ? 202 : 403));
     }
 
