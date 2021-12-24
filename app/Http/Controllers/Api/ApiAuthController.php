@@ -46,6 +46,13 @@ class ApiAuthController extends Controller
         ]);
     }
 
+    public function checkVerifiedStatus(Request $request)
+    {
+        return response()->json([
+            'status' => $request->user()->hasVerifiedEmail()
+        ], ($request->user()->hasVerifiedEmail() ? 202 : 403));
+    }
+
     public function user(Request $request)
     {
         return response()->json($request->user());
