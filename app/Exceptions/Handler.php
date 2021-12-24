@@ -37,7 +37,7 @@ class Handler extends ExceptionHandler
                 return response()->json([
                     'error' => 'Not authenticated',
                     'message' => 'Not authenticated'
-                ], 401);
+                ], 403);
             }
         });
     }
