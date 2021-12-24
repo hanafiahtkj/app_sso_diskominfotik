@@ -29,7 +29,7 @@ class ApiAuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'error' => 'Login Gagal!',
-                'messages' => $validator->errors(),
+                'message' => $validator->errors(),
             ], 400);
         }
     
@@ -37,7 +37,7 @@ class ApiAuthController extends Controller
     
         if (! $user || ! Hash::check($request->password, $user->password)) {
             return response()->json([
-                'error' => 'Email dengan Password tidak ditemukan'
+                'message' => 'Email dengan Password tidak ditemukan'
             ], 400);
         }
     
@@ -63,7 +63,7 @@ class ApiAuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'error' => 'Gagal mengubah informasi profil!',
-                'messages' => $validator->errors(),
+                'message' => $validator->errors(),
             ], 400);
         }
     
@@ -93,7 +93,7 @@ class ApiAuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'error' => 'Terjadi Kesalahan!',
-                'messages' => $validator->errors(),
+                'message' => $validator->errors(),
             ], 400);
         }
         
@@ -128,7 +128,7 @@ class ApiAuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'error' => 'Terjadi Kesalahan!',
-                'messages' => $validator->errors(),
+                'message' => $validator->errors(),
             ], 400);
         }
 
@@ -160,7 +160,7 @@ class ApiAuthController extends Controller
         
 		return response()->json([
             'status' => true,
-            'messages' => 'Email Berhasil dikirim'
+            'message' => 'Email Berhasil dikirim'
         ]);  
     }
 
@@ -178,7 +178,7 @@ class ApiAuthController extends Controller
         
 		return response()->json([
             'status' => true,
-            'messages' => 'Email Berhasil dikirim'
+            'message' => 'Email Berhasil dikirim'
         ]);  
     }
 
