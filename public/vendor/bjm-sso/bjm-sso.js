@@ -9,7 +9,7 @@ class BjmSSO {
             headers: {
                 "Content-type": "application/json",
                 "Access-Control-Allow-Origin": "*",
-                "Accept": "application/json"
+                "Accept": "application/json",
             },
             withCredentials: true
         });
