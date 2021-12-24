@@ -6,8 +6,9 @@ use Closure;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 
-class EnsureEmailIsVerified
+class EnsureEmailIsVerified extends EnsureEmailIsVerified
 {
     /**
      * Handle an incoming request.
