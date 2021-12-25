@@ -56,7 +56,7 @@ Route::post('/register', [ ApiAuthController::class, "register" ]);
 Route::get('/getKategoriWithApps', [ ApiHomeController::class, "getKategoriWithApps" ]);
 Route::get('/getBerita', [ ApiHomeController::class, "getBerita" ]); 
 
-Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
+Route::group([ "middleware" => ['auth:sanctum']], function() {
     Route::post('/email/verification-notification', [ApiAuthController::class, 'sendEmailVerificationNotification']);
     Route::post('/email/verify', [ApiAuthController::class, 'emailVerify']);
     Route::post('/updateInfoProfile', [ ApiAuthController::class, "updateInfoProfile" ]);
