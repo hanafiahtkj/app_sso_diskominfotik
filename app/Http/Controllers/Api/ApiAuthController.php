@@ -140,7 +140,11 @@ class ApiAuthController extends Controller
 
         $user->assignRole('General');
 
-        $this->_sendEmailVerificationNotification($user);
+        // sementara
+        $user->forceFill(['email_verified_at' => Carbon::now()->toDateTimeString()]);
+            $user->save();
+
+        //$this->_sendEmailVerificationNotification($user);
 
         return response()->json([
             'id' => $user->id,
