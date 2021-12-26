@@ -81,6 +81,30 @@ class ApiAuthController extends Controller
         }   
     }
 
+    public function deleteProfile(Request $request)
+    {
+        $validasi = [
+            'id' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $validasi);
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'Gagal!',
+                'message' => $validator->errors(),
+            ], 400);
+        }
+    
+        $id = $request->id;
+        $user = User::find($id);
+        if ($user) {
+            $user->delete();  
+            return response()->json([
+                'status' => true
+            ]);
+        }   
+    }
+
     public function updateUserPassword(Request $request)
     {
         $validasi = [

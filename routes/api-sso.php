@@ -62,4 +62,5 @@ Route::group([ "middleware" => ['auth:sanctum']], function() {
     Route::post('/email/verify', [ApiAuthController::class, 'emailVerify']);
     Route::post('/updateInfoProfile', [ ApiAuthController::class, "updateInfoProfile" ]);
     Route::post('/updateUserPassword', [ ApiAuthController::class, "updateUserPassword" ]);
+    Route::post('/deleteProfile', [ ApiAuthController::class, "deleteProfile" ]);
 });
