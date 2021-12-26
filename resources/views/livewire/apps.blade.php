@@ -1,16 +1,5 @@
 <div>
 
-    <div class="alert alert-dismissible show fade alert-primary alert-has-icon">
-        <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
-        <div class="alert-body">
-            <button class="close" data-dismiss="alert">
-                <span>×</span>
-            </button>
-          <div class="alert-title">Hai, Selamat Datang</div>
-          {{ $settings['judul'] }}
-        </div>
-    </div>
-
     <div class="row fixed-top-c">
         <div class="col-12">
             <div class="card mb-0">
