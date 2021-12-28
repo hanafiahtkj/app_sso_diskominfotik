@@ -226,5 +226,5 @@ class ApiAuthController extends Controller
         return response()->json([
             'status' => ($request->user()->hasVerifiedEmail()) ? true : false,
         ]);
-    }
+    } 
 }
