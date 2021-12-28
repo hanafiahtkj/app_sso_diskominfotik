@@ -28,7 +28,6 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Login Gagal!',
                 'message' => $validator->errors(),
             ], 400);
         }
@@ -62,8 +61,7 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Gagal mengubah informasi profil!',
-                'message' => $validator->errors(),
+                'message' => 'Gagal mengubah informasi profil!',
             ], 400);
         }
     
@@ -90,7 +88,6 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Gagal!',
                 'message' => $validator->errors(),
             ], 400);
         }
@@ -116,7 +113,6 @@ class ApiAuthController extends Controller
         $validator = Validator::make($request->all(), $validasi);
         if ($validator->fails()) {
             return response()->json([
-                'error' => 'Terjadi Kesalahan!',
                 'message' => $validator->errors(),
             ], 400);
         }
@@ -165,10 +161,10 @@ class ApiAuthController extends Controller
         $user->assignRole('General');
 
         // sementara
-        $user->forceFill(['email_verified_at' => Carbon::now()->toDateTimeString()]);
-            $user->save();
+        // $user->forceFill(['email_verified_at' => Carbon::now()->toDateTimeString()]);
+        //     $user->save();
 
-        //$this->_sendEmailVerificationNotification($user);
+        $this->_sendEmailVerificationNotification($user);
 
         return response()->json([
             'id' => $user->id,
@@ -187,7 +183,6 @@ class ApiAuthController extends Controller
         Mail::to($user->email)->send(new VerifikasiEmail($user, $verification_kode));
         
 		return response()->json([
-            'status' => true,
             'message' => 'Email Berhasil dikirim'
         ]);  
     }
@@ -205,7 +200,6 @@ class ApiAuthController extends Controller
         Mail::to($user->email)->send(new VerifikasiEmail($user, $verification_kode));
         
 		return response()->json([
-            'status' => true,
             'message' => 'Email Berhasil dikirim'
         ]);  
     }
@@ -230,7 +224,7 @@ class ApiAuthController extends Controller
     public function checkVerifiedStatus(Request $request)
     {
         return response()->json([
-            'message' => ($request->user()->hasVerifiedEmail()) ? true : false,
+            'status' => ($request->user()->hasVerifiedEmail()) ? true : false,
         ]);
     }
 }
