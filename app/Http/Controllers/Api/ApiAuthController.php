@@ -227,9 +227,10 @@ class ApiAuthController extends Controller
 
     public function isLogin(Request $request)
     {
+        $status = ($request->user() != null) ? true : false;
         return response()->json([
-            'status'  => Auth::check(),
-            'message' => Auth::check() ? 'SSO Sudah Login' : 'SSO Belum Login'
+            'status'  => $status,
+            'message' => $status ? 'SSO Sudah Login' : 'SSO Belum Login'
         ]);
     } 
 }
