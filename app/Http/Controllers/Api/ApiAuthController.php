@@ -224,4 +224,12 @@ class ApiAuthController extends Controller
             'status' => ($request->user()->hasVerifiedEmail()) ? true : false,
         ]);
     } 
+
+    public function isLogin(Request $request)
+    {
+        return response()->json([
+            'status'  => Auth::check(),
+            'message' => Auth::check() ? 'SSO Sudah Login' : 'SSO Belum Login'
+        ]);
+    } 
 }
