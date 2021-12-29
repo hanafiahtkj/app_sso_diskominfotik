@@ -181,10 +181,6 @@ class ApiAuthController extends Controller
         $user->save();
 
         Mail::to($user->email)->send(new VerifikasiEmail($user, $verification_kode));
-        
-		return response()->json([
-            'message' => 'Email Berhasil dikirim'
-        ]);  
     }
 
     public function sendEmailVerificationNotification(Request $request) 
@@ -200,7 +196,8 @@ class ApiAuthController extends Controller
         Mail::to($user->email)->send(new VerifikasiEmail($user, $verification_kode));
         
 		return response()->json([
-            'message' => 'Email Berhasil dikirim'
+            'status'  => true, 
+            'message' => 'Email Verifikasi Berhasil terkirim',
         ]);  
     }
 
