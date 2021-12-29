@@ -65,6 +65,7 @@ Route::group([ "middleware" => ['auth:sanctum']], function() {
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
     Route::get('/user', [ ApiAuthController::class, "user" ]);
+    Route::get('/user2', [ ApiAuthController::class, "user2" ]);
     Route::post('/updateInfoProfile', [ ApiAuthController::class, "updateInfoProfile" ]);
     Route::post('/updateUserPassword', [ ApiAuthController::class, "updateUserPassword" ]);
     Route::post('/deleteProfile', [ ApiAuthController::class, "deleteProfile" ]);

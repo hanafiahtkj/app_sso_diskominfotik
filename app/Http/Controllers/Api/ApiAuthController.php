@@ -50,6 +50,20 @@ class ApiAuthController extends Controller
         return response()->json($request->user());
     }
 
+    public function user2(Request $request)
+    {
+        $script = $request->server('REMOTE_ADDR').$request->server('HTTP_USER_AGENT');
+        $key = $request->user()->createToken($script)->plainTextToken;
+        $status = ($request->user() != null) ? true : false;
+        return response()->json([
+            'status' => $status,
+            'data'   => [
+                'user'  => $request->user(),
+                'key'   => $key,
+            ]
+        ]);
+    }
+
     public function updateInfoProfile(Request $request)
     {
         $validasi = [

@@ -34,7 +34,7 @@ class BjmSSO {
     }
 
     async getUser() {
-        var url = (this.token != null) ? '/api/user' : '/sso/user';
+        var url = (this.token != null) ? '/api/user2' : '/sso/user';
         const response = await this.apiCall.get(this.base_url + url);
         return response.data;
     }
