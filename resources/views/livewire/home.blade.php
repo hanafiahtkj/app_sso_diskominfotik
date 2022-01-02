@@ -49,7 +49,7 @@
                 <a href="{{ route('apps') }}">
                     <article class="article">
                         <div class="article-header">
-                            <div class="article-image" data-background="{{ asset('img/plusx.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">
+                            <div class="article-image" data-background="{{ url('https://sso.banjarmasinkota.go.id/storage/logo_app_kategory/lainnya%204.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">
                             </div>
                         </div>
                     </article>
