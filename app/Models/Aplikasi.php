@@ -20,6 +20,7 @@ class Aplikasi extends Model
         'path',
         'file_name',
         'is_sso',
+        'order',
     ];
 
     public static function search($query)
