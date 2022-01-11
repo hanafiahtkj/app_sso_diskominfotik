@@ -69,6 +69,7 @@ class AppController extends Controller
             'keterangan'         => $request->input('keterangan'),
             'base_url'           => $request->input('base_url'),
             'base_url_sso'       => $request->input('base_url_sso'),
+            'order'              => $request->input('order'),
         ];
 
         if($request->hasFile('foto')) {
@@ -137,6 +138,7 @@ class AppController extends Controller
             'keterangan'         => $request->input('keterangan'),
             'base_url'           => $request->input('base_url'),
             'base_url_sso'       => $request->input('base_url_sso'),
+            'order'              => $request->input('order'),
         ];
 
         if($request->hasFile('foto')) {
