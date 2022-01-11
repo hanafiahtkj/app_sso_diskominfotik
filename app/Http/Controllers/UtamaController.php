@@ -12,7 +12,7 @@ class UtamaController extends Controller
     public function index()
     {
         $data = [
-            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->orderBy('order', 'asc')->get(),
+            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
         ];
         return view('welcome', $data);
     }
@@ -20,7 +20,7 @@ class UtamaController extends Controller
     public function apps()
     { 
         $data = [
-            'kategori' => Kategori::with('aplikasi')->orderBy('order', 'asc')->orderBy('urut', 'asc')->get(),
+            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
         ];
         return view('apps', $data);
     }

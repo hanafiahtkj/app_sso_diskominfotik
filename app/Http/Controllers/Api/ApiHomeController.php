@@ -12,7 +12,7 @@ class ApiHomeController extends Controller
 {
     public function getKategoriWithApps()
     {
-        $data = Kategori::with('aplikasi')->orderBy('urut', 'asc')->orderBy('order', 'asc')->get();
+        $data = Kategori::with('aplikasi')->orderBy('urut', 'asc')->get();
         return response()->json($data);
     }
 

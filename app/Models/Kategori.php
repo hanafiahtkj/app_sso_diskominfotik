@@ -21,7 +21,7 @@ class Kategori extends Model
 
     public function aplikasi()
     {
-        return $this->hasMany(Aplikasi::class, 'id_kategori', 'id');
+        return $this->hasMany(Aplikasi::class, 'id_kategori', 'id')->orderBy('urut', 'asc');
     }
 
 }
