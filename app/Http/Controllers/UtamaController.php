@@ -16,7 +16,7 @@ class UtamaController extends Controller
         ];
 
         $user = Kategori::with('aplikasi')->orderBy('urut', 'asc')->get();
-        dd($user->toJson('JSON_PRETTY_PRINT'));
+        dd($user->toJson(JSON_PRETTY_PRINT));
         //dd($data);
 
         return view('welcome', $data);
