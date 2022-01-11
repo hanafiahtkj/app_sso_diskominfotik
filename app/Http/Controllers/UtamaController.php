@@ -12,7 +12,7 @@ class UtamaController extends Controller
     public function index()
     {
         $data = [
-            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
+            'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get()->toJson(),
         ];
 
         //$user = Kategori::with('aplikasi')->orderBy('urut', 'asc')->get();
