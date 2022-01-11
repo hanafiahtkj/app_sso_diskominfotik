@@ -15,8 +15,9 @@ class UtamaController extends Controller
             'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
         ];
 
-        dd($data);
-        
+        dd($user->toJson());
+        //dd($data);
+
         return view('welcome', $data);
     }
 
