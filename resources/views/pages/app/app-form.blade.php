@@ -81,7 +81,7 @@
                   </label>
                 </div>
               </div>
-              <div class="form-group mt-4"><label for="order">Order</label> <input type="text" id="form-order" class="form-control"> <div class="invalid-feedback feedback-urut" value="{{ isset($app) ? $app->order : '' }}"></div></div>
+              <div class="form-group mt-4"><label for="order">Order</label> <input type="text" id="form-order" class="form-control"> <div class="invalid-feedback feedback-urut" name="order" value="{{ isset($app) ? $app->order : '' }}"></div></div>
             </div>
           </div>
         </div>
