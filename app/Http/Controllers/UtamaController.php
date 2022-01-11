@@ -15,6 +15,7 @@ class UtamaController extends Controller
             'kategori' => Kategori::with('aplikasi')->orderBy('urut', 'asc')->get(),
         ];
 
+        $user = Kategori::with('aplikasi')->orderBy('urut', 'asc')->get();
         dd($user->toJson());
         //dd($data);
 
