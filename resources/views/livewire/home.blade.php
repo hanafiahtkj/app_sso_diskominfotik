@@ -22,23 +22,23 @@
                 <a class="onTap" target="_blank" href="
                 @auth 
                     @if (Auth::user()->email_verified_at != null)
-                        {{ ($app->is_sso == 1) ? url($app->base_url_sso) : url($app->base_url) }} 
+                        {{ ($app['is_sso'] == 1) ? url($app['base_url_sso'] : url($app['base_url'] }} 
                     @else
-                        {{ ($app->is_sso == 1) ? route("verification.notice") : url($app->base_url) }}
+                        {{ ($app['is_sso'] == 1) ? ['route('verification.notice") : url($app['base_url'] }}
                     @endif
                 @else 
-                    @if($app->is_sso == 1) 
-                        {{ url('login?redirect='.$app->base_url_sso) }} 
+                    @if($app['is_sso'] == 1) 
+                        {{ url('login?redirect='.$app['base_url_sso'] }} 
                     @else 
-                        {{ $app->base_url }} 
+                        {{ $app['base_url'] }} 
                     @endif 
                 @endauth">
                     <article class="article">
                         <div class="article-header">
-                            <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-size: contain; background-image: url(&quot;{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}&quot;);">
+                            <div class="article-image" data-background="url('{{ isset($app['path'] ? asset(Storage::url($app['path']) : '' }}')" style="background-size: contain; background-image: url(&quot;{{ isset($app['path'] ? asset(Storage::url($app['path'])) : '' }}&quot;);">
                             </div>
                             <div class="article-title text-white">
-                                <h5>{{ $app->keterangan }}</h5>
+                                <h5>{{ $app['keterangan'] }}</h5>
                             </div>
                         </div>
                     </article>
