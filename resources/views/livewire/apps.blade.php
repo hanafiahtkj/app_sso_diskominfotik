@@ -2,7 +2,7 @@
 
     <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">Pemerintahan</h2>
-        <p class="section-lead">Kota Banjarmasin - Kalimantan Selatan</p>
+        <p class="section-lead">Kota Banjarmasin, Kalimantan Selatan</p>
     </div>
 
     <div class="overflow-hidden sm:rounded-lg">
