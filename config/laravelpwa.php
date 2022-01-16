@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => 'Banjarmasin Dalam Genggaman',
+    'name' => 'Banjarmasin Pintar',
     'manifest' => [
-        'name' => env('APP_NAME', 'Banjarmasin Dalam Genggaman'),
-        'short_name' => 'Banjarmasin Dalam Genggaman',
+        'name' => env('APP_NAME', 'Banjarmasin Pintar'),
+        'short_name' => 'Banjarmasin Pintar',
         'start_url' => '/',
         'background_color' => '#2969b0',
         'theme_color' => '#000000',

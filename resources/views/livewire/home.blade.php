@@ -96,14 +96,14 @@
     
     <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">Polling</h2>
-        <p class="section-lead">Aplikasi Banjarmasin Dalam Genggaman</p>
+        <p class="section-lead">Aplikasi Banjarmasin Pintar</p>
     </div>
 
     <div class="row justify-content-md-center">
         <div class="col-12 col-md-6 ">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h4>Pendapat anda tentang Aplikasi Banjarmasin Dalam Genggaman?</h4>
+                    <h4>Pendapat anda tentang Aplikasi Banjarmasin Pintar?</h4>
                 </div>
                 <div class="card-body">
                     @if (session('polling') != true ) 
