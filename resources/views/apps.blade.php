@@ -30,51 +30,6 @@
                 $(obj).parents('.article').addClass('active');
             }
         
-            // ----- VUE JS ----- //
-            let dataVue= {
-                id_ket : '93',
-                kategori : @json($kategori),
-            };
-
-            console.log(dataVue);
-            
-            var app = new Vue({
-                el: '#app',
-                data: dataVue,
-                mounted () {
-                
-                },
-                methods: {
-                    changeId: function (id) {
-                        this.id_ket = id;
-                    },
-                    appBgImage(src) {
-                        let bgImage = "{{ asset(Storage::url('')) }}" + "/" + src;
-                        return {
-                            backgroundImage: `url("${bgImage}")`,
-                            backgroundSize: 'contain',
-                        }
-                    },
-                },
-                computed: {
-                    filteredKategori() {
-                        let tempKategori = this.kategori
-                        tempKategori = tempKategori.filter((item) => {
-                            if (item.id == this.id_ket) {
-                                return true;
-                            }
-
-                            if (this.id_ket == 'all') {
-                                if(item.id == 100) {
-                                    return false;
-                                }
-                                return true;
-                            }
-                        })
-                        return tempKategori;
-                    }
-                }
-            });
         </script>
         <script>
             $(function() {

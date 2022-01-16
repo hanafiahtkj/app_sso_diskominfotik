@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AppsController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UtamaController;
@@ -57,7 +58,7 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
 Route::group([ "middleware" => ['auth:sanctum', 'verified', 'role:Admin']], function() {
     Route::get('/admin-dashboard', [ AdminDashboardController::class, "index" ])->name('admin.dashboard');
     Route::resource('kategori', KategoriController::class)->middleware(['auth']);
-    Route::resource('app', AppController::class)->middleware(['auth']);
+    //Route::resource('apps', AppsController::class)->middleware(['auth']);
     Route::get('/user', [ UserController::class, "index_view" ])->name('user');
     Route::view('/user/new', "pages.user.user-new")->name('user.new');
     Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');

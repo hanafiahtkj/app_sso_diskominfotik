@@ -12,7 +12,7 @@
 
     <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">Pelayanan Publik</h2>
-        <p class="section-lead">Aplikasi Pelayanan Publik</p>
+        <p class="section-lead">Kota Banjarmasin - Kalimantan Selatan</p>
     </div>
 
     <div class="overflow-hidden sm:rounded-lg">
@@ -46,7 +46,9 @@
             </div>
             @endforeach
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a href="{{ route('apps') }}">
+                <a href="
+                {{ url('apps') }}
+                ">
                     <article class="article">
                         <div class="article-header">
                             <div class="article-image" data-background="{{ url('https://sso.banjarmasinkota.go.id/storage/logo_app_kategory/lainnya%204.png') }}" style="background-image: url(&quot;{{ asset('img/products/product-3-50.png') }}&quot;);">
@@ -61,7 +63,7 @@
     @if(!empty($berita))
     <div class="py-0 pb-3 px-0 sm:px-0">
         <h2 class="section-title">Berita Terkini</h2>
-        <p class="section-lead">Dari website berita.banjarmasinkota.go.id</p>
+        <p class="section-lead">Kota Banjarmasin - Kalimantan Selatan</p>
     </div>
 
     <div class="overflow-hidden sm:rounded-lg">

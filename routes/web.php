@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtamaController;
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\PollingController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ UtamaController::class, "index" ])->name('welcome');
 
 Route::get('/apps', [ UtamaController::class, "apps" ])->name('apps');
+
+Route::get('/app/{id}', [ AppController::class, "app" ])->name('app');
 
 Route::get('/about', [ UtamaController::class, "index" ])->name('about');
 
