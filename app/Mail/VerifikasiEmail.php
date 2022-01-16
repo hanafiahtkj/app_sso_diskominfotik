@@ -35,7 +35,7 @@ class VerifikasiEmail extends Mailable
      */
     public function build()
     {
-       return $this->subject('BANJARMASIN-DALAM-GENGGAMAN')
+       return $this->subject('BANJARMASIN PINTAR')
                    ->from('ssobanjarmasin@gmail.com', 'Verifikasi Email')
                    ->view('emailku')
                    ->with(
