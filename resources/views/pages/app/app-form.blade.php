@@ -4,7 +4,7 @@
 
   <x-slot name="header_content">
     <div class="section-header-back">
-      <a href="{{ route('app.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+      <a href="{{ route('aplikasi.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
     </div>
     <h1>Aplikasi</h1>
     <div class="section-header-breadcrumb d-none d-md-block">
@@ -17,17 +17,17 @@
   </x-slot>
 
   @if(isset($app))
-    <form id="form-app" method="POST" action="{{ route('app.update', $app->id) }}" novalidate="" enctype="multipart/form-data">
+    <form id="form-app" method="POST" action="{{ route('aplikasi.update', $app->id) }}" novalidate="" enctype="multipart/form-data">
     @method('PATCH')
   @else
-    <form id="form-app" method="POST" action="{{ route('app.store') }}" novalidate="" enctype="multipart/form-data">
+    <form id="form-app" method="POST" action="{{ route('aplikasi.store') }}" novalidate="" enctype="multipart/form-data">
   @endif
   @csrf
   <div class="main-content">
     <section class="section">
       <div class="section-header">
         <div class="section-header-back">
-        <a href="{{ route('app.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+        <a href="{{ route('aplikasi.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
       </div>
       <h1>Aplikasi</h1>
       <div class="section-header-breadcrumb d-none d-md-block">
@@ -169,9 +169,9 @@
   <script>
     // ----- VUE JS ----- //
     @if (isset($app))
-      let action = "{{ route('app.update', $app->id) }}";
+      let action = "{{ route('aplikasi.update', $app->id) }}";
     @else
-      let action = "{{ route('app.store') }}";
+      let action = "{{ route('aplikasi.store') }}";
     @endif
 
     let dataVue= {
@@ -300,7 +300,7 @@
               $(".is-invalid").removeClass("is-invalid");
               if (data['status'] == true) {
                 alert('ok');
-                window.location = "{{ route('app.index') }}";
+                window.location = "{{ route('aplikasi.index') }}";
               }
               else {
                 printErrorMsg(data.errors);

@@ -10,7 +10,7 @@
     </div>
     <h1>Aplikasi</h1>
     <div class="section-header-button">
-      <a href="{{ route('app.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Aplikasi Baru</a>
+      <a href="{{ route('aplikasi.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Aplikasi Baru</a>
     </div>
     <div class="section-header-breadcrumb">
       <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dasbor</a></div>

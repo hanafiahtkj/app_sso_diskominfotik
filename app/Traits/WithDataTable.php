@@ -37,7 +37,7 @@ trait WithDataTable {
                     "app" => $app,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('app.create'),
+                            'create_new' => route('aplikasi.create'),
                             'create_new_text' => 'Buat Aplikasi Baru',
                             'export' => '#',
                             'export_text' => 'Export'
