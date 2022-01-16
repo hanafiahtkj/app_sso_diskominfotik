@@ -16,7 +16,7 @@ class Apps extends Component
     
     public function mount()
     {
-        $this->kategori = Kategori::whereNotIn('id', 93)->with('aplikasi')->orderBy('urut', 'asc')->get();
+        $this->kategori = Kategori::whereNotIn('id', [93])->with('aplikasi')->orderBy('urut', 'asc')->get();
         $this->settings = Settings::all()->sortBy('urut')->pluck('value', 'field');
         $this->berita   = $this->_getBerita();
 

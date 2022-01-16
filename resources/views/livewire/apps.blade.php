@@ -7,7 +7,7 @@
 
     <div class="overflow-hidden sm:rounded-lg">
         <div class="row" id="app-kategori">
-            {{-- @foreach ($kategori as $kat)
+            @foreach ($kategori as $kat)
             <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                 <a class="onTap" href="{{ url('app/'.$kat->id) }}">
                     <article class="article">
@@ -18,7 +18,7 @@
                     </article>
                 </a>
             </div>
-            @endforeach --}}
+            @endforeach
         </div>
     </div>
 
