@@ -45,20 +45,16 @@
                 </a>
             </div>
             @endforeach
-            <div class="col-6 col-sm-4 col-md-4 col-lg-3">
-                <a href="
-                {{ url('apps') }}
-                ">
-                    <article class="article">
-                        <div class="article-header">
-                            <div class="article-image" data-background="{{ url('https://sso.banjarmasinkota.go.id/img/lainnya.png') }}" style="background-image: url(&quot;{{ asset('img/lainnya') }}&quot;);">
-                            </div>
-                        </div>
-                    </article>
-                </a>
-            </div>
         </div>
     </div>
+
+    <a href="{{ url('apps') }}">
+        <div class="alert alert-dismissible show fade alert-primary alert-has-icon p-0">
+        <div class="alert-body" >
+            <div style="height: 120px;background-image: url(&quot;{{ asset('img/pemerintahan.png') }}&quot;);background-size: contain;"></div>
+        </div>
+    </div>
+    </a>
 
     @if(!empty($berita))
     <div class="py-0 pb-3 px-0 sm:px-0">

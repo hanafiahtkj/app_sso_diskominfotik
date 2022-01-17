@@ -3,7 +3,7 @@ $user = auth()->user();
 @endphp 
 
 <div class="navbar-bg bg-transparent"></div>
-<nav class="navbar navbar-expand-lg main-navbar fixed-top bg-primary">
+<nav class="navbar navbar-expand-lg main-navbar fixed-top bg-gradient">
 <div class="container">
     <a class="navbar-brand sidebar-gone-hide" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}" class="d-inline-block align-top" alt="" style="height: 55px;"></a>
     <div class="navbar-nav">
