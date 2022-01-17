@@ -48,10 +48,23 @@
         </div>
     </div>
 
-    <a href="{{ url('apps') }}">
+    {{-- <a href="{{ url('apps') }}" class="p-0">
+        <div class="alert alert-dismissible show fade alert-has-icon p-0">
+        <div class="alert-body" style="height: 120px;background-image: url(&quot;{{ asset('img/pemerintahan.png') }}&quot;);background-size: contain;">
+            <div class="alert-title m-3">PEMERINTAHAN</div>
+            <div>
+            </div>
+        </div>
+    </div>
+    </a> --}}
+
+    <a href="{{ url('apps') }}" class="p-0">
         <div class="alert alert-dismissible show fade alert-primary alert-has-icon p-0">
-        <div class="alert-body" >
-            <div style="height: 120px;background-image: url(&quot;{{ asset('img/pemerintahan.png') }}&quot;);background-size: contain;"></div>
+            <div class="alert-body" style="height: 100px;">
+        {{-- <div class="alert-body" style="height: 120px;background-image: url(&quot;{{ asset('img/pemerintahan.png') }}&quot;);background-size: contain;"> --}}
+            <div class="alert-title mt-2 ml-3 font-weight-bold">PEMERINTAHAN</div>
+            <div>
+            </div>
         </div>
     </div>
     </a>
