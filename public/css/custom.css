@@ -216,7 +216,7 @@ section .section-title:before {
 
 @media (max-width: 767px) { 
     .article .article-header .article-image {
-        height: 60%;
+        height: 70%;
     }
 }
 
