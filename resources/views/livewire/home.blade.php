@@ -37,10 +37,13 @@
                         <div class="article-header">
                             <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-size: contain; background-image: url(&quot;{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}&quot;);">
                             </div>
-                            <div class="article-title text-white">
+                            {{-- <div class="article-title text-white line-clamp">
                                 <h5>{{ $app->keterangan }}</h5>
-                            </div>
+                            </div> --}}
                         </div>
+                        <div class="article-details line-clamp px-3 py-1">
+                            {{ $app->keterangan }}
+                          </div>
                     </article>
                 </a>
             </div>
