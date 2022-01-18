@@ -21,7 +21,7 @@ body {
 
 .alert.alert-primary {
     background-color: #2969b0;
-    background-image: linear-gradient(to right, #405fa2 , #1e6fc9, #5595a7, #4db1a5, #2ba79f);
+    background-image: linear-gradient(to right, #031c54 , #0954a9, #0785a9, #4db1a5, #2ba79f);
 }
 
 #welcome {
@@ -154,7 +154,7 @@ section .section-title:before {
 
 .bg-navbar {
     background-color: #9c27b0;
-    background-image: linear-gradient(to right, #2196f3 , #9c27b0, #e91e63, #ff5722, #ffeb3b);
+    background-image: linear-gradient(to right, #031c54 , #0954a9, #0785a9, #4db1a5, #2ba79f);
 }
 
 .min-h-screen {
