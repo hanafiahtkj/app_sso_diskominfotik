@@ -41,9 +41,9 @@
                                 <h5>{{ $app->keterangan }}</h5>
                             </div> --}}
                         </div>
-                        <div class="article-details line-clamp px-3 py-1">
-                            {{ $app->keterangan }}
-                          </div>
+                        <div class="article-details px-3 py-1">
+                            <p class="line-clamp">{{ $app->keterangan }}</p>
+                        </div>
                     </article>
                 </a>
             </div>
