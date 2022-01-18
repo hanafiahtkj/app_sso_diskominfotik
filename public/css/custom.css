@@ -16,7 +16,7 @@ body {
 
 .bg-gradient {
     background-color: #2969b0 !important;
-    background-image: linear-gradient(to right, #405fa2 , #1e6fc9, #5595a7, #4db1a5, #2ba79f);
+    background-image: linear-gradient(to right, #031c54 , #0954a9, #0785a9, #4db1a5, #2ba79f);
 }
 
 .alert.alert-primary {
