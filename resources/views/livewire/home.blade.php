@@ -1,12 +1,14 @@
 <div>
-    <div class="alert alert-dismissible show fade alert-primary alert-has-icon">
-        <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
-        <div class="alert-body p-0" style="background-image: url(&quot;{{ asset('img/pelayanan_publik.png') }}&quot;);background-size: contain;background-position: right;background-repeat: no-repeat;">
+    <div class="alert alert-dismissible show fade alert-primary alert-has-icon p-0">
+        {{-- <div class="alert-icon"><i class="far fa-lightbulb"></i></div> --}}
+        <div class="alert-body p-0" style="height: 90px;background-image: url(&quot;{{ asset('img/pelayanan_publik.png') }}&quot;);background-size: contain;background-position: right;background-repeat: no-repeat;">
             <button class="close" data-dismiss="alert">
                 <span>×</span>
             </button>
-          <div class="alert-title">Hai, Selamat Datang</div>
-          {{ $settings['judul'] }}
+          <div class="alert-title mt-3 ml-3">
+              <p class="font-weight-bold">Hai, Selamat Datang</p>
+              <p style="font-size: 14px;">{{ $settings['judul'] }}</p>
+            </div>
         </div>
     </div>
 
@@ -65,9 +67,9 @@
         <div class="alert alert-dismissible show fade alert-primary alert-has-icon p-0">
             {{-- <div class="alert-body" style="height: 100px;"> --}}
         <div class="alert-body" style="height: 90px;background-image: url(&quot;{{ asset('img/pemerintahan.png') }}&quot;);background-size: contain;background-position: right;background-repeat: no-repeat;">
-            <div class="alert-title mt-2 ml-3">
+            <div class="alert-title mt-3 ml-3">
                 <p class="font-weight-bold">PEMERINTAHAN</p>
-                <p>Kota Banjarmasin, Kalimantan Selatan</p>
+                <p style="font-size: 14px;">Kota Banjarmasin, Kalimantan Selatan</p>
             </div>
         </div>
     </div>
