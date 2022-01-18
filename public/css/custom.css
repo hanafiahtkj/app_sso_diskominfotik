@@ -396,4 +396,19 @@ section .section-title:before {
     border-bottom-right-radius: 10px;
     border-bottom: 1px solid #e2e8f0;
     background-color: #f6f6f6!important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #000;
+    font-weight: 700;
+}
+
+.article .article-details {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.onTap {
+    text-decoration: none;
 }
