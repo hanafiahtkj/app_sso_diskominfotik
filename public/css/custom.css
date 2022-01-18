@@ -412,3 +412,13 @@ section .section-title:before {
 .onTap {
     text-decoration: none;
 }
+
+.article .article-header {
+    height: 172px;
+    position: relative;
+    overflow: hidden;
+}
+
+.article .article-header .article-image {
+    height: 60%;
+}
