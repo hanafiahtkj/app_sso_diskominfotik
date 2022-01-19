@@ -50,7 +50,7 @@
         <style>
             @media (max-width: 767px) { 
                 .section > *:first-child {
-                    margin-top: 70px!important;
+                    /* margin-top: 70px!important; */
                 } 
             }
 
