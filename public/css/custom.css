@@ -221,8 +221,10 @@ section .section-title:before {
     }
 
     .line-clamp {
-        -webkit-line-clamp: 1;
+        display: -webkit-box!important;
+        -webkit-line-clamp: 2!important;
         font-size: 12px;
+        height: 65px;
     }
 }
 
