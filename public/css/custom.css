@@ -230,6 +230,26 @@ section .section-title:before {
     border-top:#e1e8f0;
 }
 
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:65px;
+	right:40px;
+	background-color:rgb(255, 255, 255);
+    background-image: url(../img/icon_lapor.png);
+    background-size: contain;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    z-index: 4000000;
+}
+
+.btn-float{
+	margin-top:22px;
+}
+
 @media (max-width: 767px) { 
     .article .article-header .article-image {
         height: 60%;

@@ -180,3 +180,7 @@
         </div>
     </div>
 </div>
+
+<a href="https://www.lapor.go.id/instansi/pemerintah-kota-banjarmasin" target="_blank" class="float">
+    {{-- <i class="fa fa-plus btn-float"></i> --}}
+</a>

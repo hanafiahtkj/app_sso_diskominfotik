@@ -1,8 +1,8 @@
 class BjmSSO {
 
     constructor() {
-        this.base_url = 'https://sso.banjarmasinkota.go.id';
-        // this.base_url = 'http://server.banjarmasinkota.go.id:8000';
+        // this.base_url = 'https://sso.banjarmasinkota.go.id';
+        this.base_url = 'http://server.banjarmasinkota.go.id:8000';
         // this.base_url = 'http://127.0.0.1:8000';
 
         var url_string = window.location.href;
