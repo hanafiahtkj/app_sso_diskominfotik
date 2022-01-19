@@ -115,7 +115,7 @@ section .section-title:before {
 }
 
 .article .article-header .article-image {
-    background-color: #f6f6f6;
+    background-color: #2497a8;
 }
 
 .article.article-style-b .article-details .article-title {
@@ -125,7 +125,7 @@ section .section-title:before {
 .article {
     /* box-shadow: 0 4px 8px rgb(0 0 0 / 3%);
     box-shadow: 0 4px 8px rgb(0 0 0 / 3%); */
-    background-color: #f7f7f7;
+    background-color: #2497a8;
     border-radius: 10px;
     border-left: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
@@ -135,7 +135,7 @@ section .section-title:before {
 .article .article-header {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #2497a8;
     border-bottom: 0px;
 }
 
@@ -211,12 +211,12 @@ section .section-title:before {
 }
 
 .article .article-header .article-image {
-    height: 70%;
+    height: 65%;
 }
 
 @media (max-width: 767px) { 
     .article .article-header .article-image {
-        height: 70%;
+        height: 55%;
     }
 
     .line-clamp {
