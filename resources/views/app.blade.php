@@ -25,12 +25,15 @@
                         @endif 
                     @endauth">
                         <article class="article">
-                            <div class="article-header">
+                            <div class="article-header p-2 pt-3">
                                 <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-size: contain; background-image: url(&quot;{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}&quot;);">
                                 </div>
-                                <div class="article-title text-white">
+                                {{-- <div class="article-title text-white">
                                     <h5>{{ $app->keterangan }}</h5>
-                                </div>
+                                </div> --}}
+                            </div>
+                            <div class="article-details line-clamp px-3 pt-0 pb-1 d-flex align-items-center justify-content-center">
+                                {{ $app->keterangan }}
                             </div>
                         </article>
                     </a>
