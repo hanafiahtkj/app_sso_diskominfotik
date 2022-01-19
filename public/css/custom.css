@@ -218,6 +218,10 @@ section .section-title:before {
     .article .article-header .article-image {
         height: 70%;
     }
+
+    .line-clamp {
+        -webkit-line-clamp: 1;
+    }
 }
 
 @media (min-width: 1280px) {
