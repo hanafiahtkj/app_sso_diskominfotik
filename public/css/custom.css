@@ -215,7 +215,7 @@ section .section-title:before {
     height: 65%;
 }
 
-.article .article-header .article-image {
+.article.article-style-b .article-header .article-image {
     height: 100%;
 }
 
