@@ -43,7 +43,7 @@
                                 <h5>{{ $app->keterangan }}</h5>
                             </div> --}}
                         </div>
-                        <div class="article-details line-clamp px-3 py-1">
+                        <div class="article-details line-clamp px-3 pt-0 pb-1">
                             {{ $app->keterangan }}
                         </div>
                     </article>
