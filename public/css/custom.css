@@ -215,6 +215,19 @@ section .section-title:before {
     height: 65%;
 }
 
+.article .article-header .article-image {
+    height: 100%;
+}
+
+.article.article-style-b {
+    background-color: white;
+    background-image: none;
+}
+
+.article.article-style-b .article-header{
+    border-top:#e1e8f0;
+}
+
 @media (max-width: 767px) { 
     .article .article-header .article-image {
         height: 60%;
