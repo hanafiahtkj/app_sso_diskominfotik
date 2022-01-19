@@ -36,7 +36,7 @@
                     @endif 
                 @endauth">
                     <article class="article">
-                        <div class="article-header p-2">
+                        <div class="article-header p-2 pt-3">
                             <div class="article-image" data-background="url('{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}')" style="background-size: contain; background-image: url(&quot;{{ isset($app->path) ? asset(Storage::url($app->path)) : '' }}&quot;);">
                             </div>
                             {{-- <div class="article-title text-white line-clamp">

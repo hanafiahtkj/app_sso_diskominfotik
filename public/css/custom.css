@@ -115,7 +115,7 @@ section .section-title:before {
 }
 
 .article .article-header .article-image {
-    background-color: #2497a8;
+    background-color: transparent;
 }
 
 .article.article-style-b .article-details .article-title {
@@ -126,6 +126,7 @@ section .section-title:before {
     /* box-shadow: 0 4px 8px rgb(0 0 0 / 3%);
     box-shadow: 0 4px 8px rgb(0 0 0 / 3%); */
     background-color: #2497a8;
+    background-image: linear-gradient(to right, #0a87a8, #2ba79f);
     border-radius: 10px;
     border-left: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
@@ -186,12 +187,12 @@ section .section-title:before {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom: 1px solid #e2e8f0;
-    background-color: #f6f6f6!important;
+    background-color: transparent!important;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    color: #273047;
+    color: #fff;
     font-weight: 700;
 }
 
@@ -216,11 +217,12 @@ section .section-title:before {
 
 @media (max-width: 767px) { 
     .article .article-header .article-image {
-        height: 55%;
+        height: 60%;
     }
 
     .line-clamp {
         -webkit-line-clamp: 1;
+        font-size: 12px;
     }
 }
 
