@@ -155,7 +155,7 @@ section .section-title:before {
 
 .bg-navbar {
     background-color: #9c27b0;
-    background-image: linear-gradient(to right, #031c54 , #0954a9, #0785a9, #4db1a5, #2ba79f);
+    background-image: linear-gradient(to right, #0954a9, #0785a9, #4db1a5, #2ba79f);
 }
 
 .min-h-screen {
@@ -403,6 +403,7 @@ section .section-title:before {
         line-height: 60px;
         padding-left: 1.5rem!important;
         background-color: #2969b0 !important;
+        background-image: linear-gradient(to right, #0954a9, #0785a9, #4db1a5, #2ba79f);
         /* background-color: #2969b0 !important;
         background-image: unset!important; */
     }
