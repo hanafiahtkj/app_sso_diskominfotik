@@ -2,9 +2,20 @@
     overflow: hidden;
 }
 
-body {
+/* body {
     background-color: #f9fafb;
     background-image: url(../img/sasirangan.jpg);
+    background-size: contain;
+} */
+
+body {
+    /* background-color: #f9fafb;
+    background-image: url(../img/sasirangan_atas.png);
+    background-size: contain; */
+
+    background-image: url(../img/sasirangan_bawah.png), url(../img/sasirangan_atas.png);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
     background-size: contain;
 }
 
