@@ -16,7 +16,7 @@ body {
     background-image: url(../img/sasirangan_bawah.png), url(../img/sasirangan_atas.png);
     background-position: right bottom, left top;
     background-repeat: no-repeat, repeat;
-    background-size: contain;
+    /* background-size: contain; */
 }
 
 .bg-custom {
