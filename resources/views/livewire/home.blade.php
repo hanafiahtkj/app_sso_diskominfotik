@@ -129,24 +129,36 @@
                             <label class="form-check-label" for="exampleRadios1">
                                 Sangat Baik
                             </label>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $polling['sangatbaik'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['sangatbaik'] }}%;">{{ $polling['sangatbaik'] }}%</div>
+                            </div>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="polling" id="exampleRadios2" value="2">
                             <label class="form-check-label" for="exampleRadios2">
                                 Baik
                             </label>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-primary" role="progressbar" data-width="{{ $polling['baik'] }}%" aria-valuenow="{{ $polling['baik'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['baik'] }}%;">{{ $polling['baik'] }}%</div>
+                            </div>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="polling" id="exampleRadios3" value="3">
                             <label class="form-check-label" for="exampleRadios3">
                                 Cukup
                             </label>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-warning" role="progressbar" data-width="{{ $polling['cukup'] }}%" aria-valuenow="{{ $polling['cukup'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['cukup'] }}%;">{{ $polling['cukup'] }}%</div>
+                            </div>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="polling" id="exampleRadios4" value="4">
                             <label class="form-check-label" for="exampleRadios4">
                                 Kurang
                             </label>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" data-width="{{ $polling['kurang'] }}%" aria-valuenow="{{ $polling['kurang'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['kurang'] }}%;">{{ $polling['kurang'] }}%</div>
+                            </div>
                         </div>
         
                         <div align="center" class="mt-3 mb-3">
@@ -157,24 +169,6 @@
                         <h1 style="text-align: center;" class="mb-3">Terimakasih atas masukan anda</h1>
                     @endif
                     
-                    <hr class="mb-3">
-
-                    <span class="skill m3-4">Sangat Baik</span>
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ $polling['sangatbaik'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['sangatbaik'] }}%;">{{ $polling['sangatbaik'] }}%</div>
-                    </div>
-                    <span class="skill m3-4">Baik</span>
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-primary" role="progressbar" data-width="{{ $polling['baik'] }}%" aria-valuenow="{{ $polling['baik'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['baik'] }}%;">{{ $polling['baik'] }}%</div>
-                    </div>
-                    <span class="skill m3-4">Cukup</span>
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-warning" role="progressbar" data-width="{{ $polling['cukup'] }}%" aria-valuenow="{{ $polling['cukup'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['cukup'] }}%;">{{ $polling['cukup'] }}%</div>
-                    </div>
-                    <span class="skill m3-4">Kurang</span>
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-danger" role="progressbar" data-width="{{ $polling['kurang'] }}%" aria-valuenow="{{ $polling['kurang'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['kurang'] }}%;">{{ $polling['kurang'] }}%</div>
-                    </div>
                 </div>
             </div>
         </div>
