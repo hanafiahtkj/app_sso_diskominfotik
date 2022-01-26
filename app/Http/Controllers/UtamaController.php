@@ -15,6 +15,11 @@ class UtamaController extends Controller
         return view('welcome');
     }
 
+    public function privacyPolicy() 
+    {
+        return view('privacy-policy');
+    }
+
     public function apps()
     { 
         $data = [

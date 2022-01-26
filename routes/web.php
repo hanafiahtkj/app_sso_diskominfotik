@@ -25,6 +25,8 @@ Route::get('/app/{id}', [ AppController::class, "app" ])->name('app');
 
 Route::get('/about', [ UtamaController::class, "index" ])->name('about');
 
+Route::get('/privacy-policy', [ UtamaController::class, "privacyPolicy" ])->name('privacy-policy');
+
 Route::post('/polling/simpan', [ PollingController::class, "simpan" ])->name('polling');
 
 require __DIR__.'/web-sso.php';
