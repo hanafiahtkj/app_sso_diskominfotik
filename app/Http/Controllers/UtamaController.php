@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Kategori;
 use App\Models\Settings;
 use App\Models\Aplikasi;
+use Illuminate\Support\Facades\Storage;
 
 class UtamaController extends Controller
 {
@@ -34,5 +35,12 @@ class UtamaController extends Controller
             'aplikasi' => Aplikasi::where('id_kategori', $id)->get(),
         ];
         return view('app', $data);
+    }
+
+    public function resize()
+    {
+        $files = Storage::allFiles('logo_app');
+
+        var_dump($files); die;
     }
 }

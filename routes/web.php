@@ -29,4 +29,6 @@ Route::get('/privacy-policy', [ UtamaController::class, "privacyPolicy" ])->name
 
 Route::post('/polling/simpan', [ PollingController::class, "simpan" ])->name('polling');
 
+Route::get('/resize', [ UtamaController::class, "resize" ])->name('resize');
+
 require __DIR__.'/web-sso.php';
