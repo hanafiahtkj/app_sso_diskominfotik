@@ -11,12 +11,12 @@
         <meta name="robots" content="index, follow">
         <meta name="description" content="Banjarmasin Pintar - Sebuah Aplikasi digital Pemerintah kota banjarmasin yang menampung semua aplikasi SKPD di lingkup kota banjarmasin. Sekaligus SSO (Single Sign On) dimana masyarakat dapat masuk ke semua aplikasi pelayanan publik dengan hanya satu kali pendaftaran atau hanya dengan satu akun.">
         <meta name="keywords" content="Banjarmasin Pintar, SSO Pemerintah kota Banjarmasin, Portal Aplikasi SKPD Pemerintah Kota Banjarmasin">
-        <meta name="author" content="">
+        <meta name="author" content="{{ url('') }}">
         <meta name="robots" content="all,index,follow">
         <meta http-equiv="Content-Language" content="id-ID">
         <meta NAME="Distribution" CONTENT="Global">
         <meta NAME="Rating" CONTENT="General">
-        <link rel="canonical" href=""/>
+        <link rel="canonical" href="{{ url('') }}"/>
 
         @isset($meta)
             {{ $meta }}
