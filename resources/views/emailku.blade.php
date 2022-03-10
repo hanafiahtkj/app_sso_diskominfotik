@@ -1,6 +1,6 @@
 {{-- <h3>Halo, {{ $user->name }} !</h3>
  
-<p>Selamat datang di <a href="https://sso.banjarmasinkota.go.id/">sso.banjarmasinkota.go.id</a>Hanya beberapa langkah lagi sebelum kamu dapat menggunakan akun Anda.</p>
+<p>Selamat datang di <a href="https://bapintar.banjarmasinkota.go.id/">bapintar.banjarmasinkota.go.id</a>Hanya beberapa langkah lagi sebelum kamu dapat menggunakan akun Anda.</p>
 <p>Gunakan Kode dibawah ini untuk memverifikasi email kamu.</p>
 
 <p>Kode Verifikasi : {{ $verification_kode }}</p> --}}
@@ -17,7 +17,7 @@
                          <tbody>
                             <tr>
                                <td style="box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';padding:25px 0;text-align:center">
-                                  <a href="https://sso.banjarmasinkota.go.id/" style="box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';color:#3d4852;font-size:19px;font-weight:bold;text-decoration:none;display:inline-block" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://sso.banjarmasinkota.go.id/&amp;source=gmail&amp;ust=1640226801225000&amp;usg=AOvVaw2QtyAQ1Nx7kOwz2jhfF_ZW">
+                                  <a href="https://bapintar.banjarmasinkota.go.id/" style="box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';color:#3d4852;font-size:19px;font-weight:bold;text-decoration:none;display:inline-block" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://bapintar.banjarmasinkota.go.id/&amp;source=gmail&amp;ust=1640226801225000&amp;usg=AOvVaw2QtyAQ1Nx7kOwz2jhfF_ZW">
                                   BANJARMASIN PINTAR
                                   </a>
                                </td>

@@ -42,7 +42,7 @@ class VerifikasiEmail extends Mailable
                     [
                         'user' => $this->user,
                         'verification_kode' => $this->verification_kode,
-                        'website' => 'https://sso.banjarmasinkota.go.id/',
+                        'website' => 'https://bapintar.banjarmasinkota.go.id/',
                     ]);
     }
 }

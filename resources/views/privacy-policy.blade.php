@@ -8,7 +8,7 @@
             </div>
 
             <div class="mt-6 text-gray-500">
-                <p>At Banjarmasin Pintar, accessible from https://sso.banjarmasinkota.go.id/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Banjarmasin Pintar and how we use it.</p>
+                <p>At Banjarmasin Pintar, accessible from https://bapintar.banjarmasinkota.go.id/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Banjarmasin Pintar and how we use it.</p>
 
                 <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
