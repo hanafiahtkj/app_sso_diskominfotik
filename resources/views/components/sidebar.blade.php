@@ -57,6 +57,12 @@ $navigation_links = array_to_object($links);
             </ul>
           </li>
         </ul>
+        @else
+        <div class="mt-4 mb-4 py-3 hide-sidebar-mini">
+          <a href="https://drive.google.com/file/d/16VP3mNtcMxo9s5kb8xuUwR0yYmlpVfCX/view?usp=sharing" class="btn btn-outline-dark btn-lg btn-block btn-icon-split">
+            Download APK
+          </a>
+        </div>
         @endrole
 </div>
 </nav>
