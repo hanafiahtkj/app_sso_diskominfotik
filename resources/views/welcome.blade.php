@@ -3,6 +3,7 @@
     <livewire:home /> 
 
     <x-slot name="style">
+        <link rel="stylesheet" href="{{ asset('vendor/iziToast/dist/css/iziToast.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}">
         <style>
@@ -22,9 +23,18 @@
     </x-slot> 
 
     <x-slot name="script">
+        <script src="{{ asset('vendor/iziToast/dist/js/iziToast.min.js') }}"></script>
         <script src="{{ asset('vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
         <script>
             $(function() {
+                @if (session('success'))
+                iziToast.success({
+                    title: 'Success!',
+                    message: '{{ session('success') }}',
+                    position: 'topRight'
+                });
+                @endif
+
                 $("#berita-carousel").owlCarousel({
                     items: 12,
                     margin: 20,

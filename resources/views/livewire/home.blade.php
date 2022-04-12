@@ -121,7 +121,7 @@
                     <h4>Pendapat anda tentang Aplikasi Banjarmasin Pintar?</h4>
                 </div>
                 <div class="card-body">
-                    @if (session('polling') != true ) 
+                   
                     <form id="form-polling" action="{{ route('polling') }}" method="POST" style="">
                         @csrf
                         <div class="form-check">
@@ -160,15 +160,12 @@
                                 <div class="progress-bar bg-danger" role="progressbar" data-width="{{ $polling['kurang'] }}%" aria-valuenow="{{ $polling['kurang'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $polling['kurang'] }}%;">{{ $polling['kurang'] }}%</div>
                             </div>
                         </div>
-        
+                        @if (session('polling') != true ) 
                         <div align="center" class="mt-3 mb-3">
                             <button id="btn-simpan" class="btn btn-primary" name="vote">Kirim</button>
                         </div>
+                        @endif
                     </form>
-                    @else
-                        <h1 style="text-align: center;" class="mb-3">Terimakasih atas masukan anda</h1>
-                    @endif
-                    
                 </div>
             </div>
         </div>

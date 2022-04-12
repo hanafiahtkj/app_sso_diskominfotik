@@ -35,9 +35,7 @@ class PollingController extends Controller
 
         session(['polling' => true]);
 
-        return response()
-          ->json([
-            'status' => true,
-        ]);
+        return redirect()->route('welcome')
+            ->with('success','Terimakasih atas masukannya!');
     }
 }
