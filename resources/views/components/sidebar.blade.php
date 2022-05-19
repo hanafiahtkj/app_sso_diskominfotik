@@ -59,8 +59,11 @@ $navigation_links = array_to_object($links);
         </ul>
         @else
         <div class="mt-4 mb-4 py-3 hide-sidebar-mini">
-          <a href="https://drive.google.com/file/d/16VP3mNtcMxo9s5kb8xuUwR0yYmlpVfCX/view?usp=sharing" class="btn btn-outline-primary btn-lg btn-block btn-icon-split">
+          {{-- <a href="https://drive.google.com/file/d/16VP3mNtcMxo9s5kb8xuUwR0yYmlpVfCX/view?usp=sharing" class="btn btn-outline-primary btn-lg btn-block btn-icon-split">
             Download APK
+          </a> --}}
+          <a href="https://play.google.com/store/apps/details?id=com.banjarmasinkota.app_bapintar_diskominfotik" class="btn btn-outline-primary btn-lg btn-block btn-icon-split">
+            <i class="fab fa-google-play"></i> Google Play
           </a>
         </div>
         @endrole
