@@ -170,6 +170,7 @@ class ApiAuthController extends Controller
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
+            'email_verified_at' => now()
         ]);
 
         $user->assignRole('General');
