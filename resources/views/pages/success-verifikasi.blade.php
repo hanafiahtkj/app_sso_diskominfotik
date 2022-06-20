@@ -5,7 +5,7 @@
         <script>
             swal({
                 title: "Berhasil!",
-                text: "Verifikasi Email Berhasil!",
+                text: "Registrasi Berhasil!",
                 icon: "success",
                 button: "Close!",
                 closeOnClickOutside: false,
