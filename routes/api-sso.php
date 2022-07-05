@@ -11,6 +11,8 @@ use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Api\ApiRegisterController;
 use App\Http\Controllers\Api\ApiHomeController;
 
+use Laravel\Fortify\Http\Controllers\PasswordResetLinkController;
+
 /*
 |--------------------------------------------------------------------------
 | API Untuk Web SSO
@@ -70,3 +72,5 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
     Route::post('/updateUserPassword', [ ApiAuthController::class, "updateUserPassword" ]);
     Route::post('/deleteProfile', [ ApiAuthController::class, "deleteProfile" ]);
 });
+
+Route::get('/forgot-password', [PasswordResetLinkController::class, 'create']);
