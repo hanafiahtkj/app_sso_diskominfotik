@@ -17,8 +17,6 @@ use Carbon\Carbon;
 
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Password;
 use Laravel\Fortify\Fortify;
 
@@ -272,5 +270,10 @@ class ApiAuthController extends Controller
             'status'  => $status,
             // 'message' => $status ? 'SSO Sudah Login' : 'SSO Belum Login'
         ]);
+    }
+
+    protected function broker(): PasswordBroker
+    {
+        return Password::broker(config('fortify.passwords'));
     }
 }
