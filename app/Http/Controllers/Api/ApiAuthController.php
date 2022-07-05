@@ -253,7 +253,7 @@ class ApiAuthController extends Controller
         ]);
     } 
 
-    public function sendEmailPasswordReset(Request $request): Responsable
+    public function sendEmailPasswordReset(Request $request)
     {
         $request->validate([Fortify::email() => 'required|email']);
 
