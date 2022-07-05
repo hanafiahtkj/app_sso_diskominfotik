@@ -73,4 +73,4 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
     Route::post('/deleteProfile', [ ApiAuthController::class, "deleteProfile" ]);
 });
 
-Route::get('/forgot-password', [PasswordResetLinkController::class, 'create']);
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
