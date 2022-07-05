@@ -264,10 +264,8 @@ class ApiAuthController extends Controller
             $request->only(Fortify::email())
         );
 
-        $status == Password::RESET_LINK_SENT ? true : false;
-
         return response()->json([
-            'status'  => true,
+            'status'  => $status == Password::RESET_LINK_SENT ? true : false,
             // 'message' => $status ? 'SSO Sudah Login' : 'SSO Belum Login'
         ]);
     }
