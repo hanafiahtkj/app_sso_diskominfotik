@@ -15,6 +15,13 @@ use App\Mail\VerifikasiEmail;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 
+use Illuminate\Contracts\Auth\PasswordBroker;
+use Illuminate\Contracts\Support\Responsable;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Password;
+use Laravel\Fortify\Fortify;
+
 class ApiAuthController extends Controller
 {
     public function login(Request $request)
@@ -247,4 +254,23 @@ class ApiAuthController extends Controller
             'message' => $status ? 'SSO Sudah Login' : 'SSO Belum Login'
         ]);
     } 
+
+    public function sendEmailPasswordReset(Request $request): Responsable
+    {
+        $request->validate([Fortify::email() => 'required|email']);
+
+        // We will send the password reset link to this user. Once we have attempted
+        // to send the link, we will examine the response then see the message we
+        // need to show to the user. Finally, we'll send out a proper response.
+        $status = $this->broker()->sendResetLink(
+            $request->only(Fortify::email())
+        );
+
+        $status == Password::RESET_LINK_SENT ? true : false;
+
+        return response()->json([
+            'status'  => $status,
+            // 'message' => $status ? 'SSO Sudah Login' : 'SSO Belum Login'
+        ]);
+    }
 }
