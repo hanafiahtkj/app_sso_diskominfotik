@@ -267,7 +267,7 @@ class ApiAuthController extends Controller
         $status == Password::RESET_LINK_SENT ? true : false;
 
         return response()->json([
-            'status'  => $status,
+            'status'  => true,
             // 'message' => $status ? 'SSO Sudah Login' : 'SSO Belum Login'
         ]);
     }
