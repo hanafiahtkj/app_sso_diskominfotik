@@ -167,7 +167,7 @@ class ApiAuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'error' => 'Terjadi Kesalahan!',
-                'message' => $validator->errors(),
+                'message' => $validator->errors()->first(),
             ], 400);
         }
 
@@ -188,6 +188,7 @@ class ApiAuthController extends Controller
         return response()->json([
             'id' => $user->id,
             'token' => $user->createToken($request->input('email'))->plainTextToken,
+            'message' => 'Registrasi Berhasil',
         ]);
     }
 
