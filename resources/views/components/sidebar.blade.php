@@ -12,6 +12,12 @@ $links = [
         "text" => "Tentang",
         "is_multi" => false,
     ],
+    [
+        "icon" => "fas fa-phone-volume",
+        "href" => "pages.faq",
+        "text" => "FAQ",
+        "is_multi" => false,
+    ],
 ];
 $navigation_links = array_to_object($links);
 @endphp
@@ -53,6 +59,7 @@ $navigation_links = array_to_object($links);
               <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">Dasbor</a></li>
               <li class="nav-item"><a href="{{ route('aplikasi.index') }}" class="nav-link">Data Aplikasi</a></li>
               <li class="nav-item"><a href="{{ route('user') }}" class="nav-link">Data User</a></li>
+              <li class="nav-item"><a href="{{ route('faqs') }}" class="nav-link">Data FAQ</a></li>
               <li class="nav-item"><a href="{{ route('settings.index') }}" class="nav-link">Pengaturan</a></li>
             </ul>
           </li>

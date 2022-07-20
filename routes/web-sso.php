@@ -10,6 +10,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminDashboardController;
 
@@ -24,6 +25,8 @@ Route::get('/sso/login', function () {
 });
 
 Route::get('/about', [ PagesController::class, "about" ])->name('pages.about');
+
+Route::get('/faq', [ PagesController::class, "faq" ])->name('pages.faq');
 
 Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
 
@@ -59,10 +62,16 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified', 'role:Admin']], func
     Route::get('/admin-dashboard', [ AdminDashboardController::class, "index" ])->name('admin.dashboard');
     Route::resource('kategori', KategoriController::class)->middleware(['auth']);
     Route::resource('aplikasi', AppsController::class)->middleware(['auth']);
+    
     Route::get('/user', [ UserController::class, "index_view" ])->name('user');
     Route::view('/user/new', "pages.user.user-new")->name('user.new');
     Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
-    Route::get('/settings', [ SettingsController::class, "index" ])->name('settings.index'); 
+    
+    Route::get('/settings', [ SettingsController::class, "index" ])->name('settings.index');
+    
+    Route::get('/faqs', [ FaqsController::class, "index_view" ])->name('faqs');
+    Route::view('/faqs/new', "pages.faqs.faqs-new")->name('faqs.new');
+    Route::view('/faqs/edit/{faqId}', "pages.faqs.faqs-edit")->name('faqs.edit');
 });
 
 
